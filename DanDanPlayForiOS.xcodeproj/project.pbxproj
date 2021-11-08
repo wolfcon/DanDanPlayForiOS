@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01281BF12739256E0004E3BE /* WMScrollView+InteractiveExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 01281BF02739256E0004E3BE /* WMScrollView+InteractiveExtension.m */; };
 		01E030B4256BAB9800871351 /* DDPBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8930347D23E08C5E00BE1049 /* DDPBase.m */; };
 		258DB85FF6A45F2A6FD3578E /* libPods-DDPlay_Target-iOS_Only-DDPlay_Review.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E2B4DF7BAFF1EBB7784AEF /* libPods-DDPlay_Target-iOS_Only-DDPlay_Review.a */; };
 		2A4350E1B6A1BF35E91545BA /* libPods-DDPlay_Target-iOS_Only-DDPlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361F511D4F4E8CE3A646D000 /* libPods-DDPlay_Target-iOS_Only-DDPlay.a */; };
@@ -898,6 +899,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		01281BEF2739256E0004E3BE /* WMScrollView+InteractiveExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WMScrollView+InteractiveExtension.h"; sourceTree = "<group>"; };
+		01281BF02739256E0004E3BE /* WMScrollView+InteractiveExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WMScrollView+InteractiveExtension.m"; sourceTree = "<group>"; };
 		1D64E2391276E65AC4B7DCB6 /* Pods-DDPlay_Target-DDPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-DDPlay.release.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-DDPlay/Pods-DDPlay_Target-DDPlay.release.xcconfig"; sourceTree = "<group>"; };
 		2200A8C5E60D84DF1B07F2C2 /* Pods-DDPlay_Target-iOS_Only-DDPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-iOS_Only-DDPlay.debug.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay/Pods-DDPlay_Target-iOS_Only-DDPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		2344548B202E51930721C208 /* Pods-DDPlay_Target-iOS_Only-DDPlay_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-iOS_Only-DDPlay_2.release.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay_2/Pods-DDPlay_Target-iOS_Only-DDPlay_2.release.xcconfig"; sourceTree = "<group>"; };
@@ -2222,6 +2225,8 @@
 				898C18472166107300AE7484 /* UICollectionView+DDPTools.m */,
 				89582E2C23EAD02B00468D36 /* TOSMBSession+Hook.h */,
 				89582E2D23EAD02B00468D36 /* TOSMBSession+Hook.m */,
+				01281BEF2739256E0004E3BE /* WMScrollView+InteractiveExtension.h */,
+				01281BF02739256E0004E3BE /* WMScrollView+InteractiveExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -3924,6 +3929,7 @@
 				89F173061EB1F6F0006A2473 /* DDPSettingTitleTableViewCell.m in Sources */,
 				89A80334208B331D00FF6C2B /* DDPRefreshNormalHeader.m in Sources */,
 				89E3F5FF1E585135007AB1BD /* DDPMatchNetManagerOperation.m in Sources */,
+				01281BF12739256E0004E3BE /* WMScrollView+InteractiveExtension.m in Sources */,
 				8928E37B21B81F3E007BA84C /* DDPQRHelpViewController.m in Sources */,
 				8937D0A221568FB200D0E17C /* DDPBaseTableViewCell.m in Sources */,
 				89A42EEC1EA5F87500FA0DF3 /* DDPUser.mm in Sources */,
