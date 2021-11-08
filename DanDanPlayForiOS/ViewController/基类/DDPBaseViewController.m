@@ -20,9 +20,13 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self setNavigationBarWithColor:[UIColor ddp_mainColor]];
+    NSDictionary *titleAttributes = @{
+        NSForegroundColorAttributeName: [UIColor whiteColor],
+        NSFontAttributeName: [UIFont ddp_normalSizeFont]
+    };
+    [self setNavigationBarWithColor:[UIColor ddp_mainColor]
+                    titleAttributes:titleAttributes];
     self.modalPresentationStyle = UIModalPresentationFullScreen;
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName : [UIFont ddp_normalSizeFont]};
 }
 
 - (void)viewDidLoad {

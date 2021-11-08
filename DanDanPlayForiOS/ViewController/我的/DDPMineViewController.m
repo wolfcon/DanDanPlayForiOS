@@ -85,7 +85,7 @@ UIScrollViewDelegate, DDPCacheManagerDelagate>
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self setNavigationBarWithColor: UIColor.clearColor];
+    [self setNavigationBarWithColor:UIColor.clearColor];
 }
 
 - (void)dealloc {
