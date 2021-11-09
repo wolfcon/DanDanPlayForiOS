@@ -207,6 +207,10 @@ typedef NS_ENUM(NSUInteger, InterfaceViewPanType) {
         UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panScreen:)];
         panGesture.delegate = self;
         [self.gestureView addGestureRecognizer:panGesture];
+        
+        UILongPressGestureRecognizer *pressGesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(pressScreen:)];
+        pressGesture.minimumPressDuration = 0.75;
+        [self.gestureView addGestureRecognizer:pressGesture];
     }
     
     //监听音量变化
@@ -765,6 +769,27 @@ typedef NS_ENUM(NSUInteger, InterfaceViewPanType) {
     }
     else {
         [self showWithAnimate:YES];
+    }
+}
+
+- (void)pressScreen:(UILongPressGestureRecognizer *)recognizer {
+    UIImpactFeedbackGenerator *feedbackGenerator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium];
+
+    switch (recognizer.state) {
+        case UIGestureRecognizerStateBegan:
+            self.player.speed = 3;
+            [feedbackGenerator impactOccurred];
+            break;
+            
+        case UIGestureRecognizerStateEnded:
+        case UIGestureRecognizerStateCancelled:
+        case UIGestureRecognizerStateFailed:
+            self.player.speed = 1;
+            [feedbackGenerator impactOccurred];
+            break;
+            
+        default:
+            break;
     }
 }
 
