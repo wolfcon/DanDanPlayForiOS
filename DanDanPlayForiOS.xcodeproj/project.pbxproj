@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01281BF12739256E0004E3BE /* WMScrollView+InteractiveExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 01281BF02739256E0004E3BE /* WMScrollView+InteractiveExtension.m */; };
+		01AAD0F2274E25670031215F /* DDPDocumentDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AAD0F1274E25670031215F /* DDPDocumentDelegate.m */; };
 		01E030B4256BAB9800871351 /* DDPBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8930347D23E08C5E00BE1049 /* DDPBase.m */; };
 		258DB85FF6A45F2A6FD3578E /* libPods-DDPlay_Target-iOS_Only-DDPlay_Review.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E2B4DF7BAFF1EBB7784AEF /* libPods-DDPlay_Target-iOS_Only-DDPlay_Review.a */; };
 		2A4350E1B6A1BF35E91545BA /* libPods-DDPlay_Target-iOS_Only-DDPlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361F511D4F4E8CE3A646D000 /* libPods-DDPlay_Target-iOS_Only-DDPlay.a */; };
@@ -901,6 +902,8 @@
 /* Begin PBXFileReference section */
 		01281BEF2739256E0004E3BE /* WMScrollView+InteractiveExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WMScrollView+InteractiveExtension.h"; sourceTree = "<group>"; };
 		01281BF02739256E0004E3BE /* WMScrollView+InteractiveExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WMScrollView+InteractiveExtension.m"; sourceTree = "<group>"; };
+		01AAD0F0274E25670031215F /* DDPDocumentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDPDocumentDelegate.h; sourceTree = "<group>"; };
+		01AAD0F1274E25670031215F /* DDPDocumentDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDPDocumentDelegate.m; sourceTree = "<group>"; };
 		1D64E2391276E65AC4B7DCB6 /* Pods-DDPlay_Target-DDPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-DDPlay.release.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-DDPlay/Pods-DDPlay_Target-DDPlay.release.xcconfig"; sourceTree = "<group>"; };
 		2200A8C5E60D84DF1B07F2C2 /* Pods-DDPlay_Target-iOS_Only-DDPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-iOS_Only-DDPlay.debug.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay/Pods-DDPlay_Target-iOS_Only-DDPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		2344548B202E51930721C208 /* Pods-DDPlay_Target-iOS_Only-DDPlay_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-iOS_Only-DDPlay_2.release.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay_2/Pods-DDPlay_Target-iOS_Only-DDPlay_2.release.xcconfig"; sourceTree = "<group>"; };
@@ -2652,6 +2655,8 @@
 				89B6EED1201C78320022DE0D /* DDPDownloadManager.mm */,
 				8907526A21A11A6800D149F3 /* DDPMock.h */,
 				8907526B21A11A6800D149F3 /* DDPMock.m */,
+				01AAD0F0274E25670031215F /* DDPDocumentDelegate.h */,
+				01AAD0F1274E25670031215F /* DDPDocumentDelegate.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -3924,6 +3929,7 @@
 				89A42E9A1EA5B0BA00FA0DF3 /* DDPBaseCollection.m in Sources */,
 				8928E35021B81B68007BA84C /* DDPHomePageBannerView.m in Sources */,
 				89B6EEDA201C8A2C0022DE0D /* TOSMBSessionDownloadTask+DB.mm in Sources */,
+				01AAD0F2274E25670031215F /* DDPDocumentDelegate.m in Sources */,
 				8928E37521B81F3E007BA84C /* DDPQRScannerViewController.m in Sources */,
 				89657F2E1F724C570003AF96 /* UINavigationItem+Tools.m in Sources */,
 				89F173061EB1F6F0006A2473 /* DDPSettingTitleTableViewCell.m in Sources */,

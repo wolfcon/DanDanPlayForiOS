@@ -255,6 +255,12 @@ BOOL ddp_isChatAppInstall(void) {
     return false;
 }
 
++ (void)matchVideoURL:(NSURL *)videoURL
+           completion:(DDPFastMatchAction)completion {
+    DDPVideoModel *model = [[DDPVideoModel alloc] initWithFileURL:videoURL];
+    [DDPMethod matchVideoModel:model completion:nil];
+}
+
 + (void)matchVideoModel:(DDPVideoModel *)model
         useDefaultMode:(BOOL)useDefaultMode
              completion:(DDPFastMatchAction)completion {

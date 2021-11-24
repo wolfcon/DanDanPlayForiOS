@@ -10,6 +10,7 @@
 #import "SceneDelegate.h"
 #import <Foundation/Foundation.h>
 #import "DDPMainViewController.h"
+#import "DDPDocumentDelegate.h"
 
 #if DDPAPPTYPEISMAC
 #import <UIKit/NSToolbar+UIKitAdditions.h>
@@ -97,8 +98,7 @@
     [[DDPMessageManager sharedManager] receiveMessage:model];
 #else
     UIOpenURLContext *context = URLContexts.anyObject;
-    DDPFile *file = [[DDPFile alloc] initWithFileURL:context.URL type:DDPFileTypeDocument];
-    [DDPMethod matchFile:file completion:nil];
+    [DDPMethod matchVideoURL:context.URL completion:nil];
 #endif
 }
 

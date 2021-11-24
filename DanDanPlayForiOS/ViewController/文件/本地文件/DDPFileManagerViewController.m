@@ -25,6 +25,7 @@
 #import "NSString+Tools.h"
 #import "DDPDownloadManager.h"
 #import <UITableView+FDTemplateLayoutCell.h>
+#import "DDPDocumentDelegate.h"
 
 @interface DDPFileManagerViewController ()<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource,
 #if !DDPAPPTYPE
@@ -45,10 +46,10 @@ DDPFileManagerSearchViewDelegate>
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self configRightItem];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(deleteFileSuccess:) name:DELETE_FILE_SUCCESS_NOTICE object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(moveFileSuccess:) name:MOVE_FILE_SUCCESS_NOTICE object:nil];
+    
+    [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(applicationDidBecomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.left.right.mas_equalTo(0);
@@ -254,15 +255,6 @@ DDPFileManagerSearchViewDelegate>
 }
 
 #pragma mark - 私有方法
-//- (void)configLeftItem {
-//    if (ddp_isRootFile(self.file) == NO) {
-//        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[[UIImage imageNamed:@"comment_back_item"] yy_imageByTintColor:[UIColor ddp_mainColor]] configAction:^(UIButton *aButton) {
-//             [aButton addTarget:self action:@selector(touchLeftItem:) forControlEvents:UIControlEventTouchUpInside];
-//        }];
-//
-//        [self.navigationItem addLeftItemFixedSpace:item];
-//    }
-//}
 
 - (void)touchSelectedAllButton:(UIButton *)button {
     button.selected = !button.isSelected;
@@ -456,6 +448,40 @@ DDPFileManagerSearchViewDelegate>
     }
 }
 
+- (void)configLeftItem {
+    [super configLeftItem];
+    
+    if (ddp_appType == DDPAppTypeDefault) {
+        UIImage *image;
+        if (@available(iOS 13.0, *)) {
+            image = [UIImage systemImageNamed:@"folder"];
+        } else {
+            image = [[UIImage imageNamed:@"file_app"]
+                     yy_imageByTintColor:UIColor.whiteColor];
+        }
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:image configAction:^(UIButton *aButton) {
+            [aButton addTarget:self action:@selector(openAppleFilesApp:) forControlEvents:UIControlEventTouchUpInside];
+            
+            aButton.tintColor = UIColor.whiteColor;
+            if (@available(iOS 13.0, *)) {
+                UIImageSymbolConfiguration *symbolConfig = [UIImageSymbolConfiguration
+                                                            configurationWithPointSize:0
+                                                            weight:UIImageSymbolWeightMedium
+                                                            scale:UIImageSymbolScaleLarge];
+                [aButton setPreferredSymbolConfiguration:symbolConfig
+                                         forImageInState:UIControlStateNormal];
+            }
+        }];
+        
+        NSArray <UIBarButtonItem *> *items = self.navigationItem.leftBarButtonItems;
+        self.navigationItem.leftBarButtonItems = [items arrayByAddingObject:item];
+    }
+}
+
+- (void)openAppleFilesApp:(UIButton *)sender {
+    [DDPDocumentDelegate.shared openFileAppInViewController:self];
+}
+
 - (void)touchSearchButton:(UIButton *)sender {
     self.searchView.file = self.file;
     [self.searchView show];
@@ -564,12 +590,7 @@ DDPFileManagerSearchViewDelegate>
             @strongify(self)
             if (!self) return;
             
-            [[DDPToolsManager shareToolsManager] startDiscovererFileParentFolderWithChildrenFile:self.file type:PickerFileTypeVideo completion:^(DDPFile *file) {
-                self.file = file;
-                [self.tableView reloadData];
-//                [self sortFile];
-                [self.tableView endRefreshing];
-            }];
+            [self discoverFolderFiles];
         }];
         
         [self.view addSubview:_tableView];
@@ -641,4 +662,16 @@ DDPFileManagerSearchViewDelegate>
     return _folderImg;
 }
 
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    [self discoverFolderFiles];
+}
+
+- (void)discoverFolderFiles {
+    [[DDPToolsManager shareToolsManager] startDiscovererFileParentFolderWithChildrenFile:self.file type:PickerFileTypeVideo completion:^(DDPFile *file) {
+        self.file = file;
+        [self.tableView reloadData];
+//                [self sortFile];
+        [self.tableView endRefreshing];
+    }];
+}
 @end

@@ -218,6 +218,12 @@ UIKIT_EXTERN BOOL ddp_isChatAppInstall(void);
 + (void)matchFile:(DDPFile *)file
        completion:(DDPFastMatchAction)completion;
 
+/// 匹配视频链接
+/// @param url 视频链接
+/// @param completion 成功回调
++ (void)matchVideoURL:(NSURL *)videoURL
+      completion:(DDPFastMatchAction)completion;
+
 /// 匹配视频模型
 /// @param model 视频模型
 /// @param completion 完成回调
