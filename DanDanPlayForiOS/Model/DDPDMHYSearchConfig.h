@@ -29,4 +29,11 @@
  链接id
  */
 //@property (copy, nonatomic) NSString *link;
+
+/** 查看搜索结果的页数, 以 1 开始 */
+@property (nonatomic) NSUInteger page;
+
+- (void)resetPage;
+- (void)nextPage;
+- (void)previousPage;
 @end

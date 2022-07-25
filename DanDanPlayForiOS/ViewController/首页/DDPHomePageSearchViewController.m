@@ -20,6 +20,7 @@
 #import "DDPSearchBar.h"
 #import "HomePageSearchFilterModel.h"
 #import "DDPCommentNetManagerOperation.h"
+#import "DDPBackNormalFooter.h"
 
 @interface DDPHomePageSearchViewController ()<UISearchBarDelegate, UITableViewDelegate, UITableViewDataSource, HomePageSearchFilterViewDelegate, HomePageSearchFilterViewDataSource>
 //@property (strong, nonatomic) DDPSearchBar *searchBar;
@@ -151,7 +152,9 @@
 - (void)pageSearchFilterView:(HomePageSearchFilterView *)view
   didSelectedItemAtIndexPath:(NSIndexPath *)indexPath
                        title:(NSString *)title {
-    self.filterDataSource[indexPath.section].title = title;
+    if (indexPath) {
+        self.filterDataSource[indexPath.section].title = title;
+    }
     
     NSInteger typeIndex = [view selectedItemIndexAtSection:0];
     NSInteger subGroupIndex = [view selectedItemIndexAtSection:1];
@@ -365,62 +368,112 @@
         _tableView.mj_header = [MJRefreshNormalHeader ddp_headerRefreshingCompletionHandler:^{
             @strongify(self)
             if (!self) return;
-            
-            if (self.config.keyword.length) {
-                [DDPSearchNetManagerOperation searchDMHYWithConfig:self.config completionHandler:^(DDPDMHYSearchCollection *responseObject, NSError *error) {
-                    if (error) {
-                        [self.view showWithError:error];
-                    }
-                    else {
-                        self.collection = responseObject;
-                        if (responseObject.collection.count) {
-                            [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-                                make.top.mas_offset(FILTER_VIEW_HEIGHT);
-                            }];
-                            self.filterView.hidden = NO;
-                            
-                            NSMutableOrderedSet *typeSet = [NSMutableOrderedSet orderedSetWithObject:@"全部分类"];
-                            NSMutableOrderedSet *subgroupNameSet = [NSMutableOrderedSet orderedSetWithObject:@"全部字幕组"];
-                            
-                            [responseObject.collection enumerateObjectsUsingBlock:^(DDPDMHYSearch * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                                if (obj.typeName.length) {
-                                    [typeSet addObject:obj.typeName];
-                                }
-                                
-                                if (obj.subgroupName.length) {
-                                    [subgroupNameSet addObject:obj.subgroupName];
-                                }
-                            }];
-                            
-                            HomePageSearchFilterModel *type = [[HomePageSearchFilterModel alloc] init];
-                            type.title = typeSet.firstObject;
-                            type.subItems = typeSet.array;
-                            
-                            HomePageSearchFilterModel *subGroups = [[HomePageSearchFilterModel alloc] init];
-                            subGroups.title = subgroupNameSet.firstObject;
-                            subGroups.subItems = subgroupNameSet.array;
-                            
-                            self.filterDataSource = @[type, subGroups];
-                            
-                            [self.filterView reloadData];
-                        }
-                        else {
-                            self.filterView.hidden = YES;
-                            [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
-                                make.top.mas_offset(0);
-                            }];
-                        }
-//                        self.navigationItem.rightBarButtonItem.customView.userInteractionEnabled = !!self.config;
-                        self.dataSource = responseObject.collection;
-                        [self.tableView reloadData];
-                    }
-                    [self.tableView endRefreshing];
-                }];
-            }
-            else {
+            if (self.config.keyword.length == 0) {
                 [self.tableView.mj_header endRefreshing];
+                return;
             }
+            [self.config resetPage];
+            [DDPSearchNetManagerOperation searchDMHYWithConfig:self.config completionHandler:^(DDPDMHYSearchCollection *responseObject, NSError *error) {
+                if (error) {
+                    [self.view showWithError:error];
+                    [self.tableView.mj_header endRefreshing];
+                    return;
+                }
+                self.collection = responseObject;
+                if (responseObject.collection.count) {
+                    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.top.mas_offset(FILTER_VIEW_HEIGHT);
+                    }];
+                    self.filterView.hidden = NO;
+                    
+                    NSMutableOrderedSet *typeSet = [NSMutableOrderedSet orderedSetWithObject:@"全部分类"];
+                    NSMutableOrderedSet *subgroupNameSet = [NSMutableOrderedSet orderedSetWithObject:@"全部字幕组"];
+                    
+                    [responseObject.collection enumerateObjectsUsingBlock:^(DDPDMHYSearch * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        if (obj.typeName.length) {
+                            [typeSet addObject:obj.typeName];
+                        }
+                        
+                        if (obj.subgroupName.length) {
+                            [subgroupNameSet addObject:obj.subgroupName];
+                        }
+                    }];
+                    
+                    HomePageSearchFilterModel *type = [[HomePageSearchFilterModel alloc] init];
+                    type.title = typeSet.firstObject;
+                    type.subItems = typeSet.array;
+                    
+                    HomePageSearchFilterModel *subGroups = [[HomePageSearchFilterModel alloc] init];
+                    subGroups.title = subgroupNameSet.firstObject;
+                    subGroups.subItems = subgroupNameSet.array;
+                    
+                    self.filterDataSource = @[type, subGroups];
+                    
+                    [self.filterView reloadData];
+                }
+                else {
+                    self.filterView.hidden = YES;
+                    [self.tableView mas_updateConstraints:^(MASConstraintMaker *make) {
+                        make.top.mas_offset(0);
+                    }];
+                }
+                //                        self.navigationItem.rightBarButtonItem.customView.userInteractionEnabled = !!self.config;
+                self.dataSource = responseObject.collection;
+                [self.tableView reloadData];
+                [self.tableView endRefreshing];
+            }];
+        }];
+        
+        _tableView.mj_footer = [DDPBackNormalFooter footerWithRefreshingBlock:^{
+            @strongify(self)
+            if (!self) return;
+            if (self.config.keyword.length == 0) {
+                [self.tableView.mj_footer endRefreshing];
+                return;
+            }
+            [self.config nextPage];
             
+            [DDPSearchNetManagerOperation searchDMHYWithConfig:self.config completionHandler:^(DDPDMHYSearchCollection *responseObject, NSError *error) {
+                if (error) {
+                    [self.view showWithError:error];
+                    [self.config previousPage];
+                    [self.tableView.mj_footer endRefreshing];
+                    return;
+                }
+                
+                if (responseObject.collection.count == 0) {
+                    [self.tableView.mj_footer endRefreshingWithNoMoreData];
+                    return;
+                }
+                if (self.filterDataSource.count == 2) {
+                    HomePageSearchFilterModel *type = self.filterDataSource[0];
+                    HomePageSearchFilterModel *subGroups = self.filterDataSource[1];
+                    
+                    NSMutableOrderedSet *typeSet = [NSMutableOrderedSet orderedSetWithArray:type.subItems];
+                    NSMutableOrderedSet *subgroupNameSet = [NSMutableOrderedSet orderedSetWithArray:subGroups.subItems];
+                    [responseObject.collection enumerateObjectsUsingBlock:^(DDPDMHYSearch * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        if (obj.typeName.length) {
+                            [typeSet addObject:obj.typeName];
+                        }
+                        
+                        if (obj.subgroupName.length) {
+                            [subgroupNameSet addObject:obj.subgroupName];
+                        }
+                    }];
+                    
+                    type.subItems = typeSet.array;
+                    subGroups.subItems = subgroupNameSet.array;
+                    
+                    self.filterDataSource = @[type, subGroups];
+                    [self.filterView reloadDataWithoutResetSelection];
+                }
+                
+                [self.collection.collection addObjectsFromArray:responseObject.collection];
+                
+                [self.filterView reselectItems];
+                
+                [self.tableView.mj_footer endRefreshing];
+            }];
         }];
         
         [self.view addSubview:_tableView];

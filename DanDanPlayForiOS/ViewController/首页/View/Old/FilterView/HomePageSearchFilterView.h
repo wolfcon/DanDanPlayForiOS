@@ -39,4 +39,8 @@
 //- (void)selectedItemAtIndexPath:(NSIndexPath *)indexPath
 //             updateSectionTitle:(BOOL)updateSectionTitle;
 - (void)reloadData;
+
+/// Be aware of overflow!!!
+- (void)reloadDataWithoutResetSelection;
+- (void)reselectItems;
 @end

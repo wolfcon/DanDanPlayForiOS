@@ -84,6 +84,17 @@
 //    [self.menuView reload];
 }
 
+- (void)reloadDataWithoutResetSelection {
+    [self.collectionView reloadData];
+}
+
+- (void)reselectItems {
+    if ([self.delegate respondsToSelector:@selector(pageSearchFilterView:didSelectedItemAtIndexPath:title:)]) {
+        
+        [self.delegate pageSearchFilterView:self didSelectedItemAtIndexPath:nil title:nil];
+    }
+}
+
 - (NSInteger)selectedItemIndexAtSection:(NSInteger)section {
     return self.selectedIndexDic[@(section)].integerValue;
 }

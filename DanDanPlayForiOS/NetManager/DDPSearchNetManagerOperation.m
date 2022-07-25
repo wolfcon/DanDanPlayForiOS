@@ -150,6 +150,7 @@
     if (config.subGroupId != 0) {
         dic[@"subgroup"] = @(config.subGroupId);
     }
+    dic[@"page"] = @(config.page);
     
     NSString *path = [NSString stringWithFormat:@"%@/list", DDPMethod.searchResDomain];
     

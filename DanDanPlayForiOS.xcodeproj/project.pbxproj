@@ -10,6 +10,7 @@
 		01281BF12739256E0004E3BE /* WMScrollView+InteractiveExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 01281BF02739256E0004E3BE /* WMScrollView+InteractiveExtension.m */; };
 		01AAD0F2274E25670031215F /* DDPDocumentDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AAD0F1274E25670031215F /* DDPDocumentDelegate.m */; };
 		01E030B4256BAB9800871351 /* DDPBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8930347D23E08C5E00BE1049 /* DDPBase.m */; };
+		01EC839A288A7F22000EC0B0 /* DDPBackNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EC8399288A7F22000EC0B0 /* DDPBackNormalFooter.m */; };
 		258DB85FF6A45F2A6FD3578E /* libPods-DDPlay_Target-iOS_Only-DDPlay_Review.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E2B4DF7BAFF1EBB7784AEF /* libPods-DDPlay_Target-iOS_Only-DDPlay_Review.a */; };
 		2A4350E1B6A1BF35E91545BA /* libPods-DDPlay_Target-iOS_Only-DDPlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361F511D4F4E8CE3A646D000 /* libPods-DDPlay_Target-iOS_Only-DDPlay.a */; };
 		3EA04C948B05C030A98E33C6 /* libPods-DDPlay_Target-DDPlay_ToMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8983450A097DFD30A2DBAB6 /* libPods-DDPlay_Target-DDPlay_ToMac.a */; };
@@ -904,6 +905,8 @@
 		01281BF02739256E0004E3BE /* WMScrollView+InteractiveExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "WMScrollView+InteractiveExtension.m"; sourceTree = "<group>"; };
 		01AAD0F0274E25670031215F /* DDPDocumentDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDPDocumentDelegate.h; sourceTree = "<group>"; };
 		01AAD0F1274E25670031215F /* DDPDocumentDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDPDocumentDelegate.m; sourceTree = "<group>"; };
+		01EC8398288A7F22000EC0B0 /* DDPBackNormalFooter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DDPBackNormalFooter.h; sourceTree = "<group>"; };
+		01EC8399288A7F22000EC0B0 /* DDPBackNormalFooter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DDPBackNormalFooter.m; sourceTree = "<group>"; };
 		1D64E2391276E65AC4B7DCB6 /* Pods-DDPlay_Target-DDPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-DDPlay.release.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-DDPlay/Pods-DDPlay_Target-DDPlay.release.xcconfig"; sourceTree = "<group>"; };
 		2200A8C5E60D84DF1B07F2C2 /* Pods-DDPlay_Target-iOS_Only-DDPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-iOS_Only-DDPlay.debug.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay/Pods-DDPlay_Target-iOS_Only-DDPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		2344548B202E51930721C208 /* Pods-DDPlay_Target-iOS_Only-DDPlay_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-iOS_Only-DDPlay_2.release.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay_2/Pods-DDPlay_Target-iOS_Only-DDPlay_2.release.xcconfig"; sourceTree = "<group>"; };
@@ -2416,6 +2419,8 @@
 			children = (
 				89A80332208B331D00FF6C2B /* DDPRefreshNormalHeader.h */,
 				89A80333208B331D00FF6C2B /* DDPRefreshNormalHeader.m */,
+				01EC8398288A7F22000EC0B0 /* DDPBackNormalFooter.h */,
+				01EC8399288A7F22000EC0B0 /* DDPBackNormalFooter.m */,
 			);
 			path = MJRefresh;
 			sourceTree = "<group>";
@@ -3788,6 +3793,7 @@
 				89EC0E5C1F2D812A004D3C12 /* DDPHelpViewController.m in Sources */,
 				8946D52B1EB6D38800161833 /* DDPFileManagerBaseViewCell.m in Sources */,
 				8928E35421B81B68007BA84C /* HomePageSearchTableViewCell.m in Sources */,
+				01EC839A288A7F22000EC0B0 /* DDPBackNormalFooter.m in Sources */,
 				8911387822E3665600ED15E3 /* DDPPlayerSubTitleIndexView.m in Sources */,
 				89347AEF1F4BC7FE00914FB6 /* DDPSMBFileManagerPickerViewController.m in Sources */,
 				89D8F8001EB0588F009329AA /* DDPSettingViewController.m in Sources */,
