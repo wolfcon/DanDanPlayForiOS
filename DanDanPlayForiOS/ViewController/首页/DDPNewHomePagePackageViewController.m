@@ -9,6 +9,7 @@
 #import "DDPNewHomePagePackageViewController.h"
 #import "DDPNewHomePageViewController.h"
 #import "DDPHomePageSearchPackageViewController.h"
+#import "DDPFileManagerViewController.h"
 
 @interface DDPNewHomePagePackageViewController ()
 @property (strong, nonatomic) DDPNewHomePageViewController *homePageViewController;
@@ -35,10 +36,25 @@
 }
 
 - (void)configRightItem {
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"home_search"] configAction:^(UIButton *aButton) {
+    UIImage *fileIcon = [[UIImage imageNamed:@"file_phone"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+
+    UIBarButtonItem *fileItem = [[UIBarButtonItem alloc] initWithImage:fileIcon configAction:^(UIButton *aButton) {
+        [aButton addTarget:self action:@selector(touchLeftItem) forControlEvents:UIControlEventTouchUpInside];
+        aButton.imageView.tintColor = UIColor.whiteColor;
+    }];
+    [self.navigationItem addLeftItemFixedSpace:fileItem];
+    
+    UIBarButtonItem *searchItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"home_search"] configAction:^(UIButton *aButton) {
         [aButton addTarget:self action:@selector(touchRightItem) forControlEvents:UIControlEventTouchUpInside];
     }];
-    [self.navigationItem addRightItemFixedSpace:item];
+    [self.navigationItem addRightItemFixedSpace:searchItem];
+}
+
+- (void)touchLeftItem {
+    let vc = [[DDPFileManagerViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.file = ddp_getANewRootFile();
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)touchRightItem {
