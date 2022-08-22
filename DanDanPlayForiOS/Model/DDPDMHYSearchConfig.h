@@ -16,7 +16,7 @@
 @property (copy, nonatomic) NSString *keyword;
 
 /**
- 动画类型id 完整列表 ->  res.acplay.net/type
+ 动画类型id 完整列表 ->  res.dandanplay.net/type
  */
 @property (assign, nonatomic) NSInteger episodeType;
 

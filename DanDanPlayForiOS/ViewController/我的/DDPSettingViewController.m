@@ -408,7 +408,7 @@
                 [vc addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
                     textField.text = [DDPCacheManager shareCacheManager].userDefineRequestDomain;
                     textField.font = [UIFont ddp_normalSizeFont];
-                    textField.placeholder = @"例如: https://api.acplay.net";
+                    textField.placeholder = @"例如: https://api.dandanplay.net";
                 }];
                 
                 [self presentViewController:vc animated:true completion:nil];
@@ -445,7 +445,7 @@
                 [vc addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
                     textField.text = [DDPCacheManager shareCacheManager].userDefineResRequestDomain;
                     textField.font = [UIFont ddp_normalSizeFont];
-                    textField.placeholder = @"例如: https://res.acplay.net";
+                    textField.placeholder = @"例如: https://res.dandanplay.net";
                 }];
                 
                 [self presentViewController:vc animated:true completion:nil];

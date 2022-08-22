@@ -199,14 +199,14 @@ UIKIT_EXTERN BOOL ddp_isRootPath(NSString *path) {
     if ([DDPCacheManager shareCacheManager].userDefineRequestDomain.length > 0) {
         return [DDPCacheManager shareCacheManager].userDefineRequestDomain;
     }
-    return @"https://api.acplay.net/";
+    return @"https://api.dandanplay.net/";
 }
 
 + (NSString *)searchResDomain {
     if ([DDPCacheManager shareCacheManager].userDefineResRequestDomain.length > 0) {
         return [DDPCacheManager shareCacheManager].userDefineResRequestDomain;
     }
-    return @"https://res.acplay.net/";
+    return @"https://res.dandanplay.net/";
 }
 
 + (NSString *)apiPath {
@@ -218,7 +218,7 @@ UIKIT_EXTERN BOOL ddp_isRootPath(NSString *path) {
 }
 
 + (NSString *)checkVersionPath {
-    return @"http://dandanmac.acplay.net";
+    return @"http://dandanmac.dandanplay.net/";
 }
 
 BOOL ddp_isSmallDevice(void) {

@@ -12,7 +12,7 @@
 @implementation DDPFilterNetManagerOperation
 + (NSURLSessionDataTask *)cloudFilterListWithCompletionHandler:(void (^)(DDPFilterCollection *, NSError *))completionHandler {
     
-    NSString *path = @"https://api.acplay.net/config/filter.xml";
+    NSString *path = @"https://api.dandanplay.net/config/filter.xml";
     
     return [[DDPSharedNetManager sharedNetManager] GETWithPath:path
                                              serializerType:DDPBaseNetManagerSerializerTypeXML
