@@ -32,15 +32,12 @@
 * [BarrageRenderer](https://github.com/unash/BarrageRenderer)
 
 ## build
-项目依赖CocoaPods 运行前请手动 ```pod update ```
-
-## 软件截图
-![预览图1](http://wx1.sinaimg.cn/mw690/005tgoOjgy1ff125h3tj9j30vk0hs7eb.jpg)
-
-![预览图2](http://wx1.sinaimg.cn/mw690/005tgoOjgy1ff125pbx12j30hs0vk4b5.jpg)
+项目依赖 `CocoaPods` 运行前请安装默认库 ```pod install --repo-update```
 
 ## 联系我
-[O浪微博](http://weibo.com/u/2996607392)
+
+QQ: 472730949
+> [原作者](http://weibo.com/u/2996607392)
 
 ## 许可证
 软件遵循MIT协议 详情请见LICENSE文件

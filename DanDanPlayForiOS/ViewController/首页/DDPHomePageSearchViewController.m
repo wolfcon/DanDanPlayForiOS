@@ -290,7 +290,7 @@
         }]];
         
         [vc addAction:[UIAlertAction actionWithTitle:@"直接下载" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-            NSURL *magnetURL = [NSURL URLWithString:[NSString stringWithFormat:@"magnet://%@", magnet]];
+            NSURL *magnetURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@", magnet]];
             [UIApplication.sharedApplication openURL:magnetURL];
         }]];
         
