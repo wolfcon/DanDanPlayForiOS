@@ -11,15 +11,9 @@
 @implementation DDPDMHYSearch
 
 + (NSDictionary<NSString *,id> *)modelCustomPropertyMapper {
-    return @{@"fileSize" : @"FileSize",
-             @"magnet" : @"Magnet",
-             @"pageUrl" : @"PageUrl",
-             @"publishDate" : @"PublishDate",
-             @"subgroupId" : @"SubgroupId",
-             @"subgroupName" : @"SubgroupName",
-             @"name" : @"Title",
-             @"typeId" : @"TypeId",
-             @"typeName" : @"TypeName"};
+    return @{
+             @"name" : @"title"
+    };
 }
 
 @end

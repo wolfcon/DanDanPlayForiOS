@@ -206,7 +206,7 @@ UIKIT_EXTERN BOOL ddp_isRootPath(NSString *path) {
     if ([DDPCacheManager shareCacheManager].userDefineResRequestDomain.length > 0) {
         return [DDPCacheManager shareCacheManager].userDefineResRequestDomain;
     }
-    return @"https://res.dandanplay.net/";
+    return @"https://res.dandanplay.net";
 }
 
 + (NSString *)apiPath {

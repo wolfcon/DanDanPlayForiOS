@@ -15,8 +15,8 @@
 }
 
 + (NSDictionary<NSString *,id> *)modelCustomPropertyMapper {
-    return @{@"collection" : @"Resources",
-             @"hasMore" : @"HasMore"};
+    return @{@"collection" : @"resources",
+             @"hasMore" : @"hasMore"};
 }
 
 @end
