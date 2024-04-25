@@ -48,7 +48,7 @@ PODS:
   - MBProgressHUD (1.2.0)
   - MGSwipeTableCell (1.6.11)
   - MJRefresh (3.5.0)
-  - MobileVLCKit (3.3.10)
+  - MobileVLCKit (3.5.1)
   - NKOColorPickerView (0.5)
   - Ono (2.1.2)
   - RATreeView (2.1.2)
@@ -169,8 +169,8 @@ CHECKOUT OPTIONS:
     :git: https://github.com/sunsx9316/YYWebImage_UIKitForMac.git
 
 SPEC CHECKSUMS:
-  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
-  BlocksKit: 7f422b971407001178d181a43b99014ea2591fe6
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  BlocksKit: 8639b2848dd51c35c957af4d9fbdc7a769a1fc12
   Bugly: fd066c75c4a0eca1440f9b6a84bd37d51bfc85ac
   CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
   CocoaHTTPServer: 5624681fc3473d43b18202f635f9b3abb013b530
@@ -185,7 +185,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
-  MobileVLCKit: 34a4d22c48ea48a36c2a6fdf290d4ea094869ac0
+  MobileVLCKit: 144d5f565512d1147d63b0fa1379231b3fd66535
   NKOColorPickerView: 895ca86fe5bd16f27c311ce8f5888907efee29ad
   Ono: 26a7c1fc4df13ece7747560a1d80655807a8a000
   RATreeView: 380cde0090cfde21dc6ac29137f49d3b768fdd28
@@ -207,4 +207,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 7f0e1e182e934a338afe558542c5bfccf80bc66e
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.15.2
