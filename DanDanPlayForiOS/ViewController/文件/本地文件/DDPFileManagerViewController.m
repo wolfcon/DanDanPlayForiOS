@@ -77,6 +77,14 @@ DDPFileManagerSearchViewDelegate>
     }
 }
 
+- (void)viewWillLayoutSubviews {
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, self.view.safeAreaInsets.bottom, 0);
+    } else {
+        
+    }
+}
+
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 #if !DDPAPPTYPE
@@ -618,7 +626,11 @@ DDPFileManagerSearchViewDelegate>
                         }
                         
                         [self.editView mas_updateConstraints:^(MASConstraintMaker *make) {
-                            make.height.mas_equalTo(50);
+                            if (@available(iOS 11.0, *)) {
+                                make.height.mas_equalTo(50 + self.view.safeAreaInsets.bottom - 15);
+                            } else {
+                                make.height.mas_equalTo(50);
+                            }
                         }];
                         
                         [UIView animateWithDuration:0.3 animations:^{

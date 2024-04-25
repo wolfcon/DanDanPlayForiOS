@@ -57,6 +57,14 @@
     }
 }
 
+- (void)viewWillLayoutSubviews {
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInset = UIEdgeInsetsMake(0, 0, self.view.safeAreaInsets.bottom, 0);
+    } else {
+        
+    }
+}
+
 - (void)dealloc {
     _group = nil;
 }

@@ -20,7 +20,8 @@
         [self addSubview:self.cancelButton];
         
         [self.selectedAllButton mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.left.bottom.mas_offset(0);
+            make.top.left.mas_offset(0);
+            make.height.mas_equalTo(50);
             make.width.height.mas_equalTo(@[self.moveButton, self.deleteButton, self.cancelButton]);
         }];
         

@@ -28,12 +28,11 @@
         self.selectedBackgroundView = [[UIView alloc] init];
         
         [self.bgImgView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.mas_equalTo(10);
             make.height.mas_equalTo(80);
             make.width.equalTo(self.bgImgView.mas_height).mas_offset(30);
             make.leading.mas_equalTo(10);
-            make.top.equalTo(self.contentView).offset(10);
-            make.bottom.mas_lessThanOrEqualTo(self.contentView).offset(10);
+            make.top.mas_equalTo(5);
+            make.bottom.mas_equalTo(-5);
         }];
         
         [self.lastPlayTimeButton mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -45,7 +44,7 @@
             make.trailing.mas_offset(-10);
             
             make.top.equalTo(self.bgImgView).offset(10);
-            make.bottom.mas_lessThanOrEqualTo(self.contentView).offset(10);
+            make.bottom.lessThanOrEqualTo(@-10);
         }];
         
     }
