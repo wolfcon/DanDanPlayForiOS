@@ -28,3 +28,14 @@ typedef NS_ENUM(NSUInteger, DDPFileType) {
 @property (weak, nonatomic) __kindof DDPFile *parentFile;
 - (void)removeFromParentFile;
 @end
+
+@interface DDPFile (Info)
+
+@property (nonatomic, readonly) uint64_t fileSize;         /** The file size, in bytes of this folder (0 if it's a folder) */
+@property (nonatomic, readonly) uint64_t allocationSize;   /** The allocation size (ie how big it will be on disk) of this file */
+@property (nonatomic, readonly) NSDate *creationDate;       /** The date and time that this file was created */
+@property (nonatomic, readonly) NSDate *accessDate;         /** The date when this file was last accessed. */
+@property (nonatomic, readonly) NSDate *writeDate;          /** The date when this file was last written to. */
+@property (nonatomic, readonly) NSDate *modificationDate;   /** The date when this file was last modified. */
+
+@end

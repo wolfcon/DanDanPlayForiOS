@@ -504,18 +504,51 @@ DDPFileManagerSearchViewDelegate>
 }
 
 - (void)touchSortButton:(UIButton *)button {
+    DDPFileSortType type = [DDPCacheManager shareCacheManager].fileSortType;
     UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"选择排序类型" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    [vc addAction:[UIAlertAction actionWithTitle:@"文件名升序" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [DDPCacheManager shareCacheManager].fileSortType = DDPFileSortTypeAsc;
-        [self.tableView.mj_header beginRefreshing];
-//        [self sortFile];
-    }]];
     
-    [vc addAction:[UIAlertAction actionWithTitle:@"文件名倒序" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        [DDPCacheManager shareCacheManager].fileSortType = DDPFileSortTypeDesc;
-        [self.tableView.mj_header beginRefreshing];
-//        [self sortFile];
-    }]];
+    switch (type) {
+        case DDPFileSortTypeNameAsc:
+            vc.message = @"当前为: 文件名升序 ┐(ﾟ～ﾟ)┌";
+            break;
+        case DDPFileSortTypeNameDesc:
+            vc.message = @"当前为: 文件名倒序 ┐(ﾟ～ﾟ)┌";
+            break;
+        case DDPFileSortTypeModificationDateAsc:
+            vc.message = @"当前为: 新修改时间靠后 ┐(ﾟ～ﾟ)┌";
+            break;
+        case DDPFileSortTypeModificationDateDesc:
+            vc.message = @"当前为: 新修改时间靠前 ┐(ﾟ～ﾟ)┌";
+            break;
+        default: break;
+    }
+    if (type != DDPFileSortTypeNameAsc) {
+        [vc addAction:[UIAlertAction actionWithTitle:@"文件名升序" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [DDPCacheManager shareCacheManager].fileSortType = DDPFileSortTypeNameAsc;
+            [self.tableView.mj_header beginRefreshing];
+        }]];
+    }
+    
+    if (type != DDPFileSortTypeNameDesc) {
+        [vc addAction:[UIAlertAction actionWithTitle:@"文件名倒序" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [DDPCacheManager shareCacheManager].fileSortType = DDPFileSortTypeNameDesc;
+            [self.tableView.mj_header beginRefreshing];
+        }]];
+    }
+    
+    if (type != DDPFileSortTypeModificationDateAsc) {
+        [vc addAction:[UIAlertAction actionWithTitle:@"新修改时间靠后" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [DDPCacheManager shareCacheManager].fileSortType = DDPFileSortTypeModificationDateAsc;
+            [self.tableView.mj_header beginRefreshing];
+        }]];
+    }
+    
+    if (type != DDPFileSortTypeModificationDateDesc) {
+        [vc addAction:[UIAlertAction actionWithTitle:@"新修改时间靠前" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [DDPCacheManager shareCacheManager].fileSortType = DDPFileSortTypeModificationDateDesc;
+            [self.tableView.mj_header beginRefreshing];
+        }]];
+    }
     
     [vc addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     

@@ -7,6 +7,16 @@
 //
 
 #import "DDPFile.h"
+@interface DDPFile ()
+
+@property (nonatomic) uint64_t fileSize;
+@property (nonatomic) uint64_t allocationSize;
+@property (nonatomic, strong) NSDate *creationDate;
+@property (nonatomic, strong) NSDate *accessDate;
+@property (nonatomic, strong) NSDate *writeDate;
+@property (nonatomic, strong) NSDate *modificationDate;
+
+@end
 
 @implementation DDPFile {
     DDPVideoModel *_videoModel;
@@ -16,6 +26,21 @@
     if (self = [super init]) {
         _fileURL = fileURL;
         _type = type;
+        
+        NSString *filePath = fileURL.absoluteString;
+        filePath = [filePath.stringByRemovingPercentEncoding stringByReplacingOccurrencesOfString:@"file:///" withString:@"/" options:NSCaseInsensitiveSearch range:NSMakeRange(0, filePath.length > 10 ? 10 : filePath.length)];
+        NSError *error;
+        NSDictionary<NSFileAttributeKey, id> *attributes = [NSFileManager.defaultManager attributesOfItemAtPath:filePath error:&error];
+        if (error) {
+            LOG_DEBUG(DDPLogModuleFile, @"获取数据信息失败：%@ \n\n%@",  fileURL, error.debugDescription);
+            return self;
+        }
+        _modificationDate = attributes[NSFileModificationDate];
+        _creationDate = attributes[NSFileCreationDate];
+        _fileSize = (uint64_t)attributes[NSFileSize];
+        _writeDate = attributes[NSFileModificationDate];
+        _accessDate = _modificationDate;
+        _allocationSize = _fileSize;
     }
     return self;
 }

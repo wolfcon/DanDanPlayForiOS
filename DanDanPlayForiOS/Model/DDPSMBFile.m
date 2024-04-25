@@ -53,4 +53,28 @@
     return _sessionFile;
 }
 
+- (uint64_t)fileSize {
+    return _sessionFile.fileSize;
+}
+
+- (uint64_t)allocationSize {
+    return _sessionFile.allocationSize;
+}
+
+- (NSDate *)creationDate {
+    return _sessionFile.creationTime;
+}
+
+- (NSDate *)accessDate {
+    return _sessionFile.accessTime;
+}
+
+- (NSDate *)writeDate {
+    return _sessionFile.writeTime;
+}
+
+- (NSDate *)modificationDate {
+    return _sessionFile.modificationTime;
+}
+
 @end

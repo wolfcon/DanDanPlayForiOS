@@ -312,8 +312,8 @@ static NSString *const collectionCacheKey = @"collection_cache";
 - (DDPFileSortType)fileSortType {
     NSNumber *num = (NSNumber *)[NSUserDefaults.standardUserDefaults objectForKey:[self keyWithSEL:_cmd]];
     if (num == nil) {
-        num = @(DDPFileSortTypeAsc);
-        self.fileSortType = DDPFileSortTypeAsc;
+        num = @(DDPFileSortTypeNameAsc);
+        self.fileSortType = DDPFileSortTypeNameAsc;
     }
     
     return num.integerValue;

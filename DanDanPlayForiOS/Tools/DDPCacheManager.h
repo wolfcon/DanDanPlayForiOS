@@ -66,8 +66,10 @@ typedef NS_OPTIONS(NSUInteger, DDPDanmakuShieldType) {
 };
 
 typedef NS_ENUM(NSUInteger, DDPFileSortType) {
-    DDPFileSortTypeAsc,
-    DDPFileSortTypeDesc,
+    DDPFileSortTypeNameAsc,
+    DDPFileSortTypeNameDesc,
+    DDPFileSortTypeModificationDateAsc,
+    DDPFileSortTypeModificationDateDesc,
 };
 
 //缓存所有弹幕的标识

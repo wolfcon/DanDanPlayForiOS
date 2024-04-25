@@ -430,6 +430,9 @@ static NSString *const parseMediaCompletionBlockKey = @"parse_media_completion_b
         
         [aFolders addObjectsFromArray:aFiles];
         parentFile.subFiles = aFolders;
+        
+        [self sortFiles:parentFile.subFiles];
+        
         if (completion) {
             completion(parentFile, nil);
         }
@@ -762,27 +765,38 @@ totalBytesExpectedToReceive:(int64_t)totalBytesToReceive {
     
     DDPFileSortType sortType = [DDPCacheManager shareCacheManager].fileSortType;
     [files sortUsingComparator:^NSComparisonResult(DDPFile * _Nonnull obj1, DDPFile * _Nonnull obj2) {
-        if (sortType == 0) {
-            if (obj1.type == DDPFileTypeFolder) {
-                return NSOrderedAscending;
-            }
-
-            if (obj2.type == DDPFileTypeFolder) {
-                return NSOrderedDescending;
-            }
-
-            return [obj1.name compare:obj2.name];
+        
+        if (obj1.type == DDPFileTypeFolder && obj2.type != DDPFileTypeFolder) {
+            return NSOrderedAscending;
+        } else if (obj2.type == DDPFileTypeFolder && obj1.type != DDPFileTypeFolder) {
+            return NSOrderedDescending;
         }
-        else {
-            if (obj1.type == DDPFileTypeFolder) {
-                return NSOrderedDescending;
+        
+        switch (sortType) {
+            case DDPFileSortTypeNameDesc:
+                return [obj2.name compare:obj1.name options:NSCaseInsensitiveSearch];
+            case DDPFileSortTypeModificationDateAsc: {
+                NSComparisonResult result = [obj1.modificationDate compare:obj2.modificationDate];
+                if (result == NSOrderedSame) {
+                    result = [obj1.creationDate compare:obj2.creationDate];
+                    if (result == NSOrderedSame) {
+                        return [obj1.name compare:obj2.name options:NSCaseInsensitiveSearch];
+                    }
+                }
+                return result;
             }
-
-            if (obj2.type == DDPFileTypeFolder) {
-                return NSOrderedAscending;
+            case DDPFileSortTypeModificationDateDesc: {
+                NSComparisonResult result = [obj2.modificationDate compare:obj1.modificationDate];
+                if (result == NSOrderedSame) {
+                    result = [obj2.creationDate compare:obj1.creationDate];
+                    if (result == NSOrderedSame) {
+                        return [obj1.name compare:obj2.name options:NSCaseInsensitiveSearch];
+                    }
+                }
+                return result;
             }
-
-            return [obj2.name compare:obj1.name];
+            default: //DDPFileSortTypeNameAsc
+                return [obj1.name compare:obj2.name options:NSCaseInsensitiveSearch];
         }
     }];
     
