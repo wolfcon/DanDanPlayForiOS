@@ -1,12 +1,12 @@
 # Uncomment the next line to define a global platform for your project
-platform :ios, '9.0'
+platform :ios, '13.0'
 
 inhibit_all_warnings!
 # install! 'cocoapods', generate_multiple_pod_projects: true
 
 abstract_target 'DDPlay_Target' do
     # Uncomment the next line if you're using Swift or would like to use dynamic frameworks
-    # use_frameworks!
+    use_frameworks!
     
     # pod 'JHDanmakuRender', :path => 'LocalPods/JHDanmakuRender'
     pod 'YYUtility', :path => 'LocalPods/YYUtility'
@@ -56,12 +56,12 @@ abstract_target 'iOS_Only' do
 
     target 'DDPlay' do
     pod 'TOSMBClient', '~> 1.0.5'
-    pod 'CocoaHTTPServer'
+    pod 'CocoaHTTPServer', :git => "https://github.com/wolfcon/CocoaHTTPServer.git"
     end
 
     target 'DDPlay_Review' do
     pod 'TOSMBClient', '~> 1.0.5'
-    pod 'CocoaHTTPServer'
+    pod 'CocoaHTTPServer', :git => "https://github.com/wolfcon/CocoaHTTPServer.git"
     end
 end
 
@@ -71,7 +71,7 @@ end
     pod 'CocoaLumberjack'
     pod 'DDPShare', :path => 'LocalPods/DDPShare'
 #    pod 'WCDB_UIKitForMac', :path => 'LocalPods/WCDB'
-    pod 'CocoaHTTPServer'
+    pod 'CocoaHTTPServer', :git => "https://github.com/wolfcon/CocoaHTTPServer.git"
     # pod 'TOSMBClient', '~> 1.0.5'
     end
 end
@@ -80,7 +80,7 @@ end
 post_install do |pi|
    pi.pods_project.targets.each do |t|
        t.build_configurations.each do |bc|
-           bc.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '9.0'
+           bc.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
        end
    end
 end

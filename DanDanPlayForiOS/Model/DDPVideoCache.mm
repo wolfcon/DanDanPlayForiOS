@@ -13,11 +13,11 @@
 
 WCDB_IMPLEMENTATION(DDPVideoCache)
 
-WCDB_SYNTHESIZE(DDPVideoCache, name)
-WCDB_SYNTHESIZE(DDPVideoCache, identity)
-WCDB_SYNTHESIZE(DDPVideoCache, fileHash)
-WCDB_SYNTHESIZE(DDPVideoCache, lastPlayTime)
+WCDB_SYNTHESIZE(name)
+WCDB_SYNTHESIZE(identity)
+WCDB_SYNTHESIZE(fileHash)
+WCDB_SYNTHESIZE(lastPlayTime)
 
-WCDB_PRIMARY(DDPVideoCache, fileHash)
+WCDB_PRIMARY(fileHash)
 
 @end

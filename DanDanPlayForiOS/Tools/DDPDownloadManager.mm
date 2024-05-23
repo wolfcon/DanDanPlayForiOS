@@ -164,7 +164,7 @@
             if ([task isKindOfClass:[TOSMBSessionDownloadTask class]]) {
                 [self.mTasks removeObject:task];
                 WCTDatabase *db = [DDPCacheManager shareDB];
-                [db deleteObjectsFromTable:DDPSMBDownloadTaskCache.className where:DDPSMBDownloadTaskCache.sourceFilePath == task.ddp_id];
+                [db deleteFromTable:DDPSMBDownloadTaskCache.className where:DDPSMBDownloadTaskCache.sourceFilePath == task.ddp_id];
             }
         }
         
@@ -202,7 +202,7 @@
                     if ([task isKindOfClass:[TOSMBSessionDownloadTask class]]) {
                         [self.mTasks removeObject:task];
                         WCTDatabase *db = [DDPCacheManager shareDB];
-                        [db deleteObjectsFromTable:DDPSMBDownloadTaskCache.className where:DDPSMBDownloadTaskCache.sourceFilePath == task.ddp_id];
+                        [db deleteFromTable:DDPSMBDownloadTaskCache.className where:DDPSMBDownloadTaskCache.sourceFilePath == task.ddp_id];
                     }
                 }
                 
@@ -253,7 +253,7 @@
                     [self.mTasks addObject:task];
                     if ([task isKindOfClass:[TOSMBSessionDownloadTask class]]) {
                         WCTDatabase *db = [DDPCacheManager shareDB];
-                        [db insertOrReplaceObject:aTask.cache into:DDPSMBDownloadTaskCache.className];
+                        [db insertOrReplaceObject:aTask.cache intoTable:DDPSMBDownloadTaskCache.className];
                     }
                 }
                 
@@ -357,7 +357,7 @@
         
         TOSMBSession *session = [DDPToolsManager shareToolsManager].SMBSession;
         if (session) {
-            NSArray <DDPSMBDownloadTaskCache *>*taskCaches = [db getAllObjectsOfClass:[DDPSMBDownloadTaskCache class] fromTable:DDPSMBDownloadTaskCache.className];
+            NSArray <DDPSMBDownloadTaskCache *>*taskCaches = [db getObjectsOfClass:[DDPSMBDownloadTaskCache class] fromTable:DDPSMBDownloadTaskCache.className];
             
             NSString *downloadPath = ddp_taskDownloadPath();
             NSMutableArray *tasks = [NSMutableArray array];

@@ -11,13 +11,13 @@
 @implementation DDPLinkInfo (DB)
 
 WCDB_IMPLEMENTATION(DDPLinkInfo)
-WCDB_SYNTHESIZE(DDPLinkInfo, name)
-WCDB_SYNTHESIZE(DDPLinkInfo, ipAdress)
-WCDB_SYNTHESIZE(DDPLinkInfo, selectedIpAdress)
-WCDB_SYNTHESIZE(DDPLinkInfo, port)
-WCDB_SYNTHESIZE(DDPLinkInfo, currentUser)
-WCDB_SYNTHESIZE(DDPLinkInfo, saveTime)
+WCDB_SYNTHESIZE(name)
+WCDB_SYNTHESIZE(ipAdress)
+WCDB_SYNTHESIZE(selectedIpAdress)
+WCDB_SYNTHESIZE(port)
+WCDB_SYNTHESIZE(currentUser)
+WCDB_SYNTHESIZE(saveTime)
 
-WCDB_PRIMARY(DDPLinkInfo, selectedIpAdress)
+WCDB_PRIMARY(selectedIpAdress)
 
 @end

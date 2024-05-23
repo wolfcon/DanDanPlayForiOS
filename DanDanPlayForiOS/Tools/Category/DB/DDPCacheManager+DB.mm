@@ -23,18 +23,18 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _database = [[WCTDatabase alloc] initWithPath:[[UIApplication sharedApplication].documentsPath stringByAppendingPathComponent:@"DDPConfig.db"]];
-        [_database createTableAndIndexesOfName:DDPFilter.className withClass:DDPFilter.class];
-        [_database createTableAndIndexesOfName:DDPVideoCache.className withClass:DDPVideoCache.class];
-        [_database createTableAndIndexesOfName:DDPSMBFileHashCache.className withClass:DDPSMBFileHashCache.class];
-        [_database createTableAndIndexesOfName:DDPCollectionCache.className withClass:DDPCollectionCache.class];
-        [_database createTableAndIndexesOfName:DDPLinkInfo.className withClass:DDPLinkInfo.class];
-        [_database createTableAndIndexesOfName:DDPSMBInfo.className withClass:DDPSMBInfo.class];
-        [_database createTableAndIndexesOfName:DDPUser.className withClass:DDPUser.class];
-        [_database createTableAndIndexesOfName:DDPWebDAVLoginInfo.className withClass:DDPWebDAVLoginInfo.class];
-        [_database createTableAndIndexesOfName:DDPWebDAVHasnCache.className withClass:DDPWebDAVHasnCache.class];
+        [_database createTable:DDPFilter.className withClass:DDPFilter.class];
+        [_database createTable:DDPVideoCache.className withClass:DDPVideoCache.class];
+        [_database createTable:DDPSMBFileHashCache.className withClass:DDPSMBFileHashCache.class];
+        [_database createTable:DDPCollectionCache.className withClass:DDPCollectionCache.class];
+        [_database createTable:DDPLinkInfo.className withClass:DDPLinkInfo.class];
+        [_database createTable:DDPSMBInfo.className withClass:DDPSMBInfo.class];
+        [_database createTable:DDPUser.className withClass:DDPUser.class];
+        [_database createTable:DDPWebDAVLoginInfo.className withClass:DDPWebDAVLoginInfo.class];
+        [_database createTable:DDPWebDAVHasnCache.className withClass:DDPWebDAVHasnCache.class];
 #if !DDPAPPTYPE
-        [_database createTableAndIndexesOfName:DDPSMBDownloadTaskCache.className withClass:DDPSMBDownloadTaskCache.class];
-        [_database createTableAndIndexesOfName:DDPLinkDownloadTask.className withClass:DDPLinkDownloadTask.class];
+        [_database createTable:DDPSMBDownloadTaskCache.className withClass:DDPSMBDownloadTaskCache.class];
+//        [_database createTable:DDPLinkDownloadTask.className withClass:DDPLinkDownloadTask.class];
 #endif
     });
     return _database;

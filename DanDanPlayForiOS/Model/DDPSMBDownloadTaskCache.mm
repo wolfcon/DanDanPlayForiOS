@@ -11,7 +11,7 @@
 @implementation DDPSMBDownloadTaskCache
 
 WCDB_IMPLEMENTATION(DDPSMBDownloadTaskCache)
-WCDB_SYNTHESIZE(DDPSMBDownloadTaskCache, sourceFilePath)
-WCDB_SYNTHESIZE(DDPSMBDownloadTaskCache, countOfBytesExpectedToReceive)
+WCDB_SYNTHESIZE(sourceFilePath)
+WCDB_SYNTHESIZE(countOfBytesExpectedToReceive)
 
 @end

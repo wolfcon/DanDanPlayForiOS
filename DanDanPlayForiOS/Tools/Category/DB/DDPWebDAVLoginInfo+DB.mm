@@ -11,9 +11,9 @@
 @implementation DDPWebDAVLoginInfo (DB)
 WCDB_IMPLEMENTATION(DDPWebDAVLoginInfo)
 
-WCDB_SYNTHESIZE(DDPWebDAVLoginInfo, userName)
-WCDB_SYNTHESIZE(DDPWebDAVLoginInfo, userPassword)
-WCDB_SYNTHESIZE(DDPWebDAVLoginInfo, path)
+WCDB_SYNTHESIZE(userName)
+WCDB_SYNTHESIZE(userPassword)
+WCDB_SYNTHESIZE(path)
 
-WCDB_MULTI_PRIMARY(DDPWebDAVLoginInfo, "ddp_m_p", path)
+WCDB_MULTI_PRIMARY("ddp_m_p", path)
 @end

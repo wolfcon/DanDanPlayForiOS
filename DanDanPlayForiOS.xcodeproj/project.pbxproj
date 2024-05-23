@@ -11,9 +11,7 @@
 		01AAD0F2274E25670031215F /* DDPDocumentDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 01AAD0F1274E25670031215F /* DDPDocumentDelegate.m */; };
 		01E030B4256BAB9800871351 /* DDPBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8930347D23E08C5E00BE1049 /* DDPBase.m */; };
 		01EC839A288A7F22000EC0B0 /* DDPBackNormalFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = 01EC8399288A7F22000EC0B0 /* DDPBackNormalFooter.m */; };
-		258DB85FF6A45F2A6FD3578E /* libPods-DDPlay_Target-iOS_Only-DDPlay_Review.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53E2B4DF7BAFF1EBB7784AEF /* libPods-DDPlay_Target-iOS_Only-DDPlay_Review.a */; };
-		2A4350E1B6A1BF35E91545BA /* libPods-DDPlay_Target-iOS_Only-DDPlay.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361F511D4F4E8CE3A646D000 /* libPods-DDPlay_Target-iOS_Only-DDPlay.a */; };
-		3EA04C948B05C030A98E33C6 /* libPods-DDPlay_Target-DDPlay_ToMac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C8983450A097DFD30A2DBAB6 /* libPods-DDPlay_Target-DDPlay_ToMac.a */; };
+		0E74B5DF0059F1B880922E01 /* Pods_DDPlay_Target_iOS_Only_DDPlay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F46C3783520D1EFB3F666AC9 /* Pods_DDPlay_Target_iOS_Only_DDPlay.framework */; };
 		890446801FE55567006872A0 /* UIColor+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 8904467F1FE55567006872A0 /* UIColor+Tools.m */; };
 		8905BDA11F32C7EA0055BC84 /* DDPSMBFileOprationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8905BDA01F32C7EA0055BC84 /* DDPSMBFileOprationView.m */; };
 		8905BDA41F32CEBA0055BC84 /* DDPDownloadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8905BDA31F32CEBA0055BC84 /* DDPDownloadViewController.m */; };
@@ -874,6 +872,8 @@
 		89FF610B1FD6CB7700D62178 /* DDPBiliBiliSearchVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF610A1FD6CB7700D62178 /* DDPBiliBiliSearchVideo.m */; };
 		89FF610E1FD6CD3500D62178 /* DDPBiliBiliSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FF610D1FD6CD3500D62178 /* DDPBiliBiliSearchViewController.m */; };
 		8B847BFE216C6A0300DC8623 /* YYPhotoBrowseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B847BFD216C6A0300DC8623 /* YYPhotoBrowseView.m */; };
+		A983634FD81BC851C62584C0 /* Pods_DDPlay_Target_DDPlay_ToMac.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86B386DEB6735B8D899D708A /* Pods_DDPlay_Target_DDPlay_ToMac.framework */; };
+		CAE439E02C956B9F43C77725 /* Pods_DDPlay_Target_iOS_Only_DDPlay_Review.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3522017033DAA9828E1E888 /* Pods_DDPlay_Target_iOS_Only_DDPlay_Review.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -910,11 +910,10 @@
 		1D64E2391276E65AC4B7DCB6 /* Pods-DDPlay_Target-DDPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-DDPlay.release.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-DDPlay/Pods-DDPlay_Target-DDPlay.release.xcconfig"; sourceTree = "<group>"; };
 		2200A8C5E60D84DF1B07F2C2 /* Pods-DDPlay_Target-iOS_Only-DDPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-iOS_Only-DDPlay.debug.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay/Pods-DDPlay_Target-iOS_Only-DDPlay.debug.xcconfig"; sourceTree = "<group>"; };
 		2344548B202E51930721C208 /* Pods-DDPlay_Target-iOS_Only-DDPlay_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-iOS_Only-DDPlay_2.release.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay_2/Pods-DDPlay_Target-iOS_Only-DDPlay_2.release.xcconfig"; sourceTree = "<group>"; };
-		361F511D4F4E8CE3A646D000 /* libPods-DDPlay_Target-iOS_Only-DDPlay.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDPlay_Target-iOS_Only-DDPlay.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4815DC1762504B616355530E /* Pods-DDPlay_Target-iOS_Only-DDPlay_Review_2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-iOS_Only-DDPlay_Review_2.release.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay_Review_2/Pods-DDPlay_Target-iOS_Only-DDPlay_Review_2.release.xcconfig"; sourceTree = "<group>"; };
 		515687FB396BFB1133B15A8D /* Pods-DDPlay_Target-iOS_Only-DDPlay_Review.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-iOS_Only-DDPlay_Review.release.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay_Review/Pods-DDPlay_Target-iOS_Only-DDPlay_Review.release.xcconfig"; sourceTree = "<group>"; };
-		53E2B4DF7BAFF1EBB7784AEF /* libPods-DDPlay_Target-iOS_Only-DDPlay_Review.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDPlay_Target-iOS_Only-DDPlay_Review.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		59F03C0BA3C8C1BB4328C21D /* Pods-DDPlay_Target-DDPlay.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-DDPlay.debug.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-DDPlay/Pods-DDPlay_Target-DDPlay.debug.xcconfig"; sourceTree = "<group>"; };
+		86B386DEB6735B8D899D708A /* Pods_DDPlay_Target_DDPlay_ToMac.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DDPlay_Target_DDPlay_ToMac.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8904467E1FE55567006872A0 /* UIColor+Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+Tools.h"; sourceTree = "<group>"; };
 		8904467F1FE55567006872A0 /* UIColor+Tools.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Tools.m"; sourceTree = "<group>"; };
 		8905BD9F1F32C7EA0055BC84 /* DDPSMBFileOprationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDPSMBFileOprationView.h; sourceTree = "<group>"; };
@@ -1598,12 +1597,13 @@
 		8D10852B8B5F492F892E8511 /* Pods-DDPlay_Target-iOS_Only-DDPlay_Review_2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-iOS_Only-DDPlay_Review_2.debug.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay_Review_2/Pods-DDPlay_Target-iOS_Only-DDPlay_Review_2.debug.xcconfig"; sourceTree = "<group>"; };
 		AB35A10C39832B613F53300A /* Pods-DDPlay_Target-DDPlay_ToMac.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-DDPlay_ToMac.release.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-DDPlay_ToMac/Pods-DDPlay_Target-DDPlay_ToMac.release.xcconfig"; sourceTree = "<group>"; };
 		C27B61A3AF87507331C5113D /* Pods-DDPlay_Target-iOS_Only-DDPlay_Review.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-iOS_Only-DDPlay_Review.debug.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay_Review/Pods-DDPlay_Target-iOS_Only-DDPlay_Review.debug.xcconfig"; sourceTree = "<group>"; };
+		C3522017033DAA9828E1E888 /* Pods_DDPlay_Target_iOS_Only_DDPlay_Review.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DDPlay_Target_iOS_Only_DDPlay_Review.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6464BAB9F7694C40416117C /* Pods-DDPlay_Target-iOS_Only-DDPlay_2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-iOS_Only-DDPlay_2.debug.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay_2/Pods-DDPlay_Target-iOS_Only-DDPlay_2.debug.xcconfig"; sourceTree = "<group>"; };
-		C8983450A097DFD30A2DBAB6 /* libPods-DDPlay_Target-DDPlay_ToMac.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DDPlay_Target-DDPlay_ToMac.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D840A3B433C226DB0BFBC037 /* Pods-DDPlay_Target-iOS_Only-DDPlay.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-iOS_Only-DDPlay.release.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay/Pods-DDPlay_Target-iOS_Only-DDPlay.release.xcconfig"; sourceTree = "<group>"; };
 		D8EC29B0550E4251CB4B7D8C /* Pods-DDPlay_Target-DDPlay_Review.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-DDPlay_Review.release.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-DDPlay_Review/Pods-DDPlay_Target-DDPlay_Review.release.xcconfig"; sourceTree = "<group>"; };
 		E93BA740538F81BABBC04D4A /* Pods-DDPlay_Target-DDPlay_Review.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-DDPlay_Review.debug.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-DDPlay_Review/Pods-DDPlay_Target-DDPlay_Review.debug.xcconfig"; sourceTree = "<group>"; };
 		EFDBB67CB10F5B35CC5B825B /* Pods-DDPlay_Target-DDPlay_ToMac.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DDPlay_Target-DDPlay_ToMac.debug.xcconfig"; path = "Target Support Files/Pods-DDPlay_Target-DDPlay_ToMac/Pods-DDPlay_Target-DDPlay_ToMac.debug.xcconfig"; sourceTree = "<group>"; };
+		F46C3783520D1EFB3F666AC9 /* Pods_DDPlay_Target_iOS_Only_DDPlay.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DDPlay_Target_iOS_Only_DDPlay.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1612,7 +1612,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				897E1DA32462707500640012 /* mars.framework in Frameworks */,
-				258DB85FF6A45F2A6FD3578E /* libPods-DDPlay_Target-iOS_Only-DDPlay_Review.a in Frameworks */,
+				CAE439E02C956B9F43C77725 /* Pods_DDPlay_Target_iOS_Only_DDPlay_Review.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1621,7 +1621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8911389522E371A200ED15E3 /* DanDanPlayEncrypt.xcframework in Frameworks */,
-				3EA04C948B05C030A98E33C6 /* libPods-DDPlay_Target-DDPlay_ToMac.a in Frameworks */,
+				A983634FD81BC851C62584C0 /* Pods_DDPlay_Target_DDPlay_ToMac.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1634,7 +1634,7 @@
 				89426C23239EAB35000FC640 /* mars.framework in Frameworks */,
 				895595BA2371D17900AC092F /* SystemConfiguration.framework in Frameworks */,
 				895595B82371D17300AC092F /* libz.tbd in Frameworks */,
-				2A4350E1B6A1BF35E91545BA /* libPods-DDPlay_Target-iOS_Only-DDPlay.a in Frameworks */,
+				0E74B5DF0059F1B880922E01 /* Pods_DDPlay_Target_iOS_Only_DDPlay.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2890,9 +2890,9 @@
 				895595B72371D16900AC092F /* libz.tbd */,
 				895595B52371D15700AC092F /* libresolv.9.tbd */,
 				895595B32371D14F00AC092F /* CoreTelephony.framework */,
-				C8983450A097DFD30A2DBAB6 /* libPods-DDPlay_Target-DDPlay_ToMac.a */,
-				361F511D4F4E8CE3A646D000 /* libPods-DDPlay_Target-iOS_Only-DDPlay.a */,
-				53E2B4DF7BAFF1EBB7784AEF /* libPods-DDPlay_Target-iOS_Only-DDPlay_Review.a */,
+				86B386DEB6735B8D899D708A /* Pods_DDPlay_Target_DDPlay_ToMac.framework */,
+				F46C3783520D1EFB3F666AC9 /* Pods_DDPlay_Target_iOS_Only_DDPlay.framework */,
+				C3522017033DAA9828E1E888 /* Pods_DDPlay_Target_iOS_Only_DDPlay_Review.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -2910,7 +2910,6 @@
 				8907524221A1171A00D149F3 /* Resources */,
 				8907525F21A1171A00D149F3 /* ShellScript */,
 				8907526021A1171A00D149F3 /* Embed Frameworks */,
-				7BA6142E181B4E40364AEBC7 /* [CP] Copy Pods Resources */,
 				4E944723C7B2B02898E46CEF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -2931,7 +2930,7 @@
 				891137ED22E35C7E00ED15E3 /* Frameworks */,
 				891137EF22E35C7E00ED15E3 /* Resources */,
 				8911380222E35C7E00ED15E3 /* Embed Frameworks */,
-				0B5648BD1AAA9B422FCDFE7A /* [CP] Copy Pods Resources */,
+				AA6F72DB93E709D593FC58EE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -2951,7 +2950,6 @@
 				89E3F5B61E5829BD007AB1BD /* Frameworks */,
 				89E3F5B71E5829BD007AB1BD /* Resources */,
 				89E5AFAB1F566CBD00CD4334 /* ShellScript */,
-				2484FC78D97B56600CE06049 /* [CP] Copy Pods Resources */,
 				D6D0F9AC9533CC1FB5293825 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -3103,54 +3101,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0B5648BD1AAA9B422FCDFE7A /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DDPlay_Target-DDPlay_ToMac/Pods-DDPlay_Target-DDPlay_ToMac-resources.sh",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_ROOT}/NKOColorPickerView/Assets/nko_brightness_guide.png",
-				"${PODS_ROOT}/NKOColorPickerView/Assets/nko_brightness_guide@2x.png",
-				"${PODS_ROOT}/NKOColorPickerView/Assets/nko_colormap.png",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nko_brightness_guide.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nko_brightness_guide@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nko_colormap.png",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DDPlay_Target-DDPlay_ToMac/Pods-DDPlay_Target-DDPlay_ToMac-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2484FC78D97B56600CE06049 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay/Pods-DDPlay_Target-iOS_Only-DDPlay-resources.sh",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_ROOT}/NKOColorPickerView/Assets/nko_brightness_guide.png",
-				"${PODS_ROOT}/NKOColorPickerView/Assets/nko_brightness_guide@2x.png",
-				"${PODS_ROOT}/NKOColorPickerView/Assets/nko_colormap.png",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nko_brightness_guide.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nko_brightness_guide@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nko_colormap.png",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay/Pods-DDPlay_Target-iOS_Only-DDPlay-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		490CA3915A6F31B9620FB571 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -3180,39 +3130,69 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay_Review/Pods-DDPlay_Target-iOS_Only-DDPlay_Review-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
+				"${BUILT_PRODUCTS_DIR}/DDPShare/DDPShare.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/JHDanmakuRender/JHDanmakuRender.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/NKOColorPickerView/NKOColorPickerView.framework",
+				"${BUILT_PRODUCTS_DIR}/Ono/Ono.framework",
+				"${BUILT_PRODUCTS_DIR}/RATreeView/RATreeView.framework",
+				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
+				"${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework",
+				"${BUILT_PRODUCTS_DIR}/WMPageController/WMPageController.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKeyboardManager/YYKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/YYUtility/YYUtility.framework",
+				"${BUILT_PRODUCTS_DIR}/YYWebImage/YYWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
+				"${BUILT_PRODUCTS_DIR}/WCDB/WCDB.framework",
+				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/TOSMBClient/TOSMBClient.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/MobileVLCKit/MobileVLCKit.framework/MobileVLCKit",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DDPShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JHDanmakuRender.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NKOColorPickerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ono.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RATreeView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITableView_FDTemplateLayoutCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WMPageController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYUtility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOSMBClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MobileVLCKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay_Review/Pods-DDPlay_Target-iOS_Only-DDPlay_Review-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7BA6142E181B4E40364AEBC7 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay_Review/Pods-DDPlay_Target-iOS_Only-DDPlay_Review-resources.sh",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_ROOT}/NKOColorPickerView/Assets/nko_brightness_guide.png",
-				"${PODS_ROOT}/NKOColorPickerView/Assets/nko_brightness_guide@2x.png",
-				"${PODS_ROOT}/NKOColorPickerView/Assets/nko_colormap.png",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nko_brightness_guide.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nko_brightness_guide@2x.png",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/nko_colormap.png",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay_Review/Pods-DDPlay_Target-iOS_Only-DDPlay_Review-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7F8F40A67F52E72C332974FB /* [CP] Check Pods Manifest.lock */ = {
@@ -3261,7 +3241,71 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/bin/sh\n#\n# Copyright 2016 Bugly, Tencent. All rights reserved.\n#\n# V1.4.0\n#\n# 2016.08.03\n#\n#\n#\n######################################################\n# 1. 脚本集成到Xcode工程的Target\n######################################################\n#\n# --- Copy the SCRIPT to the Run Script of Build Phases in the Xcode project ---\n#\n# #\nBUGLY_APP_ID=\"5a3d1ad706\"\n# #\nBUGLY_APP_KEY=\"cff908ee-d69a-4e0f-8af4-4dc5592903d1\"\n# #\nBUNDLE_IDENTIFIER=\"com.dandanplay.player\"\n# #\nUPLOAD_DSYM_ONLY=1\n#\n# # 脚本默认配置的版本格式为CFBundleShortVersionString(CFBundleVersion),  如果你修改默认的版本格式, 请设置此变量, 如果不想修改, 请忽略此设置\n# CUSTOMIZED_APP_VERSION=\"\"\n#\n# # Debug模式编译是否上传，1＝上传 0＝不上传，默认不上传\n# UPLOAD_DEBUG_SYMBOLS=0\n#\n# # 模拟器编译是否上传，1=上传 0=不上传，默认不上传\nUPLOAD_SIMULATOR_SYMBOLS=0\n#\n# #只有Archive操作时上传, 1=支持Archive上传 0=所有Release模式编译都上传\nUPLOAD_ARCHIVE_ONLY=1\n#\n# #\n# source dSYMUpload.sh\n#\n# --- END OF SCRIPT ---\n#\n#\n#\n#\n#######################################################\n# 2. 脚本根据输入参数处理\n#######################################################\n#\n# #命令行下输入应用基本信息, .dSYM文件的父目录路径, 输出文件目录即可\n#\n# sh dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir>\n#\n# #\n#\n# #注意:\n# # 1. dSYMUpload.sh会调用buglySymboliOS.jar进行.dSYM解析，所以依赖Java运行时环境\n# # 2. dSYMUpload.sh和buglySymboliOS.jar的文件路径需一致\n#\n#\n\n#\n# --- CONTENT OF SCRIPT ---\n#\n\n# Bugly服务域名\nBUGLY_DSYM_UPLOAD_DOMAIN=\"api.bugly.qq.com\"\n\n# 注意jar工具的路径跟dSYMUpload.sh脚本路径一致, 请务必保证jar路径的正确性\nBUGLY_SYMBOL_JAR_PATH=\"dsymtool/buglySymboliOS.jar\"\n# 查找添加到系统目录的jar工具\nif [ ! -f \"${BUGLY_SYMBOL_JAR_PATH}\" ]; then\nBUGLY_SYMBOL_JAR_PATH=\"$HOME/bin/buglySymboliOS.jar\"\nfi\n\n# 打印错误信息\nfunction exitWithMessage(){\n    echo \"--------------------------------\"\n    echo \"${1}\"\n    echo \"--------------------------------\"\n    exit ${2}\n}\n\n# 上传bSYMBOL文件\nfunction dSYMUpload() {\n    P_APP_ID=\"$1\"\n    P_APP_KEY=\"$2\"\n    P_APP_BUNDLE_ID=\"$3\"\n    P_APP_VERSION=\"$4\"\n    P_BSYMBOL_ZIP_FILE=\"$5\"\n    \n    #\n    P_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE##*/}\n        P_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE_NAME//&/_}\n            P_BSYMBOL_ZIP_FILE_NAME=\"${P_BSYMBOL_ZIP_FILE_NAME// /_}\"\n            \n            DSYM_UPLOAD_URL=\"https://${BUGLY_DSYM_UPLOAD_DOMAIN}/openapi/file/upload/symbol?app_id=${P_APP_ID}&app_key=${P_APP_KEY}\"\n            echo \"dSYM upload url: ${DSYM_UPLOAD_URL}\"\n            \n            echo \"-----------------------------\"\n            STATUS=$(/usr/bin/curl -k \"${DSYM_UPLOAD_URL}\" --form \"api_version=1\" --form \"app_id=${P_APP_ID}\" --form \"app_key=${P_APP_KEY}\" --form \"symbolType=2\"  --form \"bundleId=${BUNDLE_IDENTIFIER}\" --form \"productVersion=${BUGLY_APP_VERSION}\" --form \"fileName=${P_BSYMBOL_ZIP_FILE_NAME}\" --form \"file=@${P_BSYMBOL_ZIP_FILE}\" --verbose)\n            echo \"-----------------------------\"\n            \n            UPLOAD_RESULT=\"FAILTURE\"\n            echo \"Bugly server response: ${STATUS}\"\n            if [ ! \"${STATUS}\" ]; then\n            echo \"Error: Failed to upload the zip archive file.\"\n            elif [[ \"${STATUS}\" == *\"{\\\"reponseCode\\\":\\\"0\\\"}\"* ]]; then\n            echo \"Success to upload the dSYM for the app [${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION}]\"\n            UPLOAD_RESULT=\"SUCCESS\"\n            else\n            echo \"Error: Failed to upload the zip archive file to Bugly.\"\n            fi\n            \n            #Remove temp dSYM archive\n            #echo \"Remove temporary zip archive: ${DSYM_ZIP_FPATH}\"\n            #/bin/rm -f \"${DSYM_ZIP_FPATH}\"\n            \n            if [ \"$?\" -ne 0 ]; then\n            exitWithMessage \"Error: Failed to remove temporary zip archive.\" 0\n            fi\n            \n            echo \"--------------------------------\"\n            echo \"${UPLOAD_RESULT} - dSYM upload complete.\"\n            \n            if [[ \"${UPLOAD_RESULT}\" == \"FAILTURE\" ]]; then\n            echo \"--------------------------------\"\n            echo \"Failed to upload the dSYM\"\n            echo \"Please check the script and try it again.\"\n            fi\n        }\n        \n        # .dSYM解析为bSYMBOL文件\n        function dSYMParse() {\n            DSYM_FILE=\"$1\"\n            DSYM_SYMBOL_FILE=\"$2\"\n            \n            echo \"--------------------------------\"\n            echo \"Extract symbol info from .dSYM file. to ${DSYM_SYMBOL_FILE}\"\n            (/usr/bin/java -Xms512m -Xmx1024m -Dfile.encoding=UTF8 -jar \"${BUGLY_SYMBOL_JAR_PATH}\" -i \"${DSYM_FILE}\" -o \"${DSYM_SYMBOL_FILE}\" ) || exitWithMessage \"Error: Failed to extract symbols.\" 1\n            echo \"--------------------------------\"\n            \n        }\n        \n        # 执行\n        function run() {\n            \n            CONFIG_BUGLY_APP_ID=\"$1\"\n            CONFIG_BUGLY_APP_KEY=\"$2\"\n            \n            CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER=\"$3\"\n            CONFIG_BUGLY_APP_VERSION=\"$4\"\n            CONFIG_DSYM_SOURCE_DIR=\"$5\"\n            CONFIG_DSYM_DEST_DIR=\"$6\"\n            CONFIG_UPLOAD_DSYM_ONLY=\"$7\"\n            \n            # 检查必须参数是否设置\n            if [ ! \"${CONFIG_BUGLY_APP_ID}\" ]; then\n            exitWithMessage \"Error: Bugly App ID not defined. Please set 'BUGLY_APP_ID' \" 0\n            fi\n            \n            if [[ \"${CONFIG_BUGLY_APP_ID}\" == *\"App ID\"* ]]; then\n            exitWithMessage \"Error: Bugly App ID not defined.\" 0\n            fi\n            \n            if [ ! \"${CONFIG_BUGLY_APP_KEY}\" ]; then\n            exitWithMessage \"Error: Bugly App Key not defined.\" 0\n            fi\n            \n            if [ ! \"${CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER}\" ]; then\n            exitWithMessage \"Error: Bundle Identifier not defined.\" 0\n            fi\n            \n            if [ ! \"${CONFIG_BUGLY_APP_VERSION}\" ]; then\n            exitWithMessage \"Error: App Version not defined.\" 0\n            fi\n            \n            if [ ! -e \"${CONFIG_DSYM_SOURCE_DIR}\" ]; then\n            exitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_SOURCE_DIR}\" 0\n            fi\n            \n            if [ ! \"${CONFIG_DSYM_DEST_DIR}\" ]; then\n            exitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_DEST_DIR}\" 0\n            fi\n            \n            if [ ! -e \"${CONFIG_DSYM_DEST_DIR}\" ]; then\n            mkdir ${CONFIG_DSYM_DEST_DIR}\n            fi\n            \n            DSYM_FOLDER=\"${CONFIG_DSYM_SOURCE_DIR}\"\n            IFS=$'\\n'\n            \n            echo \"Scaning dSYM FOLDER: ${DSYM_FOLDER} ...\"\n            RET=\"F\"\n            \n            #\n            for dsymFile in $(find \"$DSYM_FOLDER\" -name '*.dSYM'); do\n            RET=\"T\"\n            echo \"Found dSYM file: $dsymFile\"\n            \n            DSYM_FILE_NAME=${dsymFile##*/}\n                DSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_FILE_NAME}.zip\"\n                DSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_SYMBOL_ZIP_FILE_NAME// /_}\"\n                DSYM_SYMBOL_ZIP_FILE=${CONFIG_DSYM_DEST_DIR}/${DSYM_SYMBOL_ZIP_FILE_NAME}\n                \n                if [ $CONFIG_UPLOAD_DSYM_ONLY -eq 1 ]; then\n                if [ -e $DSYM_SYMBOL_ZIP_FILE ]; then\n                rm -f $DSYM_SYMBOL_ZIP_FILE\n                fi\n                # 如果只上传dSYM，直接压缩dSYM目录\n                zip -r -j $DSYM_SYMBOL_ZIP_FILE $dsymFile -x *.plist\n                else\n                # 使用符号表工具来生成Symbol文件\n                dSYMParse $dsymFile $DSYM_SYMBOL_ZIP_FILE\n                fi\n                \n                # 上传\n                dSYMUpload $CONFIG_BUGLY_APP_ID $CONFIG_BUGLY_APP_KEY $CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER $CONFIG_BUGLY_APP_VERSION $DSYM_SYMBOL_ZIP_FILE\n                done\n                \n                if [ $RET = \"F\" ]; then\n                exitWithMessage \"No .dSYM found in ${DSYM_FOLDER}\" 0\n                fi\n            }\n            \n            # 在Xcode工程中执行\n            function runInXcode(){\n                echo \"Uploading dSYM to Bugly in Xcode ...\"\n                \n                echo \"Info.Plist : ${INFOPLIST_FILE}\"\n                \n                BUNDLE_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' \"${INFOPLIST_FILE}\")\n                BUNDLE_SHORT_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' \"${INFOPLIST_FILE}\")\n                \n                # 组装Bugly默认识别的版本信息(格式为CFBundleShortVersionString(CFBundleVersion), 例如: 1.0(1))\n                if [ ! \"${CUSTOMIZED_APP_VERSION}\" ]; then\n                BUGLY_APP_VERSION=\"${BUNDLE_SHORT_VERSION}(${BUNDLE_VERSION})\"\n                else\n                BUGLY_APP_VERSION=\"${CUSTOMIZED_APP_VERSION}\"\n                fi\n                \n                echo \"--------------------------------\"\n                echo \"Prepare application information.\"\n                echo \"--------------------------------\"\n                \n                echo \"Product Name: ${PRODUCT_NAME}\"\n                echo \"Bundle Identifier: ${BUNDLE_IDENTIFIER}\"\n                echo \"Version: ${BUNDLE_SHORT_VERSION}\"\n                echo \"Build: ${BUNDLE_VERSION}\"\n                \n                echo \"Bugly App ID: ${BUGLY_APP_ID}\"\n                echo \"Bugly App key: ${BUGLY_APP_KEY}\"\n                echo \"Bugly App Version: ${BUGLY_APP_VERSION}\"\n                \n                echo \"--------------------------------\"\n                echo \"Check the arguments ...\"\n                \n                ##检查模拟器编译是否允许上传符号\n                if [ \"$EFFECTIVE_PLATFORM_NAME\" == \"-iphonesimulator\" ]; then\n                if [ $UPLOAD_SIMULATOR_SYMBOLS -eq 0 ]; then\n                exitWithMessage \"Warning: Build for simulator and skipping to upload. \\nYou can modify 'UPLOAD_SIMULATOR_SYMBOLS' to 1 in the script.\" 0\n                fi\n                fi\n                \n                ##检查是否是Release模式编译\n                if [ \"${CONFIGURATION=}\" == \"Debug\" ]; then\n                if [ $UPLOAD_DEBUG_SYMBOLS -eq 0 ]; then\n                exitWithMessage \"Warning: Build for debug mode and skipping to upload. \\nYou can modify 'UPLOAD_DEBUG_SYMBOLS' to 1 in the script.\" 0\n                fi\n                fi\n                \n                ##检查是否Archive操作\n                if [ $UPLOAD_ARCHIVE_ONLY -eq 1 ]; then\n                if [[ \"$TARGET_BUILD_DIR\" == *\"/Archive\"* ]]; then\n                echo \"Archive the package\"\n                else\n                exitWithMessage \"Warning: Build for NOT Archive mode and skipping to upload. \\nYou can modify 'UPLOAD_ARCHIVE_ONLY' to 0 in the script.\" 0\n                fi\n                fi\n                \n                #\n                run ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${BUILD_DIR}/BuglySymbolTemp ${UPLOAD_DSYM_ONLY}\n            }\n            \n            # 根据Xcode的环境变量判断是否处于Xcode环境\n            INFO_PLIST_FILE=\"${INFOPLIST_FILE}\"\n            \n            BuildInXcode=\"F\"\n            if [ -f \"${INFO_PLIST_FILE}\" ]; then\n            BuildInXcode=\"T\"\n            fi\n            \n            if [ $BuildInXcode = \"T\" ]; then\n            runInXcode\n            else\n            echo \"\\nUsage: dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir> [upload_dsym_only]\\n\"\n            # 你可以在此处直接设置BuglyAppID和BuglyAppKey，排除不常变参数的输入\n            BUGLY_APP_ID=\"$1\"\n            BUGLY_APP_KEY=\"$2\"\n            BUNDLE_IDENTIFIER=\"$3\"\n            BUGLY_APP_VERSION=\"$4\"\n            DWARF_DSYM_FOLDER_PATH=\"$5\"\n            SYMBOL_OUTPUT_PATH=\"$6\"\n            UPLOAD_DSYM_ONLY=$7\n            run ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${SYMBOL_OUTPUT_PATH} ${UPLOAD_DSYM_ONLY}\n            fi";
+			shellScript = "#!/bin/sh\n#\n# Copyright 2016 Bugly, Tencent. All rights reserved.\n#\n# V1.4.0\n#\n# 2016.08.03\n#\n#\n#\n######################################################\n# 1. 脚本集成到Xcode工程的Target\n######################################################\n#\n# --- Copy the SCRIPT to the Run Script of Build Phases in the Xcode project ---\n#\n# #\nBUGLY_APP_ID=\"5a3d1ad706\"\n# #\nBUGLY_APP_KEY=\"cff908ee-d69a-4e0f-8af4-4dc5592903d1\"\n# #\nBUNDLE_IDENTIFIER=\"com.dandanplay.player\"\n# #\nUPLOAD_DSYM_ONLY=1\n#\n# # 脚本默认配置的版本格式为CFBundleShortVersionString(CFBundleVersion),  如果你修改默认的版本格式, 请设置此变量, 如果不想修改, 请忽略此设置\n# CUSTOMIZED_APP_VERSION=\"\"\n#\n# # Debug模式编译是否上传，1＝上传 0＝不上传，默认不上传\n# UPLOAD_DEBUG_SYMBOLS=0\n#\n# # 模拟器编译是否上传，1=上传 0=不上传，默认不上传\nUPLOAD_SIMULATOR_SYMBOLS=0\n#\n# #只有Archive操作时上传, 1=支持Archive上传 0=所有Release模式编译都上传\nUPLOAD_ARCHIVE_ONLY=1\n#\n# #\n# source dSYMUpload.sh\n#\n# --- END OF SCRIPT ---\n#\n#\n#\n#\n#######################################################\n# 2. 脚本根据输入参数处理\n#######################################################\n#\n# #命令行下输入应用基本信息, .dSYM文件的父目录路径, 输出文件目录即可\n#\n# sh dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir>\n#\n# #\n#\n# #注意:\n# # 1. dSYMUpload.sh会调用buglySymboliOS.jar进行.dSYM解析，所以依赖Java运行时环境\n# # 2. dSYMUpload.sh和buglySymboliOS.jar的文件路径需一致\n#\n#\n\n#\n# --- CONTENT OF SCRIPT ---\n#\n\n# Bugly服务域名\nBUGLY_DSYM_UPLOAD_DOMAIN=\"api.bugly.qq.com\"\n\n# 注意jar工具的路径跟dSYMUpload.sh脚本路径一致, 请务必保证jar路径的正确性\nBUGLY_SYMBOL_JAR_PATH=\"dsymtool/buglySymboliOS.jar\"\n# 查找添加到系统目录的jar工具\nif [ ! -f \"${BUGLY_SYMBOL_JAR_PATH}\" ]; then\nBUGLY_SYMBOL_JAR_PATH=\"$HOME/bin/buglySymboliOS.jar\"\nfi\n\n# 打印错误信息\nfunction exitWithMessage(){\n    echo \"--------------------------------\"\n    echo \"${1}\"\n    echo \"--------------------------------\"\n    exit ${2}\n}\n\n# 上传bSYMBOL文件\nfunction dSYMUpload() {\n    P_APP_ID=\"$1\"\n    P_APP_KEY=\"$2\"\n    P_APP_BUNDLE_ID=\"$3\"\n    P_APP_VERSION=\"$4\"\n    P_BSYMBOL_ZIP_FILE=\"$5\"\n    \n    #\n    P_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE##*/}\n        P_BSYMBOL_ZIP_FILE_NAME=${P_BSYMBOL_ZIP_FILE_NAME//&/_}\n            P_BSYMBOL_ZIP_FILE_NAME=\"${P_BSYMBOL_ZIP_FILE_NAME// /_}\"\n            \n            DSYM_UPLOAD_URL=\"https://${BUGLY_DSYM_UPLOAD_DOMAIN}/openapi/file/upload/symbol?app_id=${P_APP_ID}&app_key=${P_APP_KEY}\"\n            echo \"dSYM upload url: ${DSYM_UPLOAD_URL}\"\n            \n            echo \"-----------------------------\"\n            STATUS=$(/usr/bin/curl -k \"${DSYM_UPLOAD_URL}\" --form \"api_version=1\" --form \"app_id=${P_APP_ID}\" --form \"app_key=${P_APP_KEY}\" --form \"symbolType=2\"  --form \"bundleId=${BUNDLE_IDENTIFIER}\" --form \"productVersion=${BUGLY_APP_VERSION}\" --form \"fileName=${P_BSYMBOL_ZIP_FILE_NAME}\" --form \"file=@${P_BSYMBOL_ZIP_FILE}\" --verbose)\n            echo \"-----------------------------\"\n            \n            UPLOAD_RESULT=\"FAILTURE\"\n            echo \"Bugly server response: ${STATUS}\"\n            if [ ! \"${STATUS}\" ]; then\n            echo \"Error: Failed to upload the zip archive file.\"\n            elif [[ \"${STATUS}\" == *\"{\\\"reponseCode\\\":\\\"0\\\"}\"* ]]; then\n            echo \"Success to upload the dSYM for the app [${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION}]\"\n            UPLOAD_RESULT=\"SUCCESS\"\n            else\n            echo \"Error: Failed to upload the zip archive file to Bugly.\"\n            fi\n            \n            #Remove temp dSYM archive\n            #echo \"Remove temporary zip archive: ${DSYM_ZIP_FPATH}\"\n            #/bin/rm -f \"${DSYM_ZIP_FPATH}\"\n            \n            if [ \"$?\" -ne 0 ]; then\n            exitWithMessage \"Error: Failed to remove temporary zip archive.\" 0\n            fi\n            \n            echo \"--------------------------------\"\n            echo \"${UPLOAD_RESULT} - dSYM upload complete.\"\n            \n            if [[ \"${UPLOAD_RESULT}\" == \"FAILTURE\" ]]; then\n            echo \"--------------------------------\"\n            echo \"Failed to upload the dSYM\"\n            echo \"Please check the script and try it again.\"\n            fi\n        }\n        \n        # .dSYM解析为bSYMBOL文件\n        function dSYMParse() {\n            DSYM_FILE=\"$1\"\n            DSYM_SYMBOL_FILE=\"$2\"\n            \n            echo \"--------------------------------\"\n            echo \"Extract symbol info from .dSYM file. to ${DSYM_SYMBOL_FILE}\"\n            (/usr/bin/java -Xms512m -Xmx1024m -Dfile.encoding=UTF8 -jar \"${BUGLY_SYMBOL_JAR_PATH}\" -i \"${DSYM_FILE}\" -o \"${DSYM_SYMBOL_FILE}\" ) || exitWithMessage \"Error: Failed to extract symbols.\" 1\n            echo \"--------------------------------\"\n            \n        }\n        \n        # 执行\n        function run() {\n            \n            CONFIG_BUGLY_APP_ID=\"$1\"\n            CONFIG_BUGLY_APP_KEY=\"$2\"\n            \n            CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER=\"$3\"\n            CONFIG_BUGLY_APP_VERSION=\"$4\"\n            CONFIG_DSYM_SOURCE_DIR=\"$5\"\n            CONFIG_DSYM_DEST_DIR=\"$6\"\n            CONFIG_UPLOAD_DSYM_ONLY=\"$7\"\n            \n            # 检查必须参数是否设置\n            if [ ! \"${CONFIG_BUGLY_APP_ID}\" ]; then\n            exitWithMessage \"Error: Bugly App ID not defined. Please set 'BUGLY_APP_ID' \" 0\n            fi\n            \n            if [[ \"${CONFIG_BUGLY_APP_ID}\" == *\"App ID\"* ]]; then\n            exitWithMessage \"Error: Bugly App ID not defined.\" 0\n            fi\n            \n            if [ ! \"${CONFIG_BUGLY_APP_KEY}\" ]; then\n            exitWithMessage \"Error: Bugly App Key not defined.\" 0\n            fi\n            \n            if [ ! \"${CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER}\" ]; then\n            exitWithMessage \"Error: Bundle Identifier not defined.\" 0\n            fi\n            \n            if [ ! \"${CONFIG_BUGLY_APP_VERSION}\" ]; then\n            exitWithMessage \"Error: App Version not defined.\" 0\n            fi\n            \n            if [ ! -e \"${CONFIG_DSYM_SOURCE_DIR}\" ]; then\n            exitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_SOURCE_DIR}\" 0\n            fi\n            \n            if [ ! \"${CONFIG_DSYM_DEST_DIR}\" ]; then\n            exitWithMessage \"Error: Invalid dir ${CONFIG_DSYM_DEST_DIR}\" 0\n            fi\n            \n            if [ ! -e \"${CONFIG_DSYM_DEST_DIR}\" ]; then\n            mkdir ${CONFIG_DSYM_DEST_DIR}\n            fi\n            \n            DSYM_FOLDER=\"${CONFIG_DSYM_SOURCE_DIR}\"\n            IFS=$'\\n'\n            \n            echo \"Scaning dSYM FOLDER: ${DSYM_FOLDER} ...\"\n            RET=\"F\"\n            \n            #\n            for dsymFile in $(find \"$DSYM_FOLDER\" -name '*.dSYM'); do\n            RET=\"T\"\n            echo \"Found dSYM file: $dsymFile\"\n            \n            DSYM_FILE_NAME=${dsymFile##*/}\n                DSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_FILE_NAME}.zip\"\n                DSYM_SYMBOL_ZIP_FILE_NAME=\"${DSYM_SYMBOL_ZIP_FILE_NAME// /_}\"\n                DSYM_SYMBOL_ZIP_FILE=${CONFIG_DSYM_DEST_DIR}/${DSYM_SYMBOL_ZIP_FILE_NAME}\n                \n                if [ $CONFIG_UPLOAD_DSYM_ONLY -eq 1 ]; then\n                if [ -e $DSYM_SYMBOL_ZIP_FILE ]; then\n                rm -f $DSYM_SYMBOL_ZIP_FILE\n                fi\n                # 如果只上传dSYM，直接压缩dSYM目录\n                zip -r -j $DSYM_SYMBOL_ZIP_FILE $dsymFile -x *.plist\n                else\n                # 使用符号表工具来生成Symbol文件\n                dSYMParse $dsymFile $DSYM_SYMBOL_ZIP_FILE\n                fi\n                \n                # 上传\n                dSYMUpload $CONFIG_BUGLY_APP_ID $CONFIG_BUGLY_APP_KEY $CONFIG_BUGLY_APP_BUNDLE_IDENTIFIER $CONFIG_BUGLY_APP_VERSION $DSYM_SYMBOL_ZIP_FILE\n                done\n                \n                if [ $RET = \"F\" ]; then\n                exitWithMessage \"No .dSYM found in ${DSYM_FOLDER}\" 0\n                fi\n            }\n            \n            # 在Xcode工程中执行\n            function runInXcode(){\n                echo \"Uploading dSYM to Bugly in Xcode ...\"\n                \n                echo \"Info.Plist : ${INFOPLIST_FILE}\"\n                \n                BUNDLE_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleVersion' \"${INFOPLIST_FILE}\")\n                BUNDLE_SHORT_VERSION=$(/usr/libexec/PlistBuddy -c 'Print CFBundleShortVersionString' \"${INFOPLIST_FILE}\")\n                \n                # 组装Bugly默认识别的版本信息(格式为CFBundleShortVersionString(CFBundleVersion), 例如: 1.0(1))\n                if [ ! \"${CUSTOMIZED_APP_VERSION}\" ]; then\n                BUGLY_APP_VERSION=\"${BUNDLE_SHORT_VERSION}(${BUNDLE_VERSION})\"\n                else\n                BUGLY_APP_VERSION=\"${CUSTOMIZED_APP_VERSION}\"\n                fi\n                \n                echo \"--------------------------------\"\n                echo \"Prepare application information.\"\n                echo \"--------------------------------\"\n                \n                echo \"Product Name: ${PRODUCT_NAME}\"\n                echo \"Bundle Identifier: ${BUNDLE_IDENTIFIER}\"\n                echo \"Version: ${BUNDLE_SHORT_VERSION}\"\n                echo \"Build: ${BUNDLE_VERSION}\"\n                \n                echo \"Bugly App ID: ${BUGLY_APP_ID}\"\n                echo \"Bugly App key: ${BUGLY_APP_KEY}\"\n                echo \"Bugly App Version: ${BUGLY_APP_VERSION}\"\n                \n                echo \"--------------------------------\"\n                echo \"Check the arguments ...\"\n                \n                ##检查模拟器编译是否允许上传符号\n                if [ \"$EFFECTIVE_PLATFORM_NAME\" == \"-iphonesimulator\" ]; then\n                if [ $UPLOAD_SIMULATOR_SYMBOLS -eq 0 ]; then\n                exitWithMessage \"Warning: Build for simulator and skipping to upload. \\nYou can modify 'UPLOAD_SIMULATOR_SYMBOLS' to 1 in the script.\" 0\n                fi\n                fi\n                \n                ##检查是否是Release模式编译\n                if [ \"${CONFIGURATION=}\" == \"Debug\" ]; then\n                if [ $UPLOAD_DEBUG_SYMBOLS -eq 0 ]; then\n                exitWithMessage \"Warning: Build for debug mode and skipping to upload. \\nYou can modify 'UPLOAD_DEBUG_SYMBOLS' to 1 in the script.\" 0\n                fi\n                fi\n                \n                ##检查是否Archive操作\n                if [ $UPLOAD_ARCHIVE_ONLY -eq 1 ]; then\n                if [[ \"$TARGET_BUILD_DIR\" == *\"/Archive\"* ]]; then\n                echo \"Archive the package\"\n                else\n                exitWithMessage \"Warning: Build for NOT Archive mode and skipping to upload. \\nYou can modify 'UPLOAD_ARCHIVE_ONLY' to 0 in the script.\" 0\n                fi\n                fi\n                \n                #\n                run ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${BUILD_DIR}/BuglySymbolTemp ${UPLOAD_DSYM_ONLY}\n            }\n            \n            # 根据Xcode的环境变量判断是否处于Xcode环境\n            INFO_PLIST_FILE=\"${INFOPLIST_FILE}\"\n            \n            BuildInXcode=\"F\"\n            if [ -f \"${INFO_PLIST_FILE}\" ]; then\n            BuildInXcode=\"T\"\n            fi\n            \n            if [ $BuildInXcode = \"T\" ]; then\n            runInXcode\n            else\n            echo \"\\nUsage: dSYMUpload.sh <bugly_app_id> <bugly_app_key> <app_bundle_identifier> <app_version> <dSYM_src_dir> <bSYMBOL_dest_dir> [upload_dsym_only]\\n\"\n            # 你可以在此处直接设置BuglyAppID和BuglyAppKey，排除不常变参数的输入\n            BUGLY_APP_ID=\"$1\"\n            BUGLY_APP_KEY=\"$2\"\n            BUNDLE_IDENTIFIER=\"$3\"\n            BUGLY_APP_VERSION=\"$4\"\n            DWARF_DSYM_FOLDER_PATH=\"$5\"\n            SYMBOL_OUTPUT_PATH=\"$6\"\n            UPLOAD_DSYM_ONLY=$7\n            run ${BUGLY_APP_ID} ${BUGLY_APP_KEY} ${BUNDLE_IDENTIFIER} ${BUGLY_APP_VERSION} ${DWARF_DSYM_FOLDER_PATH} ${SYMBOL_OUTPUT_PATH} ${UPLOAD_DSYM_ONLY}\n            fi\n";
+		};
+		AA6F72DB93E709D593FC58EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DDPlay_Target-DDPlay_ToMac/Pods-DDPlay_Target-DDPlay_ToMac-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
+				"${BUILT_PRODUCTS_DIR}/DDPShare/DDPShare.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/JHDanmakuRender/JHDanmakuRender.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/NKOColorPickerView/NKOColorPickerView.framework",
+				"${BUILT_PRODUCTS_DIR}/Ono/Ono.framework",
+				"${BUILT_PRODUCTS_DIR}/RATreeView/RATreeView.framework",
+				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
+				"${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework",
+				"${BUILT_PRODUCTS_DIR}/WMPageController/WMPageController.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKeyboardManager/YYKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/YYUtility/YYUtility.framework",
+				"${BUILT_PRODUCTS_DIR}/YYWebImage/YYWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DDPShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JHDanmakuRender.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NKOColorPickerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ono.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RATreeView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITableView_FDTemplateLayoutCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WMPageController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYUtility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DDPlay_Target-DDPlay_ToMac/Pods-DDPlay_Target-DDPlay_ToMac-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		D6D0F9AC9533CC1FB5293825 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -3270,10 +3314,64 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-DDPlay_Target-iOS_Only-DDPlay/Pods-DDPlay_Target-iOS_Only-DDPlay-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/BlocksKit/BlocksKit.framework",
+				"${BUILT_PRODUCTS_DIR}/DDPShare/DDPShare.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/JHDanmakuRender/JHDanmakuRender.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MGSwipeTableCell/MGSwipeTableCell.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/NKOColorPickerView/NKOColorPickerView.framework",
+				"${BUILT_PRODUCTS_DIR}/Ono/Ono.framework",
+				"${BUILT_PRODUCTS_DIR}/RATreeView/RATreeView.framework",
+				"${BUILT_PRODUCTS_DIR}/SSZipArchive/SSZipArchive.framework",
+				"${BUILT_PRODUCTS_DIR}/UITableView+FDTemplateLayoutCell/UITableView_FDTemplateLayoutCell.framework",
+				"${BUILT_PRODUCTS_DIR}/WMPageController/WMPageController.framework",
+				"${BUILT_PRODUCTS_DIR}/YYCategories/YYCategories.framework",
+				"${BUILT_PRODUCTS_DIR}/YYKeyboardManager/YYKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/YYModel/YYModel.framework",
+				"${BUILT_PRODUCTS_DIR}/YYUtility/YYUtility.framework",
+				"${BUILT_PRODUCTS_DIR}/YYWebImage/YYWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/iCarousel/iCarousel.framework",
+				"${BUILT_PRODUCTS_DIR}/WCDB/WCDB.framework",
+				"${BUILT_PRODUCTS_DIR}/WCDBOptimizedSQLCipher/sqlcipher.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaAsyncSocket/CocoaAsyncSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/TOSMBClient/TOSMBClient.framework",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/MobileVLCKit/MobileVLCKit.framework/MobileVLCKit",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BlocksKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DDPShare.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JHDanmakuRender.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MGSwipeTableCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NKOColorPickerView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Ono.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RATreeView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SSZipArchive.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UITableView_FDTemplateLayoutCell.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WMPageController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYCategories.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYModel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYUtility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iCarousel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WCDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/sqlcipher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaAsyncSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TOSMBClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MobileVLCKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4196,58 +4294,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"AFNetworking\"",
-					"-l\"CocoaLumberjack\"",
-					"-l\"DZNEmptyDataSet\"",
-					"-l\"IQKeyboardManager\"",
-					"-l\"MBProgressHUD\"",
-					"-l\"MJRefresh\"",
-					"-l\"Masonry\"",
-					"-l\"NKOColorPickerView\"",
-					"-l\"RATreeView\"",
-					"-l\"UITableView+FDTemplateLayoutCell\"",
-					"-l\"WMPageController\"",
-					"-l\"YYCategories\"",
-					"-l\"YYModel\"",
-					"-l\"YYWebImage\"",
-					"-l\"bz2\"",
-					"-l\"iconv\"",
-					"-l\"sqlite3\"",
-					"-l\"stdc++\"",
-					"-l\"xml2\"",
-					"-l\"z\"",
-					"-framework",
-					"\"AVFoundation\"",
-					"-framework",
-					"\"Accelerate\"",
-					"-framework",
-					"\"AudioToolbox\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"CoreFoundation\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreImage\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"ImageIO\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"OpenGLES\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dandanplay.concept2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4286,60 +4332,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"AFNetworking\"",
-					"-l\"CocoaLumberjack\"",
-					"-l\"DZNEmptyDataSet\"",
-					"-l\"IQKeyboardManager\"",
-					"-l\"MBProgressHUD\"",
-					"-l\"MJRefresh\"",
-					"-l\"Masonry\"",
-					"-l\"NKOColorPickerView\"",
-					"-l\"RATreeView\"",
-					"-l\"UITableView+FDTemplateLayoutCell\"",
-					"-l\"WMPageController\"",
-					"-l\"YYCategories\"",
-					"-l\"YYModel\"",
-					"-l\"YYWebImage\"",
-					"-l\"bz2\"",
-					"-l\"iconv\"",
-					"-l\"sqlite3\"",
-					"-l\"stdc++\"",
-					"-l\"xml2\"",
-					"-l\"z\"",
-					"-framework",
-					"\"AVFoundation\"",
-					"-framework",
-					"\"AssetsLibrary\"",
-					"-framework",
-					"\"Accelerate\"",
-					"-framework",
-					"\"AudioToolbox\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"CoreFoundation\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreImage\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"ImageIO\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"OpenGLES\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dandanplay.concept2;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4378,47 +4370,11 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"CocoaLumberjack\"",
-					"-l\"bz2\"",
-					"-l\"iconv\"",
-					"-l\"sqlite3\"",
-					"-l\"stdc++\"",
-					"-l\"xml2\"",
-					"-l\"z\"",
-					"-framework",
-					"\"AVFoundation\"",
-					"-framework",
-					"\"Accelerate\"",
-					"-framework",
-					"\"AudioToolbox\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"CoreFoundation\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreImage\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"ImageIO\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dandanplay.iosplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_UIKITFORMAC = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -4456,60 +4412,11 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"AFNetworking\"",
-					"-l\"CocoaLumberjack\"",
-					"-l\"DZNEmptyDataSet\"",
-					"-l\"IQKeyboardManager\"",
-					"-l\"MBProgressHUD\"",
-					"-l\"MJRefresh\"",
-					"-l\"Masonry\"",
-					"-l\"NKOColorPickerView\"",
-					"-l\"RATreeView\"",
-					"-l\"UITableView+FDTemplateLayoutCell\"",
-					"-l\"WMPageController\"",
-					"-l\"YYCategories\"",
-					"-l\"YYModel\"",
-					"-l\"YYWebImage\"",
-					"-l\"bz2\"",
-					"-l\"iconv\"",
-					"-l\"sqlite3\"",
-					"-l\"stdc++\"",
-					"-l\"xml2\"",
-					"-l\"z\"",
-					"-framework",
-					"\"AVFoundation\"",
-					"-framework",
-					"\"Accelerate\"",
-					"-framework",
-					"\"AudioToolbox\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"CoreFoundation\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreImage\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"ImageIO\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dandanplay.iosplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_MACCATALYST = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_UIKITFORMAC = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -4520,7 +4427,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -4574,7 +4481,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
@@ -4671,7 +4578,7 @@
 					"\"$(SDKROOT)/usr/include/libxml2\"",
 				);
 				INFOPLIST_FILE = "$(PROJECT_NAME)/AppStore/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4680,66 +4587,12 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"AFNetworking\"",
-					"-l\"CocoaAsyncSocket\"",
-					"-l\"CocoaHTTPServer\"",
-					"-l\"CocoaLumberjack\"",
-					"-l\"DZNEmptyDataSet\"",
-					"-l\"IQKeyboardManager\"",
-					"-l\"MBProgressHUD\"",
-					"-l\"MJRefresh\"",
-					"-l\"Masonry\"",
-					"-l\"NKOColorPickerView\"",
-					"-l\"RATreeView\"",
-					"-l\"UITableView+FDTemplateLayoutCell\"",
-					"-l\"WMPageController\"",
-					"-l\"YYCategories\"",
-					"-l\"YYModel\"",
-					"-l\"YYWebImage\"",
-					"-l\"bz2\"",
-					"-l\"iconv\"",
-					"-l\"sqlite3\"",
-					"-l\"stdc++\"",
-					"-l\"xml2\"",
-					"-l\"z\"",
-					"-framework",
-					"\"AVFoundation\"",
-					"-framework",
-					"\"Accelerate\"",
-					"-framework",
-					"\"AssetsLibrary\"",
-					"-framework",
-					"\"AudioToolbox\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"CoreFoundation\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreImage\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"ImageIO\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"OpenGLES\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dandanplay.iosplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -4799,7 +4652,7 @@
 					"\"$(SDKROOT)/usr/include/libxml2\"",
 				);
 				INFOPLIST_FILE = "$(PROJECT_NAME)/AppStore/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4808,66 +4661,12 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"AFNetworking\"",
-					"-l\"CocoaAsyncSocket\"",
-					"-l\"CocoaHTTPServer\"",
-					"-l\"CocoaLumberjack\"",
-					"-l\"DZNEmptyDataSet\"",
-					"-l\"IQKeyboardManager\"",
-					"-l\"MBProgressHUD\"",
-					"-l\"MJRefresh\"",
-					"-l\"Masonry\"",
-					"-l\"NKOColorPickerView\"",
-					"-l\"RATreeView\"",
-					"-l\"UITableView+FDTemplateLayoutCell\"",
-					"-l\"WMPageController\"",
-					"-l\"YYCategories\"",
-					"-l\"YYModel\"",
-					"-l\"YYWebImage\"",
-					"-l\"bz2\"",
-					"-l\"iconv\"",
-					"-l\"sqlite3\"",
-					"-l\"stdc++\"",
-					"-l\"xml2\"",
-					"-l\"z\"",
-					"-framework",
-					"\"AVFoundation\"",
-					"-framework",
-					"\"Accelerate\"",
-					"-framework",
-					"\"AssetsLibrary\"",
-					"-framework",
-					"\"AudioToolbox\"",
-					"-framework",
-					"\"CFNetwork\"",
-					"-framework",
-					"\"CoreFoundation\"",
-					"-framework",
-					"\"CoreGraphics\"",
-					"-framework",
-					"\"CoreImage\"",
-					"-framework",
-					"\"CoreText\"",
-					"-framework",
-					"\"Foundation\"",
-					"-framework",
-					"\"ImageIO\"",
-					"-framework",
-					"\"MobileCoreServices\"",
-					"-framework",
-					"\"OpenGLES\"",
-					"-framework",
-					"\"QuartzCore\"",
-					"-framework",
-					"\"Security\"",
-					"-framework",
-					"\"SystemConfiguration\"",
-					"-framework",
-					"\"UIKit\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dandanplay.iosplayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

@@ -80,7 +80,7 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
     if (_mDanmakuFilters == nil) {
 
         WCTDatabase *db = [DDPCacheManager shareDB];
-        NSArray *datas = [db getAllObjectsOfClass:DDPFilter.class fromTable:DDPFilter.className];
+        NSArray *datas = [db getObjectsOfClass:DDPFilter.class fromTable:DDPFilter.className];
         if (datas) {
             _mDanmakuFilters = [NSMutableOrderedSet orderedSetWithArray:datas];
         }
@@ -112,7 +112,7 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
     [self.mDanmakuFilters addObjectsFromArray:models];
     [self clearFilterHash];
     WCTDatabase *db = [DDPCacheManager shareDB];
-    [db insertOrReplaceObjects:models into:DDPFilter.className];
+    [db insertOrReplaceObjects:models intoTable:DDPFilter.className];
 }
 
 - (void)removeFilters:(NSArray<DDPFilter *> *)models {
@@ -122,9 +122,9 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
     [self clearFilterHash];
     WCTDatabase *db = [DDPCacheManager shareDB];
     NSString *tableName = DDPFilter.className;
-    [db runTransaction:^BOOL{
+    [db runTransaction:^BOOL(WCTHandle *handle) {
         for (DDPFilter *obj in models) {
-            [db deleteObjectsFromTable:tableName where:DDPFilter.name == obj.name];
+            [db deleteFromTable:tableName where:DDPFilter.name == obj.name];
         }
         
         return YES;
@@ -140,7 +140,7 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
     NSMutableOrderedSet<DDPFilter *> *_mLinkInfoHistorys = objc_getAssociatedObject(self, _cmd);
     if (_mLinkInfoHistorys == nil) {
         WCTDatabase *db = [DDPCacheManager shareDB];
-        NSArray *datas = [db getAllObjectsOfClass:DDPLinkInfo.class fromTable:DDPLinkInfo.className];
+        NSArray *datas = [db getObjectsOfClass:DDPLinkInfo.class fromTable:DDPLinkInfo.className];
         if (datas) {
             _mLinkInfoHistorys = [NSMutableOrderedSet orderedSetWithArray:datas];
         }
@@ -155,7 +155,7 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
 
 - (DDPLinkInfo *)lastLinkInfo {
     WCTDatabase *db = [DDPCacheManager shareDB];
-    return [db getOneObjectOfClass:DDPLinkInfo.class fromTable:DDPLinkInfo.className orderBy:DDPLinkInfo.saveTime.order(WCTOrderedDescending)];
+    return [db getObjectOfClass:DDPLinkInfo.class fromTable:DDPLinkInfo.className orders:DDPLinkInfo.saveTime.asOrder(WCTOrderedDescending)];
 }
 
 - (void)addLinkInfo:(DDPLinkInfo *)linkInfo {
@@ -163,7 +163,7 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
     
     [self.mLinkInfoHistorys addObject:linkInfo];
     WCTDatabase *db = [DDPCacheManager shareDB];
-    [db insertOrReplaceObject:linkInfo into:DDPLinkInfo.className];
+    [db insertOrReplaceObject:linkInfo intoTable:DDPLinkInfo.className];
 }
 
 - (void)removeLinkInfo:(DDPLinkInfo *)linkInfo {
@@ -171,7 +171,7 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
     
     [self.mLinkInfoHistorys removeObject:linkInfo];
     WCTDatabase *db = [DDPCacheManager shareDB];
-    [db deleteObjectsFromTable:linkInfo.className where:DDPLinkInfo.selectedIpAdress == linkInfo.selectedIpAdress];
+    [db deleteFromTable:linkInfo.className where:DDPLinkInfo.selectedIpAdress == linkInfo.selectedIpAdress];
 }
 
 #pragma mark -
@@ -188,7 +188,7 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
     cache.identity = episodeId;
     cache.name = episodeName;
     
-    [db insertOrReplaceObject:cache into:DDPVideoCache.className];
+    [db insertOrReplaceObject:cache intoTable:DDPVideoCache.className];
 }
 
 - (void)saveLastPlayTime:(NSInteger)time videoModel:(DDPVideoModel *)model {
@@ -202,31 +202,31 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
     
     cache.lastPlayTime = time;
     
-    [db insertOrReplaceObject:cache into:DDPVideoCache.className];
+    [db insertOrReplaceObject:cache intoTable:DDPVideoCache.className];
 }
 
 - (DDPVideoCache *)relevanceCacheWithVideoModel:(DDPVideoModel *)model {
     WCTDatabase *db = [DDPCacheManager shareDB];
-    return [db getOneObjectOfClass:DDPVideoCache.class fromTable:DDPVideoCache.className where:DDPVideoCache.fileHash == model.fileHash];
+    return [db getObjectOfClass:DDPVideoCache.class fromTable:DDPVideoCache.className where:DDPVideoCache.fileHash == model.fileHash];
 }
 
 #pragma mark -
 
 - (NSArray<DDPWebDAVLoginInfo *> *)webDAVInfos {
     WCTDatabase *db = [DDPCacheManager shareDB];
-    return [db getAllObjectsOfClass:DDPWebDAVLoginInfo.class fromTable:DDPWebDAVLoginInfo.className];
+    return [db getObjectsOfClass:DDPWebDAVLoginInfo.class fromTable:DDPWebDAVLoginInfo.className];
 }
 
 - (void)saveWebDAVInfo:(DDPWebDAVLoginInfo *)info {
     if (info == nil) return;
     WCTDatabase *db = [DDPCacheManager shareDB];
-    [db insertOrReplaceObject:info into:DDPWebDAVLoginInfo.className];
+    [db insertOrReplaceObject:info intoTable:DDPWebDAVLoginInfo.className];
 }
 
 - (void)removeWebDAVInfo:(DDPWebDAVLoginInfo *)info {
     if (info == nil) return;
     WCTDatabase *db = [DDPCacheManager shareDB];
-    [db deleteObjectsFromTable:info.className where:DDPWebDAVLoginInfo.path == info.path];
+    [db deleteFromTable:info.className where:DDPWebDAVLoginInfo.path == info.path];
 }
 
 #pragma mark -
@@ -238,13 +238,13 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
     cache.key = ddp_webDAVCacheKey(file);
     
     WCTDatabase *db = [DDPCacheManager shareDB];
-    [db insertOrReplaceObject:cache into:DDPWebDAVHasnCache.className];
+    [db insertOrReplaceObject:cache intoTable:DDPWebDAVHasnCache.className];
 }
 
 - (NSString *)webDAVHash:(DDPWebDAVFile *)file {
     NSString *key = ddp_webDAVCacheKey(file);
     WCTDatabase *db = [DDPCacheManager shareDB];
-    DDPSMBFileHashCache *cache = [db getOneObjectOfClass:DDPWebDAVHasnCache.class fromTable:DDPWebDAVHasnCache.className where:DDPWebDAVHasnCache.key == key];
+    DDPSMBFileHashCache *cache = [db getObjectOfClass:DDPWebDAVHasnCache.class fromTable:DDPWebDAVHasnCache.className where:DDPWebDAVHasnCache.key == key];
     return cache.md5;
 }
 
@@ -253,7 +253,7 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
 - (NSArray<DDPSMBInfo *> *)SMBLinkInfos {
 #if !DDPAPPTYPEISMAC
     WCTDatabase *db = [DDPCacheManager shareDB];
-    return [db getAllObjectsOfClass:DDPSMBInfo.class fromTable:DDPSMBInfo.className];
+    return [db getObjectsOfClass:DDPSMBInfo.class fromTable:DDPSMBInfo.className];
 #else
     return nil;
 #endif
@@ -263,7 +263,7 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
     if (info == nil) return;
     #if !DDPAPPTYPEISMAC
     WCTDatabase *db = [DDPCacheManager shareDB];
-    [db insertOrReplaceObject:info into:DDPSMBInfo.className];
+    [db insertOrReplaceObject:info intoTable:DDPSMBInfo.className];
     #endif
 }
 
@@ -271,7 +271,7 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
     if (info == nil) return;
     #if !DDPAPPTYPEISMAC
     WCTDatabase *db = [DDPCacheManager shareDB];
-    [db deleteObjectsFromTable:info.className where:DDPSMBInfo.hostName == info.hostName && DDPSMBInfo.userName == info.userName && DDPSMBInfo.password == info.password];
+    [db deleteFromTable:info.className where:DDPSMBInfo.hostName == info.hostName && DDPSMBInfo.userName == info.userName && DDPSMBInfo.password == info.password];
     #endif
 }
 
@@ -285,7 +285,7 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
     cache.key = ddp_cacheKey(file);
     
     WCTDatabase *db = [DDPCacheManager shareDB];
-    [db insertOrReplaceObject:cache into:DDPSMBFileHashCache.className];
+    [db insertOrReplaceObject:cache intoTable:DDPSMBFileHashCache.className];
     #endif
 }
 
@@ -294,7 +294,7 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
 #if !DDPAPPTYPEISMAC
     NSString *key = ddp_cacheKey(file);
     WCTDatabase *db = [DDPCacheManager shareDB];
-    DDPSMBFileHashCache *cache = [db getOneObjectOfClass:DDPSMBFileHashCache.class fromTable:DDPSMBFileHashCache.className where:DDPSMBFileHashCache.key == key];
+    DDPSMBFileHashCache *cache = [db getObjectOfClass:DDPSMBFileHashCache.class fromTable:DDPSMBFileHashCache.className where:DDPSMBFileHashCache.key == key];
     return cache.md5;
 #else
     return @"";
@@ -304,13 +304,13 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
 #pragma mark -
 - (NSArray<DDPCollectionCache *> *)collectors {
     WCTDatabase *db = [DDPCacheManager shareDB];
-    return [db getAllObjectsOfClass:DDPCollectionCache.class fromTable:DDPCollectionCache.className];
+    return [db getObjectsOfClass:DDPCollectionCache.class fromTable:DDPCollectionCache.className];
 }
 
 - (void)addCollector:(DDPCollectionCache *)cache {
     if (cache == nil) return;
     WCTDatabase *db = [DDPCacheManager shareDB];
-    [db insertOrReplaceObject:cache into:DDPCollectionCache.className];
+    [db insertOrReplaceObject:cache intoTable:DDPCollectionCache.className];
     for (id<DDPCacheManagerDelagate> observer in self.observers.copy) {
         if ([observer respondsToSelector:@selector(collectionDidHandleCache:operation:)]) {
             [observer collectionDidHandleCache:cache operation:DDPCollectionCacheDidChangeTypeAdd];
@@ -322,7 +322,7 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
     if (cache == nil) return;
     
     WCTDatabase *db = [DDPCacheManager shareDB];
-    [db deleteObjectsFromTable:DDPCollectionCache.className where:DDPCollectionCache.cacheType == cache.cacheType && DDPCollectionCache.filePath == cache.filePath];
+    [db deleteFromTable:DDPCollectionCache.className where:DDPCollectionCache.cacheType == cache.cacheType && DDPCollectionCache.filePath == cache.filePath];
     
     for (id<DDPCacheManagerDelagate> observer in self.observers.copy) {
         if ([observer respondsToSelector:@selector(collectionDidHandleCache:operation:)]) {
@@ -333,7 +333,7 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
 
 - (DDPUser *)_currentUser {
     WCTDatabase *db = [DDPCacheManager shareDB];
-    return [db getOneObjectOfClass:DDPUser.class fromTable:DDPUser.className orderBy:DDPUser.lastUpdateTime.order(WCTOrderedDescending)];
+    return [db getObjectOfClass:DDPUser.class fromTable:DDPUser.className orders:DDPUser.lastUpdateTime.asOrder(WCTOrderedDescending)];
 }
 
 - (BOOL)_saveWithUser:(DDPUser *)user {
@@ -342,7 +342,7 @@ NS_INLINE NSString *ddp_webDAVCacheKey(DDPWebDAVFile *file) {
     }
     
     WCTDatabase *db = [DDPCacheManager shareDB];
-    return [db insertOrReplaceObject:user into:DDPUser.className];
+    return [db insertOrReplaceObject:user intoTable:DDPUser.className];
 }
 
 #pragma mark -

@@ -30,13 +30,13 @@ PODS:
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
   - Bugly (2.5.71)
-  - CocoaAsyncSocket (7.6.4)
-  - CocoaHTTPServer (2.3):
+  - CocoaAsyncSocket (7.6.5)
+  - CocoaHTTPServer (2.3.1):
     - CocoaAsyncSocket
     - CocoaLumberjack
-  - CocoaLumberjack (3.7.0):
-    - CocoaLumberjack/Core (= 3.7.0)
-  - CocoaLumberjack/Core (3.7.0)
+  - CocoaLumberjack (3.8.5):
+    - CocoaLumberjack/Core (= 3.8.5)
+  - CocoaLumberjack/Core (3.8.5)
   - DDPEncrypt (1.0)
   - DDPShare (0.1.0):
     - YYModel
@@ -52,8 +52,6 @@ PODS:
   - NKOColorPickerView (0.5)
   - Ono (2.1.2)
   - RATreeView (2.1.2)
-  - SQLiteRepairKit (1.2.2):
-    - WCDBOptimizedSQLCipher (~> 1.2.0)
   - SSZipArchive (2.2.3)
   - TOSMBClient (1.0.8)
   - "UITableView+FDTemplateLayoutCell (1.6)"
@@ -70,10 +68,9 @@ PODS:
   - UMCShare/Social/ReducedWeChat (6.10.1):
     - UMCCommon
     - UMCShare/Core
-  - WCDB (1.0.7.5):
-    - SQLiteRepairKit (~> 1.2.0)
-    - WCDBOptimizedSQLCipher (~> 1.2.0)
-  - WCDBOptimizedSQLCipher (1.2.1)
+  - WCDB (2.1.2):
+    - WCDBOptimizedSQLCipher (= 1.4.4)
+  - WCDBOptimizedSQLCipher (1.4.4)
   - WMPageController (2.5.2)
   - YYCategories (1.0.4):
     - YYCategories/no-arc (= 1.0.4)
@@ -87,7 +84,7 @@ DEPENDENCIES:
   - AFNetworking
   - BlocksKit
   - Bugly
-  - CocoaHTTPServer
+  - CocoaHTTPServer (from `https://github.com/wolfcon/CocoaHTTPServer.git`)
   - CocoaLumberjack
   - DDPEncrypt (from `LocalPods/Encrypt`)
   - DDPShare (from `LocalPods/DDPShare`)
@@ -125,7 +122,6 @@ SPEC REPOS:
     - BlocksKit
     - Bugly
     - CocoaAsyncSocket
-    - CocoaHTTPServer
     - CocoaLumberjack
     - DZNEmptyDataSet
     - iCarousel
@@ -139,7 +135,6 @@ SPEC REPOS:
     - NKOColorPickerView
     - Ono
     - RATreeView
-    - SQLiteRepairKit
     - SSZipArchive
     - TOSMBClient
     - "UITableView+FDTemplateLayoutCell"
@@ -154,6 +149,8 @@ SPEC REPOS:
     - YYModel
 
 EXTERNAL SOURCES:
+  CocoaHTTPServer:
+    :git: https://github.com/wolfcon/CocoaHTTPServer.git
   DDPEncrypt:
     :path: LocalPods/Encrypt
   DDPShare:
@@ -164,6 +161,9 @@ EXTERNAL SOURCES:
     :git: https://github.com/sunsx9316/YYWebImage_UIKitForMac.git
 
 CHECKOUT OPTIONS:
+  CocoaHTTPServer:
+    :commit: f86ce1c895d60e54def50a4da39631c8145f0469
+    :git: https://github.com/wolfcon/CocoaHTTPServer.git
   YYWebImage:
     :commit: 45b1d89ac67c99ecfd9c637c32f16bae8b7e14dd
     :git: https://github.com/sunsx9316/YYWebImage_UIKitForMac.git
@@ -172,9 +172,9 @@ SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   BlocksKit: 8639b2848dd51c35c957af4d9fbdc7a769a1fc12
   Bugly: fd066c75c4a0eca1440f9b6a84bd37d51bfc85ac
-  CocoaAsyncSocket: 694058e7c0ed05a9e217d1b3c7ded962f4180845
-  CocoaHTTPServer: 5624681fc3473d43b18202f635f9b3abb013b530
-  CocoaLumberjack: e8955b9d337ac307103b0a34fd141c32f27e53c5
+  CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
+  CocoaHTTPServer: fbf86a209576b88fe4eb791b6b3baa1581177d2f
+  CocoaLumberjack: 6a459bc897d6d80bd1b8c78482ec7ad05dffc3f0
   DDPEncrypt: 0f1e60e535b058549f15b18555e334e25f81648e
   DDPShare: b3ac506ba0e59f8fc5a35e784958b361c9e23f52
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
@@ -189,15 +189,14 @@ SPEC CHECKSUMS:
   NKOColorPickerView: 895ca86fe5bd16f27c311ce8f5888907efee29ad
   Ono: 26a7c1fc4df13ece7747560a1d80655807a8a000
   RATreeView: 380cde0090cfde21dc6ac29137f49d3b768fdd28
-  SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
   TOSMBClient: 8884ede03ae70e6087962433fda22fb6b4b8c7f8
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
   UMCCommon: 15e5311b00c7ff6e6ffb1f5c965651373b6b2b3c
   UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
   UMCShare: 0846449c689e8bf6793a941b97f51f9afff927ef
-  WCDB: 8e90babdeb7784c569353a4bd22a66c0a175a882
-  WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
+  WCDB: 85228140dc383a819e6707e7aa659cf17786d32f
+  WCDBOptimizedSQLCipher: 7f03bb7c94ad164996f0fa87d0f76026f5ab0f92
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
   YYCategories: 6bcd4314c6661a561410dce4a793379ebd306abd
   YYKeyboardManager: ff53d2e80d1808567a7f004028bd200d9469a89f
@@ -205,6 +204,6 @@ SPEC CHECKSUMS:
   YYUtility: 1d8f92d46c386eeaf7ba08b5e4636f02c1ed6e33
   YYWebImage: 0dd00e631dd0ea984a7ecb07d4c42af0ab34803b
 
-PODFILE CHECKSUM: 7f0e1e182e934a338afe558542c5bfccf80bc66e
+PODFILE CHECKSUM: 09c761efb06423afc88f6d05ea6697cbbcfa99b7
 
 COCOAPODS: 1.15.2
