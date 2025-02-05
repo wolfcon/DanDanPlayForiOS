@@ -58,23 +58,11 @@
 }
 
 - (void)touchOfficialWebsiteButton:(UIButton *)sender {
-#if DDPAPPTYPEISMAC
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:DDPLAY_OFFICIAL_SITE] options:@{} completionHandler:^(BOOL success) {
-        
-    }];
-#else
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:DDPLAY_OFFICIAL_SITE]];
-#endif
+    [UIApplication.sharedApplication openURL:[NSURL URLWithString:DDPLAY_OFFICIAL_SITE] options:@{} completionHandler:nil];
 }
 
 - (void)touchOpenSourceButton:(UIButton *)sender {
-#if DDPAPPTYPEISMAC
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/sunsx9316/DanDanPlayForiOS"] options:@{} completionHandler:^(BOOL success) {
-        
-    }];
-#else
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://github.com/sunsx9316/DanDanPlayForiOS"]];
-#endif
+    [UIApplication.sharedApplication openURL:[NSURL URLWithString:@"https://github.com/wolfcon/DanDanPlayForiOS"] options:@{} completionHandler:nil];
 }
 
 - (void)touchContentButton:(UIButton *)sender {
@@ -96,7 +84,7 @@
         
         [self presentViewController:vc animated:YES completion:nil];
         #else
-        [[UIApplication sharedApplication] openURL:url];
+        [UIApplication.sharedApplication openURL:url options:@{} completionHandler:nil];
         #endif
     } else {
         [self.view showWithText:@"请安装QQ"];
@@ -114,13 +102,7 @@
 }
 
 - (void)touchRightItem:(UIButton *)button {
-#if DDPAPPTYPEISMAC
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:APP_LINK] options:@{} completionHandler:^(BOOL success) {
-        
-    }];
-#else
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:APP_LINK]];
-#endif
+    [UIApplication.sharedApplication openURL:[NSURL URLWithString:APP_LINK] options:@{} completionHandler:nil];
 }
 
 #pragma mark - 懒加载

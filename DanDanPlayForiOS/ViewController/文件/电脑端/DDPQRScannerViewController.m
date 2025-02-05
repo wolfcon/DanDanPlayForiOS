@@ -69,7 +69,7 @@
         NSString *appName = [UIApplication sharedApplication].appDisplayName;
         UIAlertController *vc = [UIAlertController alertControllerWithTitle:[NSString stringWithFormat:@"请在设置-%@中允许%@访问您的相机~", appName, appName] message:nil preferredStyle:UIAlertControllerStyleAlert];
         [vc addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+            [UIApplication.sharedApplication openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString] options:@{} completionHandler:nil];
         }]];
         
         [vc addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {

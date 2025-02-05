@@ -125,7 +125,7 @@
 
 - (void)touchRightItem:(UIButton *)sender {
     if (self.request.URL) {
-        [[UIApplication sharedApplication] openURL:self.request.URL];
+        [UIApplication.sharedApplication openURL:self.request.URL options:@{} completionHandler:nil];
     }
 }
 

@@ -121,7 +121,7 @@
     
     let model = self.models[index];
     if (ddp_appType == DDPAppTypeToMac) {
-        [[UIApplication sharedApplication] openURL:model.url options:@{} completionHandler:nil];
+        [UIApplication.sharedApplication openURL:model.url options:@{} completionHandler:nil];
     } else {
         DDPBaseWebViewController *vc = [[DDPBaseWebViewController alloc] initWithURL:model.url];
         vc.hidesBottomBarWhenPushed = YES;
