@@ -154,7 +154,7 @@
     
     NSString *path = [NSString stringWithFormat:@"%@/list", DDPMethod.searchResDomain];
     
-    return [[DDPSharedNetManager sharedNetManager] GETWithPath:path
+    return [[DDPSharedNetManager resNetManager] GETWithPath:path
                                              serializerType:DDPBaseNetManagerSerializerTypeJSON
                                                  parameters:dic
                                           completionHandler:^(DDPResponse *responseObj) {

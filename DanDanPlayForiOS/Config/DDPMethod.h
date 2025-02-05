@@ -197,6 +197,9 @@ UIKIT_EXTERN BOOL ddp_isChatAppInstall(void);
  */
 + (NSString *)apiPath;
 
+/// 基础 API 域名
++ (NSString *)apiDomain;
+
 /**
  @return 搜索资源的域名
  */

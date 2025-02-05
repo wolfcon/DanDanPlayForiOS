@@ -18,6 +18,8 @@
 @property (strong, nonatomic) AFHTTPSessionManager *HTTPSessionManager;
 @property (strong, nonatomic) AFHTTPSessionManager *defaultHTTPSessionManager;
 @property (strong, nonatomic) YYReachability *reachability;
+
+@property (nonatomic) NSURL *baseURL;
 @end
 
 static NSString *ddp_jsonString(id obj) {
@@ -35,7 +37,7 @@ static NSString *ddp_jsonString(id obj) {
     return nil;
 };
 
-CG_INLINE NSDictionary *ddp_defaultHTTPHeaderField() {
+CG_INLINE NSDictionary *ddp_defaultHTTPHeaderField(void) {
     return @{@"X-Client-Name" : @"iOS",
              @"X-Client-Version" : [UIApplication sharedApplication].appVersion,
              @"User-Agent": [NSString stringWithFormat:@"dandanplay/ios %@", UIApplication.sharedApplication.appVersion]
@@ -46,18 +48,32 @@ static DDPRequestParameters *ddp_requestParameters(DDPBaseNetManagerSerializerTy
     return [[DDPRequestParameters alloc] initWithType:type parameters:parameters];
 }
 
+CG_INLINE NSDictionary *ddp_signatureHeader(NSString *path) {
+    NSInteger timestamp = ceil(NSDate.date.timeIntervalSince1970);
+    
+    // Id + interval + path + s
+    NSData *signatureData = [NSString stringWithFormat:@"%@%@%@%@", ddp_apiV2AppId, @(timestamp), path, ddp_apiV2AppSecret].dataValue;
+    NSString *hashSignature = signatureData.sha256Data.base64EncodedString;
+    
+    return @{
+        @"X-AppId": ddp_apiV2AppId,
+        @"X-Timestamp": @(timestamp).stringValue,
+        @"X-Signature": hashSignature,
+    };
+}
 
 @implementation DDPBaseNetManager
 {
     NSHashTable *_observers;
 }
 
-
-- (instancetype)init {
+- (instancetype)initWithBaseURL:(NSURL *)baseURL {
     if (self = [super init]) {
         _observers = [[NSHashTable alloc] initWithOptions:NSPointerFunctionsWeakMemory|NSPointerFunctionsObjectPointerPersonality capacity:0];
         //开启网络的指示符
         [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+        
+        _baseURL = baseURL;
     }
     return self;
 }
@@ -78,7 +94,8 @@ static DDPRequestParameters *ddp_requestParameters(DDPBaseNetManagerSerializerTy
     }
     
     AFHTTPSessionManager *manager = self.HTTPSessionManager;
-    return [manager GET:path parameters:ddp_requestParameters(serializerType, parameters) headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable responseObject) {
+    
+    return [manager GET:path parameters:ddp_requestParameters(serializerType, parameters) headers:ddp_signatureHeader(path) progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary * _Nullable responseObject) {
         LOG_DEBUG(DDPLogModuleNetwork, @"GET 请求成功：%@ \n\n%@", task.originalRequest.URL, ddp_jsonString(responseObject));
         if (completionHandler) {
             completionHandler([[DDPResponse alloc] initWithResponseObject:responseObject error:nil]);
@@ -101,7 +118,7 @@ static DDPRequestParameters *ddp_requestParameters(DDPBaseNetManagerSerializerTy
     
     AFHTTPSessionManager *manager = self.HTTPSessionManager;
     
-    return [manager POST:path parameters:ddp_requestParameters(serializerType, parameters) headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    return [manager POST:path parameters:ddp_requestParameters(serializerType, parameters) headers:ddp_signatureHeader(path) progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         LOG_DEBUG(DDPLogModuleNetwork, @"POST 请求成功：%@\n\n%@\n\n%@", path, ddp_jsonString(parameters) , ddp_jsonString(responseObject));
         
         if (completionHandler) {
@@ -128,7 +145,7 @@ static DDPRequestParameters *ddp_requestParameters(DDPBaseNetManagerSerializerTy
     
     AFHTTPSessionManager *manager = self.HTTPSessionManager;
     
-    return [manager DELETE:path parameters:ddp_requestParameters(serializerType, parameters) headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    return [manager DELETE:path parameters:ddp_requestParameters(serializerType, parameters) headers:ddp_signatureHeader(path) success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         LOG_DEBUG(DDPLogModuleNetwork, @"DELETE 请求成功：%@\n\n%@", path, ddp_jsonString(responseObject));
         
         if (completionHandler) {
@@ -155,7 +172,7 @@ static DDPRequestParameters *ddp_requestParameters(DDPBaseNetManagerSerializerTy
     
     AFHTTPSessionManager *manager = self.HTTPSessionManager;
     
-    return [manager PUT:path parameters:ddp_requestParameters(serializerType, parameters) headers:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    return [manager PUT:path parameters:ddp_requestParameters(serializerType, parameters) headers:ddp_signatureHeader(path) success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         LOG_DEBUG(DDPLogModuleNetwork, @"PUT 请求成功：%@\n\n%@", path, ddp_jsonString(responseObject));
         
         if (completionHandler) {
@@ -216,7 +233,7 @@ static DDPRequestParameters *ddp_requestParameters(DDPBaseNetManagerSerializerTy
         
         dispatch_group_enter(group);
         
-        NSURLSessionDataTask *dataTask = [manager GET:obj parameters:ddp_requestParameters(serializerType, nil) headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSURLSessionDataTask *dataTask = [manager GET:obj parameters:ddp_requestParameters(serializerType, nil) headers:ddp_signatureHeader(obj) progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             currentIndex++;
             
             if (editResponseBlock) {
@@ -274,7 +291,7 @@ static DDPRequestParameters *ddp_requestParameters(DDPBaseNetManagerSerializerTy
 
 - (AFHTTPSessionManager *)HTTPSessionManager {
     if (_HTTPSessionManager == nil) {
-        _HTTPSessionManager = [AFHTTPSessionManager manager];
+        _HTTPSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:_baseURL];
         _HTTPSessionManager.responseSerializer = ({
             DDPHTTPResponseSerializer *serializer = [DDPHTTPResponseSerializer serializer];
             serializer;
@@ -297,7 +314,7 @@ static DDPRequestParameters *ddp_requestParameters(DDPBaseNetManagerSerializerTy
 
 - (AFHTTPSessionManager *)defaultHTTPSessionManager {
     if (_defaultHTTPSessionManager == nil) {
-        _defaultHTTPSessionManager = [AFHTTPSessionManager manager];
+        _defaultHTTPSessionManager = [[AFHTTPSessionManager alloc] initWithBaseURL:_baseURL];
         _defaultHTTPSessionManager.requestSerializer.timeoutInterval = ddp_HTTP_TIME_OUT;
         [_defaultHTTPSessionManager.requestSerializer setCachePolicy:NSURLRequestReloadIgnoringLocalCacheData];
         NSDictionary *dic = ddp_defaultHTTPHeaderField();

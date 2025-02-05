@@ -67,3 +67,4 @@ sh/
 Export/
 decode_mars_nocrypt_log_file.py
 APPKey.h
+DanDanPlayForiOS/Config/APPKey.h

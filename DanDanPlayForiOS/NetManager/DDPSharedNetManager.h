@@ -14,6 +14,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic, class, readonly) DDPSharedNetManager *sharedNetManager;
 
+@property (nonatomic, class, readonly) DDPSharedNetManager *resNetManager;
+
 - (void)resetJWTToken:(NSString * _Nullable)token;
 
 @end

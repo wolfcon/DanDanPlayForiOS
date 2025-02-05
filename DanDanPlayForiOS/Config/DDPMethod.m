@@ -214,7 +214,7 @@ UIKIT_EXTERN BOOL ddp_isRootPath(NSString *path) {
 }
 
 + (NSString *)apiNewPath {
-    return [[self apiDomain] ddp_appendingPathComponent:@"/api/v2"];
+    return @"/api/v2";
 }
 
 + (NSString *)checkVersionPath {

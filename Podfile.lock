@@ -162,7 +162,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   CocoaHTTPServer:
-    :commit: f86ce1c895d60e54def50a4da39631c8145f0469
+    :commit: e039e39f04f80af90dde0b07cc77cb1cdc2a89bb
     :git: https://github.com/wolfcon/CocoaHTTPServer.git
   YYWebImage:
     :commit: 45b1d89ac67c99ecfd9c637c32f16bae8b7e14dd
@@ -173,7 +173,7 @@ SPEC CHECKSUMS:
   BlocksKit: 8639b2848dd51c35c957af4d9fbdc7a769a1fc12
   Bugly: fd066c75c4a0eca1440f9b6a84bd37d51bfc85ac
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
-  CocoaHTTPServer: fbf86a209576b88fe4eb791b6b3baa1581177d2f
+  CocoaHTTPServer: f63b897f1abd7b7ac8318b36029b0378b4ef53af
   CocoaLumberjack: 6a459bc897d6d80bd1b8c78482ec7ad05dffc3f0
   DDPEncrypt: 0f1e60e535b058549f15b18555e334e25f81648e
   DDPShare: b3ac506ba0e59f8fc5a35e784958b361c9e23f52

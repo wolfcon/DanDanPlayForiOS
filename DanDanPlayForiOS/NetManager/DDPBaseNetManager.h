@@ -18,6 +18,8 @@
 
 @interface DDPBaseNetManager : NSObject
 
+- (instancetype)initWithBaseURL:(NSURL *)baseURL;
+
 /**
  设置JWTToken
 

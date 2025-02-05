@@ -17,7 +17,18 @@
     static dispatch_once_t onceToken;
     static DDPSharedNetManager *manager = nil;
     dispatch_once(&onceToken, ^{
-        manager = [[self alloc] init];
+        NSURL *url = [NSURL URLWithString:DDPMethod.apiDomain];
+        manager = [[self alloc] initWithBaseURL:url];
+    });
+    return manager;
+}
+
++ (DDPSharedNetManager *)resNetManager {
+    static dispatch_once_t onceToken;
+    static DDPSharedNetManager *manager = nil;
+    dispatch_once(&onceToken, ^{
+        NSURL *url = [NSURL URLWithString:DDPMethod.searchResDomain];
+        manager = [[self alloc] initWithBaseURL:url];
     });
     return manager;
 }

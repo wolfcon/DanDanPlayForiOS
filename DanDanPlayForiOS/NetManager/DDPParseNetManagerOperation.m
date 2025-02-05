@@ -22,7 +22,7 @@
     
     NSString *path = [NSString stringWithFormat:@"%@/dmhy/parse", DDPMethod.searchResDomain];
     NSDictionary *parameters = @{@"url" : url};
-    return [[DDPSharedNetManager sharedNetManager] GETWithPath:path
+    return [[DDPSharedNetManager resNetManager] GETWithPath:path
                                              serializerType:DDPBaseNetManagerSerializerTypeJSON
                                                  parameters:parameters
                                           completionHandler:^(DDPResponse *responseObj) {
