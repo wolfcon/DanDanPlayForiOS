@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DDPNewHomePageViewController : WMStickyPageController
 - (CGFloat)progressViewHeight;
+
++ (NSString *)mapKeyWithWeekday:(NSInteger)weekday;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -173,6 +173,7 @@
 - (__kindof UIViewController *)pageController:(WMPageController *)pageController viewControllerAtIndex:(NSInteger)index {
     DDPNewHomePageItemViewController *vc = [[DDPNewHomePageItemViewController alloc] init];
     vc.bangumis = self.bangumiDic[_sortKeys[index]];
+    vc.isMyAttention = index == 0;
     return vc;
 }
 
@@ -239,7 +240,7 @@
 
 #pragma mark - 私有方法
 - (void)resetBangumiDicWithShinBangumiList:(NSArray <DDPNewBangumiIntro *>*)shinBangumiList {
-    NSMutableArray <NSString *>*tempArr = [NSMutableArray arrayWithObject:[self mapKeyWithWeekday:-1]];
+    NSMutableArray <NSString *>*tempArr = [NSMutableArray arrayWithObject:[self.class mapKeyWithWeekday:-1]];
     
     if (self.user.isLogin == false) {
         [tempArr removeAllObjects];
@@ -247,7 +248,7 @@
     
     NSDate *date = [NSDate date];
     for (NSInteger i = 0; i < 7; ++i) {
-        NSString *day = [self mapKeyWithWeekday:[date dateByAddingDays:i].weekday - 1];
+        NSString *day = [self.class mapKeyWithWeekday:[date dateByAddingDays:i].weekday - 1];
         [tempArr addObject:day];
     }
     _sortKeys = tempArr;
@@ -257,7 +258,7 @@
     
     
     let getArrAction = ^NSMutableArray <DDPNewBangumiIntro *>*(NSInteger index) {
-        let mapKey = [self mapKeyWithWeekday:index];
+        let mapKey = [self.class mapKeyWithWeekday:index];
         var arr = dic[mapKey];
         if (arr == nil) {
             arr = [NSMutableArray array];
@@ -281,7 +282,7 @@
     self.bangumiDic = dic;
 }
 
-- (NSString *)mapKeyWithWeekday:(NSInteger)weekday {
++ (NSString *)mapKeyWithWeekday:(NSInteger)weekday {
     switch (weekday) {
         case -1:
             return @"我的关注";

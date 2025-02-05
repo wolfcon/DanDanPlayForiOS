@@ -9,11 +9,13 @@
 #import "DDPNewHomePageBangumiIntroCollectionViewCell.h"
 #import "DDPEdgeLabel.h"
 #import "DDPAttentionDetailViewController.h"
+#import "DDPNewHomePageViewController.h"
 
 @interface DDPNewHomePageBangumiIntroCollectionViewCell ()
 @property (weak, nonatomic) IBOutlet DDPEdgeLabel *rateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (weak, nonatomic) IBOutlet UIImageView *imgView;
+@property (weak, nonatomic) IBOutlet DDPEdgeLabel *updateDayLabel;
 
 @property (weak, nonatomic) IBOutlet DDPEdgeLabel *nameLabel;
 
@@ -34,6 +36,8 @@
     self.nameLabel.inset = CGSizeMake(0, 10);
     self.rateLabel.inset = CGSizeMake(10, 10);
     self.rateLabel.font = [UIFont ddp_smallSizeFont];
+    self.updateDayLabel.font = self.rateLabel.font;
+    self.updateDayLabel.inset = CGSizeMake(5, 5);
     self.nameLabel.font = [UIFont ddp_smallSizeFont];
     
     let mainColor = [UIColor ddp_mainColor];
@@ -54,7 +58,9 @@
     [self.imgView ddp_setImageWithURL:_model.imageUrl];
     self.rateLabel.text = [NSString stringWithFormat:@"%.1lf", _model.rating];
     self.nameLabel.text = _model.name;
+    self.updateDayLabel.text = [[DDPNewHomePageViewController mapKeyWithWeekday:_model.airDay] stringByReplacingOccurrencesOfString:@"周" withString:@""];
     self.likeButton.selected = _model.isFavorited;
+    self.updateDayLabel.hidden = !self.isMyAttention;
 }
 
 

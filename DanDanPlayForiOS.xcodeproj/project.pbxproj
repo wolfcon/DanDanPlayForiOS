@@ -4535,6 +4535,7 @@
 			baseConfigurationReference = 2200A8C5E60D84DF1B07F2C2 /* Pods-DDPlay_Target-iOS_Only-DDPlay.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = DDPlay.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -4608,6 +4609,7 @@
 			baseConfigurationReference = D840A3B433C226DB0BFBC037 /* Pods-DDPlay_Target-iOS_Only-DDPlay.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_ENTITLEMENTS = DDPlay.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";

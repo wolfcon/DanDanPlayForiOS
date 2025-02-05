@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface DDPNewHomePageItemViewController : DDPBaseViewController
 @property (strong, nonatomic) NSArray <DDPNewBangumiIntro *>*bangumis;
+@property (nonatomic) BOOL isMyAttention;
 @end
 
 NS_ASSUME_NONNULL_END

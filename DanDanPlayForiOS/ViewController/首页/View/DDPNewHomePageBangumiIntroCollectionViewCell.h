@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (copy, nonatomic) void(^touchLikeButtonCallBack)(DDPNewBangumiIntro *model);
 @property (copy, nonatomic) void(^attentionCallBack)(NSUInteger animateId);
 @property (strong, nonatomic) DDPNewBangumiIntro *model;
+@property (nonatomic) BOOL isMyAttention;
 
 @property (assign, nonatomic) CGSize itemSize;
 @end

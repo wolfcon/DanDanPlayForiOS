@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -46,13 +43,23 @@
                             <action selector="touchLikeButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="DcA-K9-RkN"/>
                         </connections>
                     </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="五" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQW-G8-oqB" customClass="DDPEdgeLabel">
+                        <rect key="frame" x="6" y="28" width="17" height="21"/>
+                        <color key="backgroundColor" red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <constraints>
                 <constraint firstItem="ecK-w2-YkB" firstAttribute="bottom" secondItem="PKo-4e-Qcg" secondAttribute="bottom" id="1Xc-Lj-rsp"/>
                 <constraint firstItem="yAj-gU-Br2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="42f-8d-qzc"/>
+                <constraint firstItem="qQW-G8-oqB" firstAttribute="centerX" secondItem="xNW-Ye-5C3" secondAttribute="centerX" id="4A1-sf-H6I"/>
                 <constraint firstAttribute="bottom" secondItem="PKo-4e-Qcg" secondAttribute="bottom" id="8aE-Oi-jca"/>
                 <constraint firstItem="ecK-w2-YkB" firstAttribute="top" secondItem="PKo-4e-Qcg" secondAttribute="top" constant="10" id="F29-aH-aNA"/>
+                <constraint firstItem="qQW-G8-oqB" firstAttribute="top" secondItem="xNW-Ye-5C3" secondAttribute="bottom" constant="2" id="HMI-pT-fac"/>
                 <constraint firstItem="ecK-w2-YkB" firstAttribute="leading" secondItem="PKo-4e-Qcg" secondAttribute="leading" constant="5" id="LH5-ze-Y6N"/>
                 <constraint firstItem="yAj-gU-Br2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="N5X-Rc-o49"/>
                 <constraint firstItem="ecK-w2-YkB" firstAttribute="trailing" secondItem="PKo-4e-Qcg" secondAttribute="trailing" constant="-5" id="Pzu-Q2-mek"/>
@@ -65,13 +72,13 @@
                 <constraint firstItem="t1E-7m-1Or" firstAttribute="centerY" secondItem="xNW-Ye-5C3" secondAttribute="centerY" id="qEJ-RO-2Be"/>
                 <constraint firstAttribute="bottom" secondItem="yAj-gU-Br2" secondAttribute="bottom" id="uBZ-s3-OGJ"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
             <size key="customSize" width="215" height="272"/>
             <connections>
                 <outlet property="imgView" destination="yAj-gU-Br2" id="SRh-2d-heM"/>
                 <outlet property="likeButton" destination="t1E-7m-1Or" id="YGC-fU-Afe"/>
                 <outlet property="nameLabel" destination="ecK-w2-YkB" id="Mha-jz-UL0"/>
                 <outlet property="rateLabel" destination="xNW-Ye-5C3" id="gfa-9F-IuJ"/>
+                <outlet property="updateDayLabel" destination="qQW-G8-oqB" id="7HE-O9-yAc"/>
             </connections>
             <point key="canvasLocation" x="-95.200000000000003" y="79.160419790104953"/>
         </collectionViewCell>

@@ -12,7 +12,10 @@
 
 + (UIColor *)ddp_mainColor {
 //    return DDPRGBColor(51, 151, 252);
-    return DDPRGBColor(243, 118, 47);
+    // 黄色
+//    return DDPRGBColor(243, 118, 47);
+    // 蓝色
+    return DDPRGBColor(33, 160, 221);
 }
 
 + (UIColor *)ddp_backgroundColor {

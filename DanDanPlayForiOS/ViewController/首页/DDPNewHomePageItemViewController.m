@@ -49,6 +49,7 @@
     let size = [self collectionView:collectionView layout:collectionView.collectionViewLayout sizeForItemAtIndexPath:indexPath];
     
     cell.itemSize = size;
+    cell.isMyAttention = self.isMyAttention;
     cell.model = self.bangumis[indexPath.item];
     
     @weakify(self)
