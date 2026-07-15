@@ -12,6 +12,6 @@ typedef void(^ParseCompletionAction)(UIImage *image);
 
 @interface DDPMediaThumbnailer : VLCMediaThumbnailer
 @property (copy, nonatomic) ParseCompletionAction parseCompletionCallBack;
-- (instancetype)initWithMedia:(VLCMedia *)media 
++ (instancetype)thumbnailerWithMedia:(VLCMedia *)media 
                         block:(ParseCompletionAction)block;
 @end

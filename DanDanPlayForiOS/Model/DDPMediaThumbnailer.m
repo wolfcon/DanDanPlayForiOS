@@ -13,15 +13,13 @@
 @end
 
 @implementation DDPMediaThumbnailer
-- (instancetype)initWithMedia:(VLCMedia *)media
++ (instancetype)thumbnailerWithMedia:(VLCMedia *)media
                         block:(ParseCompletionAction)block {
-    if (self = [super init]) {
-        self.media = media;
-        self.delegate = self;
-        self.libVLCinstance = [VLCLibrary sharedLibrary].instance;
-        self.parseCompletionCallBack = block;
-    }
-    return self;
+    DDPMediaThumbnailer *thumbnailer = (DDPMediaThumbnailer *)[self thumbnailerWithMedia:media delegate:NSNull.null andVLCLibrary:VLCLibrary.sharedLibrary];
+    thumbnailer.delegate = thumbnailer;
+    
+    thumbnailer.parseCompletionCallBack = block;
+    return thumbnailer;
 }
 
 #pragma mark - VLCMediaThumbnailerDelegate

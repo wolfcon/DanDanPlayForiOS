@@ -86,7 +86,7 @@ static NSString *const parseMediaCompletionBlockKey = @"parse_media_completion_b
     let aMedia = [[VLCMedia alloc] initWithURL:model.fileURL];
     dispatch_group_async(_parseVideoGroup, _queue, ^{
         dispatch_semaphore_wait(_semaphore, DISPATCH_TIME_FOREVER);
-        DDPMediaThumbnailer *thumbnailer = [[DDPMediaThumbnailer alloc] initWithMedia:aMedia block:^(UIImage *image) {
+        DDPMediaThumbnailer *thumbnailer = [DDPMediaThumbnailer thumbnailerWithMedia:aMedia block:^(UIImage *image) {
             [[YYWebImageManager sharedManager].cache setImage:image forKey:model.quickHash];
             
             dispatch_async(dispatch_get_main_queue(), ^{
