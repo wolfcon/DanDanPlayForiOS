@@ -44,4 +44,8 @@
     return @"已完结";
 }
 
+- (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
+    return YES;
+}
+
 @end

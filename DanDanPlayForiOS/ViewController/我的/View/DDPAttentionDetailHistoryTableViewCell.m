@@ -54,9 +54,11 @@
     self.titleLabel.text = _model.name;
     if (_model.lastWatchDate) {
         self.timeLabel.text = [NSString stringWithFormat:@"上次观看时间: %@", _model.lastWatchDateString];
-    }
-    else {
-        self.timeLabel.text = nil;
+        self.timeLabel.textColor = UIColor.lightGrayColor;
+    } else {
+        NSString *date = [_model.airDate componentsSeparatedByString:@"T"].firstObject;
+        self.timeLabel.text = [NSString stringWithFormat:@"播出日期: %@", date];
+        self.timeLabel.textColor = UIColor.ddp_mainColor;
     }
     
     if (_model.linkFile == nil) {

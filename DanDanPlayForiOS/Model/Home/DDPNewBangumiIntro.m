@@ -16,4 +16,8 @@
              };
 }
 
+- (BOOL)modelCustomTransformFromDictionary:(NSDictionary *)dic {
+    return YES;
+}
+
 @end

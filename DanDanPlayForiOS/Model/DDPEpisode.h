@@ -20,6 +20,7 @@
 @property (strong, nonatomic) NSDate *lastWatchDate;
 @property (strong, nonatomic, readonly) NSString *lastWatchDateString;
 //@property (copy, nonatomic) NSString *time;
+@property (strong, nonatomic) NSString *airDate;
 
 #pragma mark - 自定义属性
 
