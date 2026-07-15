@@ -63,24 +63,19 @@
             return;
         }
         
-        BOOL flag = !model.isFavorited;
-        [self.view showLoading];
-        [DDPFavoriteNetManagerOperation changeFavoriteStatusWithAnimeId:model.identity like:flag completionHandler:^(NSError *error) {
-            @strongify(self)
-            if (!self) {
-                return;
-            }
+        if (model.isFavorited) {
+            UIAlertController *alertContoller = [UIAlertController alertControllerWithTitle:@"🤧" message:@"真的不喜欢了么o(╥﹏╥)o?" preferredStyle:UIAlertControllerStyleAlert];
+            [alertContoller addAction:[UIAlertAction actionWithTitle:@"🥰点错了" style:UIAlertActionStyleDefault handler:nil]];
+            [alertContoller addAction:[UIAlertAction actionWithTitle:@"🫡没错" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+                
+                [self changeFavoriteStatusWithModel:model];
+            }]];
             
-            [self.view hideLoading];
-            
-            if (error) {
-                [self.view showWithError:error];
-            }
-            else {
-                [[NSNotificationCenter defaultCenter] postNotificationName:ATTENTION_SUCCESS_NOTICE object:@(model.identity) userInfo:@{ATTENTION_KEY : @(flag)}];
-            }
-            
-        }];
+            [self presentViewController:alertContoller animated:YES completion:nil];
+            return;
+        }
+        
+        [self changeFavoriteStatusWithModel:model];
     };
     
     cell.attentionCallBack = ^(NSUInteger animateId) {
@@ -88,6 +83,28 @@
     };
     
     return cell;
+}
+
+- (void)changeFavoriteStatusWithModel:(DDPNewBangumiIntro *)model {
+    @weakify(self)
+    BOOL flag = !model.isFavorited;
+    [self.view showLoading];
+    [DDPFavoriteNetManagerOperation changeFavoriteStatusWithAnimeId:model.identity like:flag completionHandler:^(NSError *error) {
+        @strongify(self)
+        if (!self) {
+            return;
+        }
+        
+        [self.view hideLoading];
+        
+        if (error) {
+            [self.view showWithError:error];
+        }
+        else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:ATTENTION_SUCCESS_NOTICE object:@(model.identity) userInfo:@{ATTENTION_KEY : @(flag)}];
+        }
+        
+    }];
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
