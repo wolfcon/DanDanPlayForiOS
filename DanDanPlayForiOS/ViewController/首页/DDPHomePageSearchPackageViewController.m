@@ -40,6 +40,7 @@
     
     [self addChildViewController:self.pageViewController];
     [self.view addSubview:self.pageViewController.view];
+    _pageViewController.view.backgroundColor = UIColor.clearColor;
     
     [UIView performWithoutAnimation:^{
         if (self.searchBar.text.length == 0) {

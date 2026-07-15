@@ -43,7 +43,6 @@
     if (_titleLabel == nil) {
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.font = [UIFont ddp_normalSizeFont];
-        _titleLabel.textColor = [UIColor blackColor];
         _titleLabel.numberOfLines = 0;
         [self.contentView addSubview:_titleLabel];
     }
@@ -54,7 +53,7 @@
     if (_detailLabel == nil) {
         _detailLabel = [[UILabel alloc] init];
         _detailLabel.font = [UIFont ddp_normalSizeFont];
-        _detailLabel.textColor = [UIColor darkGrayColor];
+        _detailLabel.textColor = [UIColor systemGrayColor];
         _detailLabel.numberOfLines = 0;
         _detailLabel.textAlignment = NSTextAlignmentRight;
         [_detailLabel setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];

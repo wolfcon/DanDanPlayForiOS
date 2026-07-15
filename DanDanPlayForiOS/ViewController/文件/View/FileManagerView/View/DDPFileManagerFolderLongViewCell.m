@@ -46,7 +46,6 @@
         _titleLabel.font = [UIFont ddp_normalSizeFont];
         _titleLabel.numberOfLines = 0;
         _titleLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
-        _titleLabel.textColor = [UIColor blackColor];
         [self.contentView addSubview:_titleLabel];
     }
     return _titleLabel;

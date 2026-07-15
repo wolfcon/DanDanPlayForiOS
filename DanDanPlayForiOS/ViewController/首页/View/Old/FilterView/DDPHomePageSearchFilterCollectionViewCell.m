@@ -16,7 +16,7 @@
     self.titleButton.titleLabel.font = [UIFont ddp_normalSizeFont];
     [self.titleButton setImage:[[UIImage imageNamed:@"filter_arrow_down"] yy_imageByTintColor:[UIColor ddp_mainColor]] forState:UIControlStateNormal];
     [self.titleButton setTitleColor:[UIColor ddp_mainColor] forState:UIControlStateNormal];
-    self.lineView.backgroundColor = DDPRGBColor(230, 230, 230);
+    self.lineView.backgroundColor = UIColor.ddp_veryLightGrayColor;
 }
 
 @end

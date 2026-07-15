@@ -37,7 +37,6 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
-        self.backgroundColor = [UIColor whiteColor];
         self.clipsToBounds = NO;
         _selectedIndex = -1;
         
@@ -424,7 +423,7 @@
 - (UIView *)bottomLineView {
     if (_bottomLineView == nil) {
         _bottomLineView = [[UIView alloc] init];
-        _bottomLineView.backgroundColor = DDPRGBColor(230, 230, 230);
+        _bottomLineView.backgroundColor = UIColor.ddp_veryLightGrayColor;
         [self addSubview:_bottomLineView];
     }
     return _bottomLineView;

@@ -614,7 +614,6 @@ DDPFileManagerSearchViewDelegate>
 - (DDPBaseTableView *)tableView {
     if (_tableView == nil) {
         _tableView = [[DDPBaseTableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-        _tableView.backgroundColor = [UIColor whiteColor];
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.emptyDataSetSource = self;

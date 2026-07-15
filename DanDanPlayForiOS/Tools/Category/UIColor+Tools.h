@@ -13,6 +13,7 @@
 //项目主色调
 + (UIColor *)ddp_mainColor;
 + (UIColor *)ddp_backgroundColor;
++ (UIColor *)ddp_veryLightGrayColorLight;
 + (UIColor *)ddp_veryLightGrayColor;
 + (UIColor *)ddp_lightGrayColor;
 + (UIColor *)ddp_cellHighlightColor;

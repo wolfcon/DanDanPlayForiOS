@@ -19,20 +19,23 @@
 }
 
 + (UIColor *)ddp_backgroundColor {
-    return [UIColor whiteColor];
+    return [UIColor systemBackgroundColor];
+}
+
++ (UIColor *)ddp_veryLightGrayColorLight {
+    return DDPRGBColor(240, 240, 240);
 }
 
 + (UIColor *)ddp_veryLightGrayColor {
-    return DDPRGBColor(240, 240, 240);
-    
+    return UIColor.systemGray6Color;
 }
 
 + (UIColor *)ddp_lightGrayColor {
-    return DDPRGBColor(230, 230, 230);
+    return UIColor.systemGray5Color;
 }
 
 + (UIColor *)ddp_cellHighlightColor {
-    return DDPRGBColor(153, 153, 153);
+    return UIColor.systemGrayColor;
 }
 
 @end

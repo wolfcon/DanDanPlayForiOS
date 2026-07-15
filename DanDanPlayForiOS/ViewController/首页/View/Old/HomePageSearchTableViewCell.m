@@ -70,7 +70,6 @@
     if (_nameLabel == nil) {
         _nameLabel = [[UILabel alloc] init];
         _nameLabel.font = [UIFont ddp_normalSizeFont];
-        _nameLabel.textColor = [UIColor blackColor];
         _nameLabel.numberOfLines = 0;
         [self.contentView addSubview:_nameLabel];
     }
@@ -81,7 +80,7 @@
     if (_sizeLabel == nil) {
         _sizeLabel = [[UILabel alloc] init];
         _sizeLabel.font = [UIFont ddp_smallSizeFont];
-        _sizeLabel.textColor = [UIColor grayColor];
+        _sizeLabel.textColor = [UIColor systemGrayColor];
         [_sizeLabel setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
         [_sizeLabel setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
         [self.contentView addSubview:_sizeLabel];
@@ -93,7 +92,7 @@
     if (_timeLabel == nil) {
         _timeLabel = [[UILabel alloc] init];
         _timeLabel.font = [UIFont ddp_smallSizeFont];
-        _timeLabel.textColor = [UIColor grayColor];
+        _timeLabel.textColor = [UIColor systemGrayColor];
         [_timeLabel setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
         [_timeLabel setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
         [self.contentView addSubview:_timeLabel];

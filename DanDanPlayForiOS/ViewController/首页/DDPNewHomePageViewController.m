@@ -71,6 +71,7 @@
     [self.view addSubview:self.progressHeaderView];
     [self.view addSubview:self.bangumiProgressView];
     [self.view addSubview:self.bangumiIntroHeaderView];
+    self.contentView.backgroundColor = UIColor.systemBackgroundColor;
     
     @weakify(self)
     self.contentView.mj_header = [MJRefreshNormalHeader ddp_headerRefreshingCompletionHandler:^{
@@ -363,7 +364,7 @@
 - (void)showBangumiSeasonList {
     DDPPlayerSelectedIndexView *view = [DDPPlayerSelectedIndexView fromXib];
     view.effect = nil;
-    view.contentViewBgColor = [UIColor whiteColor];
+//    view.contentViewBgColor = [UIColor whiteColor];
     view.textColor = [UIColor darkGrayColor];
     view.delegate = self;
     view.dataSource = self;
@@ -398,7 +399,7 @@
         _progressHeaderView = [[DDPHomeMoreHeaderView alloc] initWithReuseIdentifier:nil];
         _progressHeaderView.titleLabel.text = @"追番进度";
         _progressHeaderView.clipsToBounds = true;
-        _progressHeaderView.backgroundColor = [UIColor whiteColor];
+//        _progressHeaderView.backgroundColor = [UIColor whiteColor];
         @weakify(self)
         _progressHeaderView.touchCallBack = ^{
             @strongify(self)
@@ -416,7 +417,7 @@
 - (DDPHomeBangumiIntroHeaderView *)bangumiIntroHeaderView {
     if (_bangumiIntroHeaderView == nil) {
         _bangumiIntroHeaderView = [[DDPHomeBangumiIntroHeaderView alloc] initWithReuseIdentifier:nil];
-        _bangumiIntroHeaderView.backgroundColor = [UIColor whiteColor];
+//        _bangumiIntroHeaderView.backgroundColor = [UIColor whiteColor];
         _bangumiIntroHeaderView.clipsToBounds = true;
         @weakify(self)
         _bangumiIntroHeaderView.touchHeaderCallBack = ^{

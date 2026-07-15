@@ -81,7 +81,7 @@
     if (_contentLabel == nil) {
         _contentLabel = [[UILabel alloc] init];
         _contentLabel.font = [UIFont ddp_smallSizeFont];
-        _contentLabel.textColor = [UIColor ddp_veryLightGrayColor];
+        _contentLabel.textColor = [UIColor ddp_veryLightGrayColorLight];
         _contentLabel.numberOfLines = 3;
         [self addSubview:_contentLabel];
     }

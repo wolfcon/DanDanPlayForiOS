@@ -129,8 +129,6 @@ UIScrollViewDelegate, DDPCacheManagerDelagate>
         cell = [tableView dequeueReusableCellWithIdentifier:@"DDPSettingTitleTableViewCell" forIndexPath:indexPath];
     }
     
-    cell.backgroundColor = [UIColor whiteColor];
-    cell.titleLabel.textColor = [UIColor blackColor];
     [self.dataSourceArr[indexPath.row] enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         [cell setValue:obj forKeyPath:key];
     }];

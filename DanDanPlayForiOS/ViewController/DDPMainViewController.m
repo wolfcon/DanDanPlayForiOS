@@ -91,14 +91,10 @@
     [super viewDidLoad];
     
     let items = [self.class items];
-    let arr = [NSMutableArray arrayWithCapacity:items.count];
     
     [items enumerateObjectsUsingBlock:^(DDPMainVCItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        UINavigationController *vc = [self navigationControllerWithNormalImg:obj.normalImage selectImg:obj.selectedImage rootVC:[[NSClassFromString(obj.vcClassName) alloc] init] title:nil];
-        [arr addObject:vc];
+        [self addChildWithNormalImg:obj.normalImage selectImg:obj.selectedImage rootVC:[[NSClassFromString(obj.vcClassName) alloc] init] title:nil];
     }];
-    
-    self.viewControllers = arr;
     
 #if DDPAPPTYPEISMAC
     self.tabBar.alpha = 0;
@@ -112,7 +108,7 @@
         [view show];
     }
 #else
-    self.tabBar.translucent = NO;
+    self.tabBar.translucent = YES;
 #endif
     
     [self renewToken];
@@ -279,21 +275,24 @@
     }];
 }
 
-- (UINavigationController *)navigationControllerWithNormalImg:(UIImage *)normalImg selectImg:(UIImage *)selectImg rootVC:(UIViewController *)rootVC title:(NSString *)title {
+- (void)addChildWithNormalImg:(UIImage *)normalImg selectImg:(UIImage *)selectImg rootVC:(UIViewController *)rootVC title:(NSString *)title {
+    UINavigationController *navVC = [[DDPBaseNavigationController alloc] initWithRootViewController:rootVC];
+    [self addChildViewController:navVC];
+    
+    if (@available(iOS 26, *)) {
+        normalImg = [normalImg imageByTintColor:UIColor.labelColor];
+    }
     
     normalImg = [normalImg imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     selectImg = [[selectImg imageByTintColor:[UIColor ddp_mainColor]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     
-    UITabBarItem *item = [[UITabBarItem alloc] initWithTitle:title
-                                                       image:normalImg
-                                               selectedImage:selectImg];
-    UINavigationController *navVC = [[DDPBaseNavigationController alloc] initWithRootViewController:rootVC];
-    navVC.tabBarItem = item;
-    if (ddp_isPad() == NO) {
-        item.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
-    }
+    rootVC.tabBarItem.title = title;
+    rootVC.tabBarItem.image = normalImg;
+    rootVC.tabBarItem.selectedImage = selectImg;
     
-    return navVC;
+    if (ddp_isPad() == NO) {
+        rootVC.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0);
+    }
 }
 
 - (void)addDragAndDrop {
