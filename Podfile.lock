@@ -48,7 +48,7 @@ PODS:
   - MBProgressHUD (1.2.0)
   - MGSwipeTableCell (1.6.11)
   - MJRefresh (3.5.0)
-  - MobileVLCKit (3.5.1)
+  - MobileVLCKit (3.7.3)
   - NKOColorPickerView (0.5)
   - Ono (2.1.2)
   - RATreeView (2.1.2)
@@ -185,7 +185,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
   MGSwipeTableCell: b804e4e450dee439c42250be90bd50458bf67fce
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
-  MobileVLCKit: 144d5f565512d1147d63b0fa1379231b3fd66535
+  MobileVLCKit: 73d7ddb52238b6885b70b0f281cae75a0a6e3ac0
   NKOColorPickerView: 895ca86fe5bd16f27c311ce8f5888907efee29ad
   Ono: 26a7c1fc4df13ece7747560a1d80655807a8a000
   RATreeView: 380cde0090cfde21dc6ac29137f49d3b768fdd28

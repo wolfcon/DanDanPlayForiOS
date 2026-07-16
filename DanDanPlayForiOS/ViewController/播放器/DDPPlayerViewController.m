@@ -245,48 +245,17 @@
 //    [self.interfaceView updateWithPlayerStatus:status];
     
     switch (status) {
-        case DDPMediaPlayerStatusPlaying:
-        {
+        case DDPMediaPlayerStatusPlaying:{
             [self.danmakuEngine start];
         }
             break;
-        case DDPMediaPlayerStatusNextEpisode:
-        {
-            
-            DDPPlayerPlayMode mode = [DDPCacheManager shareCacheManager].playMode;
-            //单集循环
-            if (mode == DDPPlayerPlayModeSingleCircle) {
-                self.model = self.model;
-            }
-            //列表循环
-            else if (mode == DDPPlayerPlayModeCircle || mode == DDPPlayerPlayModeOrder) {
-                DDPFile *currentFile = self.model.file;
-                DDPFile *parentFile = currentFile.parentFile;
-                
-                NSMutableArray <DDPFile *>*canPlayItems = [NSMutableArray array];
-                [parentFile.subFiles enumerateObjectsUsingBlock:^(__kindof DDPFile * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                    if (obj.type == DDPFileTypeDocument && ddp_isVideoFile(obj.fileURL.absoluteString)) {
-                        [canPlayItems addObject:obj];
-                    }
-                }];
-                
-                NSInteger index = [canPlayItems indexOfObject:currentFile];
-                
-                if (index != NSNotFound) {
-                    NSInteger nextIndex = index + 1;
-                    
-                    if (mode == DDPPlayerPlayModeOrder) {
-                        if (nextIndex > canPlayItems.count - 1) {
-                            return;
-                        }
-                        
-                        [self playerConfigPanelViewController:nil didSelectedModel:canPlayItems[nextIndex].videoModel];
-                    } else {
-                        [self playerConfigPanelViewController:nil didSelectedModel:canPlayItems[nextIndex % canPlayItems.count].videoModel];
-                    }
-                }
-            }
+        case DDPMediaPlayerStatusNextEpisode:{
+            [self nextEpisodeButtonDidTouch];
         }
+            break;
+            
+        case DDPMediaPlayerStatusStop:
+            [self.player stop];
             break;
         default:
             [self.danmakuEngine pause];
@@ -490,6 +459,42 @@
 
 - (void)interfaceViewDidTouchCustomMatchButton {
     [self playerConfigPanelViewControllerDidTouchMatchCell];
+}
+
+- (void)nextEpisodeButtonDidTouch {
+    DDPPlayerPlayMode mode = [DDPCacheManager shareCacheManager].playMode;
+    //单集循环
+    if (mode == DDPPlayerPlayModeSingleCircle) {
+        self.model = self.model;
+    }
+    //列表循环
+    else if (mode == DDPPlayerPlayModeCircle || mode == DDPPlayerPlayModeOrder) {
+        DDPFile *currentFile = self.model.file;
+        DDPFile *parentFile = currentFile.parentFile;
+        
+        NSMutableArray <DDPFile *>*canPlayItems = [NSMutableArray array];
+        [parentFile.subFiles enumerateObjectsUsingBlock:^(__kindof DDPFile * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (obj.type == DDPFileTypeDocument && ddp_isVideoFile(obj.fileURL.absoluteString)) {
+                [canPlayItems addObject:obj];
+            }
+        }];
+        
+        NSInteger index = [canPlayItems indexOfObject:currentFile];
+        
+        if (index != NSNotFound) {
+            NSInteger nextIndex = index + 1;
+            
+            if (mode == DDPPlayerPlayModeOrder) {
+                if (nextIndex > canPlayItems.count - 1) {
+                    return;
+                }
+                
+                [self playerConfigPanelViewController:nil didSelectedModel:canPlayItems[nextIndex].videoModel];
+            } else {
+                [self playerConfigPanelViewController:nil didSelectedModel:canPlayItems[nextIndex % canPlayItems.count].videoModel];
+            }
+        }
+    }
 }
 
 #pragma mark - DDPPlayerConfigPanelViewControllerDelegate

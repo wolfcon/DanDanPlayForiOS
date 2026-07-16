@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="24765" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24743"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,20 +20,24 @@
                     <rect key="frame" x="0.0" y="0.0" width="561" height="303"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FKI-KS-ftV">
-                            <rect key="frame" x="0.0" y="0.0" width="561" height="60"/>
+                            <rect key="frame" x="0.0" y="0.0" width="561" height="70"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comment_gradual_gray_b2w" translatesAutoresizingMaskIntoConstraints="NO" id="1nu-qC-U3v">
-                                    <rect key="frame" x="0.0" y="0.0" width="561" height="60"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="561" height="70"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BpW-XW-sj0">
-                                    <rect key="frame" x="516" y="23.5" width="25" height="23"/>
+                                    <rect key="frame" x="516" y="28.5" width="25" height="23"/>
                                     <state key="normal" image="player_setting"/>
                                     <connections>
                                         <action selector="touchSettingButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="nPX-32-G6s"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7N-FY-be7">
-                                    <rect key="frame" x="15" y="20" width="15" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="752" contentHorizontalAlignment="leading" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q7N-FY-be7">
+                                    <rect key="frame" x="15" y="20" width="40" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="D57-fE-gYn"/>
+                                        <constraint firstAttribute="height" constant="40" id="KtO-Yo-LAu"/>
+                                    </constraints>
                                     <state key="normal" image="comment_back_item"/>
                                     <connections>
                                         <action selector="touchBackButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="usj-XR-J7i"/>
@@ -61,7 +64,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="561" height="91"/>
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O0E-o7-f1Q">
-                                    <rect key="frame" x="15" y="51" width="31" height="30"/>
+                                    <rect key="frame" x="15" y="51" width="30" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" title="字幕"/>
                                     <connections>
@@ -69,7 +72,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rY-Z3-h5g">
-                                    <rect key="frame" x="61" y="51" width="31" height="30"/>
+                                    <rect key="frame" x="60" y="51" width="30" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" title="声道"/>
                                     <connections>
@@ -77,7 +80,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="50P-5r-KSI">
-                                    <rect key="frame" x="107" y="55.5" width="25" height="21"/>
+                                    <rect key="frame" x="105" y="55.5" width="25" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" image="player_screen_shot"/>
                                     <connections>
@@ -85,7 +88,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTB-ii-xV2" customClass="DDPEdgeButton">
-                                    <rect key="frame" x="426" y="51" width="56" height="30"/>
+                                    <rect key="frame" x="414" y="51" width="56" height="30"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                     <state key="normal" title="吐个槽~"/>
                                     <connections>
@@ -93,7 +96,7 @@
                                     </connections>
                                 </button>
                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fQh-Ph-228">
-                                    <rect key="frame" x="492" y="50.5" width="51" height="31"/>
+                                    <rect key="frame" x="480" y="52" width="63" height="28"/>
                                     <color key="onTintColor" red="0.20000000000000001" green="0.59215686270000001" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="touchSwitch:" destination="iN0-l3-epB" eventType="valueChanged" id="dAD-YN-bNW"/>
@@ -109,7 +112,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="go5-8M-LHQ">
-                                    <rect key="frame" x="68" y="8" width="425" height="31"/>
+                                    <rect key="frame" x="70" y="6" width="421" height="34"/>
                                     <color key="tintColor" red="0.20000000000000001" green="0.59215686270000001" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <connections>
                                         <action selector="touchSlider:" destination="iN0-l3-epB" eventType="valueChanged" id="Q6T-oL-L0r"/>
@@ -128,6 +131,21 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OKb-aq-ax0">
+                                    <rect key="frame" x="265.5" y="49" width="30" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="ECr-Gu-Zfp"/>
+                                        <constraint firstAttribute="width" constant="30" id="c2H-92-Cb7"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" image="forward.end.alt.fill" catalog="system">
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="nextEpisodeButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="JmQ-9e-ZIN"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
@@ -139,9 +157,11 @@
                                 <constraint firstItem="go5-8M-LHQ" firstAttribute="leading" secondItem="BNE-B2-aKs" secondAttribute="trailing" id="H2S-Xc-l62"/>
                                 <constraint firstAttribute="trailing" secondItem="rea-82-1Zb" secondAttribute="trailing" constant="10" id="I5L-82-uU5"/>
                                 <constraint firstItem="BNE-B2-aKs" firstAttribute="leading" secondItem="jaG-43-GFw" secondAttribute="leading" constant="10" id="JBe-d4-Tnd"/>
+                                <constraint firstItem="OKb-aq-ax0" firstAttribute="centerX" secondItem="nNG-H1-HBL" secondAttribute="centerX" id="LiT-f2-phZ"/>
                                 <constraint firstItem="fQh-Ph-228" firstAttribute="centerY" secondItem="jTB-ii-xV2" secondAttribute="centerY" id="PQz-lG-QGa"/>
                                 <constraint firstItem="50P-5r-KSI" firstAttribute="centerY" secondItem="O0E-o7-f1Q" secondAttribute="centerY" id="UoQ-YN-eNY"/>
                                 <constraint firstItem="9rY-Z3-h5g" firstAttribute="leading" secondItem="O0E-o7-f1Q" secondAttribute="trailing" constant="15" id="WZv-2d-iif"/>
+                                <constraint firstItem="OKb-aq-ax0" firstAttribute="top" secondItem="go5-8M-LHQ" secondAttribute="bottom" constant="9" id="XgT-zx-Klk"/>
                                 <constraint firstItem="nNG-H1-HBL" firstAttribute="top" secondItem="jaG-43-GFw" secondAttribute="top" id="cbp-Kc-bOU"/>
                                 <constraint firstItem="jTB-ii-xV2" firstAttribute="centerY" secondItem="50P-5r-KSI" secondAttribute="centerY" id="eIl-ul-aqV"/>
                                 <constraint firstItem="9rY-Z3-h5g" firstAttribute="centerY" secondItem="O0E-o7-f1Q" secondAttribute="centerY" id="eR0-1v-Lix"/>
@@ -166,6 +186,28 @@
                         <constraint firstItem="fQh-Ph-228" firstAttribute="trailing" secondItem="BpW-XW-sj0" secondAttribute="trailing" id="ufl-74-bfb"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ys-gb-cKQ">
+                    <rect key="frame" x="8" y="129" width="41" height="45"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="lock.open" catalog="system"/>
+                    <state key="selected" image="lock" catalog="system"/>
+                    <connections>
+                        <action selector="lockButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="M3K-g8-8DT"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ai5-BA-H9T">
+                    <rect key="frame" x="512" y="129" width="41" height="45"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="lock.open" catalog="system"/>
+                    <state key="selected" image="lock" catalog="system"/>
+                    <connections>
+                        <action selector="lockButtonTouchUpInside:" destination="iN0-l3-epB" eventType="touchUpInside" id="vT6-eF-np6"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -188,7 +230,10 @@
                 <outlet property="danmakuHideSwitch" destination="fQh-Ph-228" id="Y4G-hl-DqJ"/>
                 <outlet property="gestureView" destination="IaV-TY-F1C" id="uP2-f4-bHI"/>
                 <outlet property="holdView" destination="5iR-IC-U7o" id="N5u-ik-vdf"/>
+                <outlet property="leftLockButton" destination="2Ys-gb-cKQ" id="wVc-uC-PVy"/>
+                <outlet property="nextEpisodeButton" destination="OKb-aq-ax0" id="Xjd-rJ-gGE"/>
                 <outlet property="progressSlider" destination="go5-8M-LHQ" id="vYo-RG-xlj"/>
+                <outlet property="rightLockButton" destination="ai5-BA-H9T" id="83h-CV-ftu"/>
                 <outlet property="screenShotButton" destination="50P-5r-KSI" id="vVe-IS-ewz"/>
                 <outlet property="sendDanmakuButton" destination="jTB-ii-xV2" id="py5-kA-V4q"/>
                 <outlet property="settingButton" destination="BpW-XW-sj0" id="0W7-Au-ScW"/>
@@ -204,6 +249,9 @@
         <image name="comment_back_item" width="15" height="30"/>
         <image name="comment_gradual_gray" width="1" height="10"/>
         <image name="comment_gradual_gray_b2w" width="1" height="10"/>
+        <image name="forward.end.alt.fill" catalog="system" width="128" height="62"/>
+        <image name="lock" catalog="system" width="111" height="128"/>
+        <image name="lock.open" catalog="system" width="128" height="110"/>
         <image name="player_screen_shot" width="25" height="21.5"/>
         <image name="player_setting" width="25" height="23"/>
     </resources>

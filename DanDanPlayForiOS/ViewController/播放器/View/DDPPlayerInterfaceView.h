@@ -44,6 +44,8 @@
  点击匹配按钮
  */
 - (void)interfaceViewDidTouchCustomMatchButton;
+
+- (void)nextEpisodeButtonDidTouch;
 @end
 
 @class DDPBlurView;

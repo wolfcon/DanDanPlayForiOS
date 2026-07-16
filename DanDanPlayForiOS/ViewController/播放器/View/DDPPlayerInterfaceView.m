@@ -67,6 +67,7 @@ typedef NS_ENUM(NSUInteger, InterfaceViewPanType) {
 @property (weak, nonatomic) IBOutlet UIButton *subTitleIndexButton;
 @property (weak, nonatomic) IBOutlet UIButton *audioChannelIndexButton;
 @property (weak, nonatomic) IBOutlet UIButton *screenShotButton;
+@property (weak, nonatomic) IBOutlet UIButton *nextEpisodeButton;
 
 /**
  发弹幕按钮
@@ -77,6 +78,10 @@ typedef NS_ENUM(NSUInteger, InterfaceViewPanType) {
 
 @property (weak, nonatomic) IBOutlet UIImageView *bottomBgImgView;
 
+@property (weak, nonatomic) IBOutlet UIButton *leftLockButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *rightLockButton;
+
 /**
  手势视图
  */
@@ -84,6 +89,7 @@ typedef NS_ENUM(NSUInteger, InterfaceViewPanType) {
 
 @property (weak, nonatomic) DDPMediaPlayer *player;
 
+@property (nonatomic) CGFloat startPanGestureProgress;
 /**
  处理一些点击事件
  */
@@ -276,6 +282,8 @@ typedef NS_ENUM(NSUInteger, InterfaceViewPanType) {
         
         let action = ^{
             self.holdView.alpha = 1;
+            self.leftLockButton.hidden = NO;
+            self.rightLockButton.hidden = NO;
             self.topView.transform = CGAffineTransformIdentity;
             self.bottomView.transform = CGAffineTransformIdentity;
             [self.viewController setNeedsStatusBarAppearanceUpdate];
@@ -302,6 +310,10 @@ typedef NS_ENUM(NSUInteger, InterfaceViewPanType) {
         
         let action = ^{
             self.holdView.alpha = 0;
+            if (!self.leftLockButton.isSelected) {
+                self.leftLockButton.hidden = YES;
+                self.rightLockButton.hidden = YES;
+            }
             self.topView.transform = CGAffineTransformMakeTranslation(0, -30);
             self.bottomView.transform = CGAffineTransformMakeTranslation(0, 30);
             [self.viewController setNeedsStatusBarAppearanceUpdate];
@@ -562,9 +574,9 @@ typedef NS_ENUM(NSUInteger, InterfaceViewPanType) {
 - (void)touchPlayButton {
     if ([self.player isPlaying]) {
         [self.player pause];
-    }
-    else {
+    } else {
         [self.player play];
+        [self.player setPosition:self.progressSlider.value completionHandler:nil];
     }
 }
 
@@ -663,8 +675,26 @@ typedef NS_ENUM(NSUInteger, InterfaceViewPanType) {
     }];
 }
 
+- (IBAction)nextEpisodeButtonTouchUpInside:(UIButton *)sender {
+    if ([_delegate respondsToSelector:@selector(nextEpisodeButtonDidTouch)]) {
+        [_delegate nextEpisodeButtonDidTouch];
+    }
+}
+
+- (IBAction)lockButtonTouchUpInside:(UIButton *)sender {
+    BOOL isSelected = !sender.isSelected;
+    _leftLockButton.selected = isSelected;
+    _rightLockButton.selected = isSelected;
+    
+    isSelected ? [self dismissWithAnimate:YES] : [self showWithAnimate:YES];
+    self.gestureView.userInteractionEnabled = !isSelected;
+}
+
 - (void)panScreen:(UIPanGestureRecognizer *)panGesture {
     UIGestureRecognizerState state = panGesture.state;
+    if (state == UIGestureRecognizerStateBegan) {
+        _startPanGestureProgress = self.progressSlider.value;
+    }
     if (state == UIGestureRecognizerStateEnded || state == UIGestureRecognizerStateCancelled || state == UIGestureRecognizerStateFailed) {
         if (_panType == InterfaceViewPanTypeProgress) {
             [self touchSliderUp:self.progressSlider];
@@ -733,7 +763,7 @@ typedef NS_ENUM(NSUInteger, InterfaceViewPanType) {
                 }
             }
             
-            float x = self.player.position + ([panGesture translationInView:nil].x / self.width) * _sliderRate;
+            float x = self.startPanGestureProgress + ([panGesture translationInView:nil].x / self.width) * _sliderRate;
             self.progressSlider.value = x;
             [self touchSlider:self.progressSlider];
         }
@@ -773,6 +803,10 @@ typedef NS_ENUM(NSUInteger, InterfaceViewPanType) {
 }
 
 - (void)pressScreen:(UILongPressGestureRecognizer *)recognizer {
+    if (self.holdView.alpha == 0) {
+        return;
+    }
+    
     UIImpactFeedbackGenerator *feedbackGenerator = [[UIImpactFeedbackGenerator alloc] initWithStyle:UIImpactFeedbackStyleMedium];
 
     switch (recognizer.state) {
