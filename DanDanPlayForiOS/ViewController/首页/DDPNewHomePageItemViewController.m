@@ -22,6 +22,9 @@
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(0);
     }];
+    UIEdgeInsets insets = self.collectionView.contentInset;
+    insets.bottom = self.tabBarController.tabBar.height;
+    self.collectionView.contentInset = insets;
 }
 
 - (void)dealloc {
