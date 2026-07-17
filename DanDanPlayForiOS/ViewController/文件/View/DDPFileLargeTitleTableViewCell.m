@@ -44,7 +44,8 @@
 
 - (UIImageView *)arrowImgView {
     if (_arrowImgView == nil) {
-        _arrowImgView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"file_header_arrow"]];
+        UIImage *image = [[UIImage imageNamed:@"file_header_arrow"] imageWithTintColor:UIColor.labelColor];
+        _arrowImgView = [[UIImageView alloc] initWithImage:image];
         [self.contentView addSubview:_arrowImgView];
     }
     return _arrowImgView;
