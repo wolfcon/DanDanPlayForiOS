@@ -25,6 +25,9 @@
 #import "mars/xlog/appender.h"
 #import <sys/xattr.h>
 
+using namespace mars;
+using namespace mars::xlog;
+
 static NSUInteger g_processID = 0;
 #endif
 
@@ -73,12 +76,22 @@ static NSUInteger g_processID = 0;
     
 #if DEBUG
     xlogger_SetLevel(kLevelDebug);
-    appender_set_console_log(true);
+    mars::xlog::appender_set_console_log(true);
 #else
     xlogger_SetLevel(kLevelInfo);
     appender_set_console_log(false);
 #endif
-    appender_open(kAppednerAsync, documentsPath.UTF8String, "DDPlay", "");
+    XLogConfig config;
+    config.mode_ = mars::xlog::kAppenderAsync;
+    config.logdir_ = documentsPath.UTF8String;
+    config.nameprefix_ = "DDPlay";
+    config.pub_key_ = "";
+    config.compress_mode_ = kZlib;
+    config.compress_level_ = 0;
+    config.cachedir_ = "";
+    config.cache_days_ = 0;
+    
+    appender_open(config);
 #endif
 }
 

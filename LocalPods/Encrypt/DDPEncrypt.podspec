@@ -7,6 +7,6 @@ Pod::Spec.new do |s|
   s.author       = { "jimHuang" => "sun_8434@163.com" }
   s.platform     = :ios
   s.source       = { :git => '', :tag => s.version, :submodules => true }
-  s.vendored_frameworks = 'Encrypt/DanDanPlayEncrypt.framework'
+  s.vendored_frameworks = 'Encrypt/DanDanPlayEncrypt.xcframework'
 
 end

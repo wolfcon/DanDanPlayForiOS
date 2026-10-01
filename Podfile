@@ -35,32 +35,31 @@ abstract_target 'DDPlay_Target' do
     pod 'Ono'
 
 abstract_target 'iOS_Only' do
-    pod 'UMCCommon'
-    pod 'UMCSecurityPlugins'
-    # 集成新浪微博
-    pod 'UMCShare/Social/ReducedSina'
-    # 集成QQ
-    pod 'UMCShare/Social/ReducedQQ'
-    # 集成微信
-    pod 'UMCShare/Social/ReducedWeChat'
+#    pod 'UMCCommon'
+#    pod 'UMCSecurityPlugins'
+#    # 集成新浪微博
+#    pod 'UMCShare/Social/ReducedSina'
+#    # 集成QQ
+#    pod 'UMCShare/Social/ReducedQQ'
+#    # 集成微信
+#    pod 'UMCShare/Social/ReducedWeChat'
 
     # 友盟统计
 #    pod 'UMCAnalytics'
-    pod 'Bugly'
+#    pod 'Bugly'
     #内存泄露检测
     # pod 'MLeaksFinder', :configurations => ['Debug'] 
     pod 'DDPEncrypt', :path => 'LocalPods/Encrypt'
     pod 'WCDB'
     pod 'MobileVLCKit'#, '3.3.10'#:path => 'LocalPods/MobileVLCKit'
     pod 'Ono'
+    pod 'TOSMBClient', :git => "https://github.com/wolfcon/TOSMBClient.git", :branch => "master"
 
     target 'DDPlay' do
-    pod 'TOSMBClient', '~> 1.0.5'
     pod 'CocoaHTTPServer', :git => "https://github.com/wolfcon/CocoaHTTPServer.git"
     end
 
     target 'DDPlay_Review' do
-    pod 'TOSMBClient', '~> 1.0.5'
     pod 'CocoaHTTPServer', :git => "https://github.com/wolfcon/CocoaHTTPServer.git"
     end
 end
@@ -80,7 +79,7 @@ end
 post_install do |pi|
    pi.pods_project.targets.each do |t|
        t.build_configurations.each do |bc|
-           bc.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
+           bc.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
        end
    end
 end

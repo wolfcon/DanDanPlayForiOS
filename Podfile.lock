@@ -29,7 +29,6 @@ PODS:
   - BlocksKit/UIKit (2.2.5):
     - BlocksKit/Core
     - BlocksKit/DynamicDelegate
-  - Bugly (2.5.71)
   - CocoaAsyncSocket (7.6.5)
   - CocoaHTTPServer (2.3.1):
     - CocoaAsyncSocket
@@ -53,21 +52,12 @@ PODS:
   - Ono (2.1.2)
   - RATreeView (2.1.2)
   - SSZipArchive (2.2.3)
-  - TOSMBClient (1.0.8)
+  - TOSMBClient (1.1.0):
+    - TOSMBClient/ASN1 (= 1.1.0)
+    - TOSMBClient/DSM (= 1.1.0)
+  - TOSMBClient/ASN1 (1.1.0)
+  - TOSMBClient/DSM (1.1.0)
   - "UITableView+FDTemplateLayoutCell (1.6)"
-  - UMCCommon (7.2.2)
-  - UMCSecurityPlugins (1.0.6)
-  - UMCShare/Core (6.10.1):
-    - UMCCommon
-  - UMCShare/Social/ReducedQQ (6.10.1):
-    - UMCCommon
-    - UMCShare/Core
-  - UMCShare/Social/ReducedSina (6.10.1):
-    - UMCCommon
-    - UMCShare/Core
-  - UMCShare/Social/ReducedWeChat (6.10.1):
-    - UMCCommon
-    - UMCShare/Core
   - WCDB (2.1.16):
     - WCDBOptimizedSQLCipher (= 1.4.8)
   - WCDBOptimizedSQLCipher (1.4.8)
@@ -83,7 +73,6 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - BlocksKit
-  - Bugly
   - CocoaHTTPServer (from `https://github.com/wolfcon/CocoaHTTPServer.git`)
   - CocoaLumberjack
   - DDPEncrypt (from `LocalPods/Encrypt`)
@@ -101,13 +90,8 @@ DEPENDENCIES:
   - Ono
   - RATreeView
   - SSZipArchive
-  - TOSMBClient (~> 1.0.5)
+  - TOSMBClient (from `https://github.com/wolfcon/TOSMBClient.git`, branch `master`)
   - "UITableView+FDTemplateLayoutCell"
-  - UMCCommon
-  - UMCSecurityPlugins
-  - UMCShare/Social/ReducedQQ
-  - UMCShare/Social/ReducedSina
-  - UMCShare/Social/ReducedWeChat
   - WCDB
   - WMPageController
   - YYCategories
@@ -120,7 +104,6 @@ SPEC REPOS:
   trunk:
     - AFNetworking
     - BlocksKit
-    - Bugly
     - CocoaAsyncSocket
     - CocoaLumberjack
     - DZNEmptyDataSet
@@ -136,11 +119,7 @@ SPEC REPOS:
     - Ono
     - RATreeView
     - SSZipArchive
-    - TOSMBClient
     - "UITableView+FDTemplateLayoutCell"
-    - UMCCommon
-    - UMCSecurityPlugins
-    - UMCShare
     - WCDB
     - WCDBOptimizedSQLCipher
     - WMPageController
@@ -155,6 +134,9 @@ EXTERNAL SOURCES:
     :path: LocalPods/Encrypt
   DDPShare:
     :path: LocalPods/DDPShare
+  TOSMBClient:
+    :branch: master
+    :git: https://github.com/wolfcon/TOSMBClient.git
   YYUtility:
     :path: LocalPods/YYUtility
   YYWebImage:
@@ -164,6 +146,9 @@ CHECKOUT OPTIONS:
   CocoaHTTPServer:
     :commit: e039e39f04f80af90dde0b07cc77cb1cdc2a89bb
     :git: https://github.com/wolfcon/CocoaHTTPServer.git
+  TOSMBClient:
+    :commit: 8c0452468292e16a1a389bdc6ca9a6022ad62d4c
+    :git: https://github.com/wolfcon/TOSMBClient.git
   YYWebImage:
     :commit: 45b1d89ac67c99ecfd9c637c32f16bae8b7e14dd
     :git: https://github.com/sunsx9316/YYWebImage_UIKitForMac.git
@@ -171,11 +156,10 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
   BlocksKit: 8639b2848dd51c35c957af4d9fbdc7a769a1fc12
-  Bugly: fd066c75c4a0eca1440f9b6a84bd37d51bfc85ac
   CocoaAsyncSocket: 065fd1e645c7abab64f7a6a2007a48038fdc6a99
   CocoaHTTPServer: f63b897f1abd7b7ac8318b36029b0378b4ef53af
   CocoaLumberjack: 6a459bc897d6d80bd1b8c78482ec7ad05dffc3f0
-  DDPEncrypt: 0f1e60e535b058549f15b18555e334e25f81648e
+  DDPEncrypt: 56ab452b5f5571dd3425fdb4289c39380848f070
   DDPShare: 6f9cc73b674d1dcc18b247bcfaae0bc53f82417f
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   iCarousel: d782f635afac190c49bb8ee455882284cff8b85f
@@ -190,11 +174,8 @@ SPEC CHECKSUMS:
   Ono: 26a7c1fc4df13ece7747560a1d80655807a8a000
   RATreeView: 380cde0090cfde21dc6ac29137f49d3b768fdd28
   SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
-  TOSMBClient: 8884ede03ae70e6087962433fda22fb6b4b8c7f8
+  TOSMBClient: 80402dac887ac44ad86b5c47ebc5e941e97034dc
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
-  UMCCommon: 15e5311b00c7ff6e6ffb1f5c965651373b6b2b3c
-  UMCSecurityPlugins: 0831a08f3988f3cea9f1d3a7626cd9bee4fef150
-  UMCShare: 0846449c689e8bf6793a941b97f51f9afff927ef
   WCDB: d42e5e10cfe39e1e45759eaf660425ec635abfe7
   WCDBOptimizedSQLCipher: 871994f7f620302fdf87a2729c099a1efa2223da
   WMPageController: 0c7624d2b48e4f1ab92371688cf6744ed701575d
@@ -204,6 +185,6 @@ SPEC CHECKSUMS:
   YYUtility: 1d8f92d46c386eeaf7ba08b5e4636f02c1ed6e33
   YYWebImage: 0dd00e631dd0ea984a7ecb07d4c42af0ab34803b
 
-PODFILE CHECKSUM: 09c761efb06423afc88f6d05ea6697cbbcfa99b7
+PODFILE CHECKSUM: 7ab9289d326bf8be520bd08307e848fd781e0988
 
-COCOAPODS: 1.16.2
+COCOAPODS: 1.17.0

@@ -15,7 +15,7 @@
 #import "DDPBaseScrollView.h"
 #import "UIView+Tools.h"
 #if !DDPAPPTYPEISMAC
-#import <UMShare/UMShare.h>
+//#import <UMShare/UMShare.h>
 #import <Bugly/Bugly.h>
 #endif
 #import "LAContext+Tools.h"
@@ -110,40 +110,40 @@
  */
 - (void)touchThirdPartyBotton:(UIButton *)sender {
     #if !DDPAPPTYPEISMAC
-    UMSocialPlatformType platformType = sender.tag;
-    
-    @weakify(self)
-    [[UMSocialManager defaultManager] getUserInfoWithPlatform:platformType currentViewController:self completion:^(id result, NSError *error) {
-        @strongify(self)
-        
-        if (error) {
-            [self.view showWithText:[self UMErrorStringWithError:error]];
-        }
-        else {
-            UMSocialUserInfoResponse *resp = result;
-            [self.view showLoadingWithText:@"登录中..."];
-            
-            [DDPLoginNetManagerOperation loginWithSource:platformType == UMSocialPlatformType_Sina ? DDPUserLoginTypeWeibo : DDPUserLoginTypeQQ userId:resp.uid token:resp.accessToken completionHandler:^(DDPUser *responseObject, NSError *error1) {
-                [self.view hideLoading];
-                
-                if (error1) {
-                    [self.view showWithError:error1];
-                }
-                //登录成功
-                else {
-                    if (responseObject.registerRequired == YES) {
-                        DDPRegisterViewController *vc = [[DDPRegisterViewController alloc] init];
-                        vc.user = responseObject;
-                        [self.navigationController pushViewController:vc animated:YES];
-                    }
-                    else {
-                        [self.view showWithText:@"登录成功!"];
-                        [self touchLeftItem:nil];
-                    }
-                }
-            }];
-        }
-    }];
+//    UMSocialPlatformType platformType = sender.tag;
+//    
+//    @weakify(self)
+//    [[UMSocialManager defaultManager] getUserInfoWithPlatform:platformType currentViewController:self completion:^(id result, NSError *error) {
+//        @strongify(self)
+//        
+//        if (error) {
+//            [self.view showWithText:[self UMErrorStringWithError:error]];
+//        }
+//        else {
+//            UMSocialUserInfoResponse *resp = result;
+//            [self.view showLoadingWithText:@"登录中..."];
+//            
+//            [DDPLoginNetManagerOperation loginWithSource:platformType == UMSocialPlatformType_Sina ? DDPUserLoginTypeWeibo : DDPUserLoginTypeQQ userId:resp.uid token:resp.accessToken completionHandler:^(DDPUser *responseObject, NSError *error1) {
+//                [self.view hideLoading];
+//                
+//                if (error1) {
+//                    [self.view showWithError:error1];
+//                }
+//                //登录成功
+//                else {
+//                    if (responseObject.registerRequired == YES) {
+//                        DDPRegisterViewController *vc = [[DDPRegisterViewController alloc] init];
+//                        vc.user = responseObject;
+//                        [self.navigationController pushViewController:vc animated:YES];
+//                    }
+//                    else {
+//                        [self.view showWithText:@"登录成功!"];
+//                        [self touchLeftItem:nil];
+//                    }
+//                }
+//            }];
+//        }
+//    }];
 #endif
 }
 
@@ -203,34 +203,34 @@
 
 - (NSString *)UMErrorStringWithError:(NSError *)error {
     #if !DDPAPPTYPEISMAC
-    switch (error.code) {
-        case UMSocialPlatformErrorType_NotSupport:
-            return @"客户端不支持该操作";
-        case UMSocialPlatformErrorType_AuthorizeFailed:
-            return @"授权失败";
-        case UMSocialPlatformErrorType_ShareFailed:
-            return @"分享失败";
-        case UMSocialPlatformErrorType_RequestForUserProfileFailed:
-            return @"请求用户信息失败";
-        case UMSocialPlatformErrorType_ShareDataNil:
-            return @"分享内容为空";
-        case UMSocialPlatformErrorType_ShareDataTypeIllegal:
-            return @"不支持该分享内容";
-        case UMSocialPlatformErrorType_CheckUrlSchemaFail:
-            return @"不支持该分享内容";
-        case UMSocialPlatformErrorType_NotInstall:
-            return @"应用未安装";
-        case UMSocialPlatformErrorType_Cancel:
-            return @"用户取消操作";
-        case UMSocialPlatformErrorType_NotUsingHttps:
-        case UMSocialPlatformErrorType_NotNetWork:
-            return @"网络异常";
-        case UMSocialPlatformErrorType_SourceError:
-            return @"第三方错误";
-        default:
+//    switch (error.code) {
+//        case UMSocialPlatformErrorType_NotSupport:
+//            return @"客户端不支持该操作";
+//        case UMSocialPlatformErrorType_AuthorizeFailed:
+//            return @"授权失败";
+//        case UMSocialPlatformErrorType_ShareFailed:
+//            return @"分享失败";
+//        case UMSocialPlatformErrorType_RequestForUserProfileFailed:
+//            return @"请求用户信息失败";
+//        case UMSocialPlatformErrorType_ShareDataNil:
+//            return @"分享内容为空";
+//        case UMSocialPlatformErrorType_ShareDataTypeIllegal:
+//            return @"不支持该分享内容";
+//        case UMSocialPlatformErrorType_CheckUrlSchemaFail:
+//            return @"不支持该分享内容";
+//        case UMSocialPlatformErrorType_NotInstall:
+//            return @"应用未安装";
+//        case UMSocialPlatformErrorType_Cancel:
+//            return @"用户取消操作";
+//        case UMSocialPlatformErrorType_NotUsingHttps:
+//        case UMSocialPlatformErrorType_NotNetWork:
+//            return @"网络异常";
+//        case UMSocialPlatformErrorType_SourceError:
+//            return @"第三方错误";
+//        default:
             return @"未知错误";
-            break;
-    }
+//            break;
+//    }
 #else
     return @"";
 #endif
@@ -421,7 +421,7 @@
         _qqButton = [[DDPEdgeButton alloc] init];
         _qqButton.inset = CGSizeMake(20, 20);
 #if !DDPAPPTYPEISMAC
-        _qqButton.tag = UMSocialPlatformType_QQ;
+//        _qqButton.tag = UMSocialPlatformType_QQ;
 #endif
         [_qqButton setImage:[UIImage imageNamed:@"login_qq"] forState:UIControlStateNormal];
         [_qqButton addTarget:self action:@selector(touchThirdPartyBotton:) forControlEvents:UIControlEventTouchUpInside];
@@ -436,7 +436,7 @@
         _weiboButton = [[DDPEdgeButton alloc] init];
         _weiboButton.inset = CGSizeMake(20, 20);
 #if !DDPAPPTYPEISMAC
-        _weiboButton.tag = UMSocialPlatformType_Sina;
+//        _weiboButton.tag = UMSocialPlatformType_Sina;
 #endif
         [_weiboButton addTarget:self action:@selector(touchThirdPartyBotton:) forControlEvents:UIControlEventTouchUpInside];
         [_weiboButton setImage:[UIImage imageNamed:@"login_weibo"] forState:UIControlStateNormal];

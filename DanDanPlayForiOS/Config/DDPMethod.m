@@ -13,7 +13,7 @@
 #import "UIApplication+DDPTools.h"
 #import "DDPVideoModel+Tools.h"
 #if !DDPAPPTYPEISMAC
-#import <UMShare/UMShare.h>
+//#import <UMShare/UMShare.h>
 #import "DDPPlayNavigationController.h"
 #else
 #import <DDPShare/DDPShare.h>
@@ -236,21 +236,21 @@ BOOL ddp_isLandscape(void) {
 
 BOOL ddp_isChatAppInstall(void) {
 #if !DDPAPPTYPEISMAC
-    if ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_QQ]) {
-        return true;
-    }
-    
-    if ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Sina]) {
-        return true;
-    }
-    
-    if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:@"weixin://"]]) {
-        return true;
-    }
-    
-    if ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Tim]) {
-        return true;
-    }
+//    if ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_QQ]) {
+//        return true;
+//    }
+//    
+//    if ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Sina]) {
+//        return true;
+//    }
+//    
+//    if ([[UIApplication sharedApplication]canOpenURL:[NSURL URLWithString:@"weixin://"]]) {
+//        return true;
+//    }
+//    
+//    if ([[UMSocialManager defaultManager] isInstall:UMSocialPlatformType_Tim]) {
+//        return true;
+//    }
 #endif
     return false;
 }

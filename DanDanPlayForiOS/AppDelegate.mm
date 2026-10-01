@@ -24,8 +24,8 @@
 
 #if !DDPAPPTYPEISMAC
 #import <Bugly/Bugly.h>
-#import <UMShare/UMShare.h>
-#import <UMCommon/UMCommon.h>
+//#import <UMShare/UMShare.h>
+//#import <UMCommon/UMCommon.h>
 #else
 #import <SSZipArchive/SSZipArchive.h>
 #import <DDPShare/DDPShare.h>
@@ -154,7 +154,7 @@
     BOOL result = NO;
     
 #if !DDPAPPTYPEISMAC
-    result = [[UMSocialManager defaultManager] handleOpenURL:url options:options];
+//    result = [[UMSocialManager defaultManager] handleOpenURL:url options:options];
 #endif
     
     if (!result) {
@@ -221,18 +221,19 @@
 
 - (void)configBugly {
     #if !DDPAPPTYPEISMAC
-    [Bugly startWithAppId:ddp_buglyKey];
+    BuglyConfig *config = [[BuglyConfig alloc] initWithAppId:@"x"
+                                                      appKey:ddp_buglyKey];
     #endif
 }
 
 - (void)configUM {
 #if !DDPAPPTYPEISMAC
-    if (ddp_UMShareKey.length != 0) {
-        [UMConfigure initWithAppkey:ddp_UMShareKey channel:nil];
-        [UMConfigure setLogEnabled:YES];
-        [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:ddp_QQAppKey appSecret:nil redirectURL:nil];
-        [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:ddp_weiboAppKey appSecret:ddp_weiboSecretKey redirectURL:ddp_weiboRedirectURL];       
-    }
+//    if (ddp_UMShareKey.length != 0) {
+//        [UMConfigure initWithAppkey:ddp_UMShareKey channel:nil];
+//        [UMConfigure setLogEnabled:YES];
+//        [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:ddp_QQAppKey appSecret:nil redirectURL:nil];
+//        [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:ddp_weiboAppKey appSecret:ddp_weiboSecretKey redirectURL:ddp_weiboRedirectURL];       
+//    }
 #endif
 }
 
