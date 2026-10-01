@@ -62,7 +62,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DDPFileManagerFolderPlayerListViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DDPFileManagerFolderPlayerListViewCell" forIndexPath:indexPath];
     if (cell.isFromCache == NO) {
-        cell.titleLabel.textColor = [UIColor blackColor];
+        cell.titleLabel.textColor = [UIColor labelColor];
 //        cell.rightButtons = @[[MGSwipeButton buttonWithTitle:@"删除" backgroundColor:[UIColor redColor]]];
 //        cell.rightSwipeSettings.transition = MGSwipeTransitionClipCenter;
 //        cell.delegate = self;

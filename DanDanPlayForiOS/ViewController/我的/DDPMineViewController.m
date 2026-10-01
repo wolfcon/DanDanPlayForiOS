@@ -259,7 +259,7 @@ UIScrollViewDelegate, DDPCacheManagerDelagate>
 - (DDPMineHeadView *)headView {
     if (_headView == nil) {
         _headView = [DDPMineHeadView fromXib];
-        _headView.frame = CGRectMake(0, 0, self.view.width, self.view.height * TITLE_VIEW_RATE + CGRectGetMaxY([UIApplication sharedApplication].statusBarFrame));
+        _headView.frame = CGRectMake(0, 0, self.view.width, self.view.height * TITLE_VIEW_RATE + CGRectGetMaxY(self.view.window.windowScene.statusBarManager.statusBarFrame));
     }
     return _headView;
 }

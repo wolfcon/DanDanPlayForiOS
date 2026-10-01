@@ -29,7 +29,7 @@
     self.idLabel.textColor = [UIColor lightGrayColor];
     self.idLabel.font = [UIFont ddp_verySmallSizeFont];
     
-    self.holdViewCenterYConstraint.constant = CGRectGetMaxY([UIApplication sharedApplication].statusBarFrame);
+    self.holdViewCenterYConstraint.constant =  CGRectGetMaxY(self.window.windowScene.statusBarManager.statusBarFrame);
     
     self.autoresizingMask = UIViewAutoresizingNone;
     

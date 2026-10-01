@@ -58,7 +58,7 @@
         _detailLabel.numberOfLines = 2;
         _detailLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
         _detailLabel.textAlignment = NSTextAlignmentCenter;
-        _detailLabel.textColor = [UIColor whiteColor];
+        _detailLabel.textColor = [UIColor labelColor];
 //        [_detailLabel setContentHuggingPriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
 //        [_detailLabel setContentCompressionResistancePriority:UILayoutPriorityRequired forAxis:UILayoutConstraintAxisHorizontal];
         [self.contentView addSubview:_detailLabel];

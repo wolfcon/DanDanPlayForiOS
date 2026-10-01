@@ -31,7 +31,7 @@
         
         [self.searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.mas_equalTo(0);
-            make.top.mas_offset(CGRectGetMaxY([UIApplication sharedApplication].statusBarFrame) - 5);
+            make.top.mas_offset(CGRectGetMaxY(self.window.windowScene.statusBarManager.statusBarFrame) - 5);
         }];
         
         [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {

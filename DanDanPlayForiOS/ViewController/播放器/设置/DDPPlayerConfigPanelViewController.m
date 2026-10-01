@@ -151,7 +151,7 @@
     } else {
         width = self.view.width * 0.5;
     }
-    return CGRectMake(0, CGRectGetMaxY([UIApplication sharedApplication].statusBarFrame), width, 40);
+    return CGRectMake(0, CGRectGetMaxY(self.view.window.windowScene.statusBarManager.statusBarFrame), width, 40);
 }
 
 #pragma mark - 懒加载

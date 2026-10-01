@@ -22,7 +22,7 @@
     if (self = [super initWithFrame:frame]) {
         self.translucent = true;
         
-        _upperBound = CGRectGetHeight([UIApplication sharedApplication].statusBarFrame) + 44;
+        _upperBound = CGRectGetHeight(self.window.windowScene.statusBarManager.statusBarFrame) + 44;
         _lowerBound = 200.0;
         [self updateTransparentWithOffset:CGPointZero];
         
@@ -36,7 +36,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
-    CGRect rect = [UIApplication sharedApplication].statusBarFrame;
+    CGRect rect = self.window.windowScene.statusBarManager.statusBarFrame;
     rect.origin.y -= rect.size.height;
     rect.size.height += self.bounds.size.height;
     

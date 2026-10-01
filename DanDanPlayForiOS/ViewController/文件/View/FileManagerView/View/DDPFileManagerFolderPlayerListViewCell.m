@@ -31,7 +31,7 @@
         self.titleLabel.textColor = [UIColor ddp_mainColor];
     }
     else {
-        self.titleLabel.textColor = [UIColor whiteColor];
+        self.titleLabel.textColor = [UIColor labelColor];
     }
 }
 
@@ -40,7 +40,7 @@
     if (_titleLabel == nil) {
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.font = [UIFont ddp_normalSizeFont];
-        _titleLabel.textColor = [UIColor whiteColor];
+        _titleLabel.textColor = [UIColor labelColor];
         _titleLabel.numberOfLines = 0;
         _titleLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
         [self.contentView addSubview:_titleLabel];
