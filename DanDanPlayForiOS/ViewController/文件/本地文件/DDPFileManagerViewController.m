@@ -26,6 +26,7 @@
 #import "DDPDownloadManager.h"
 #import <UITableView+FDTemplateLayoutCell.h>
 #import "DDPDocumentDelegate.h"
+#import "DDPVideoModel+Tools.h"
 
 @interface DDPFileManagerViewController ()<UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetSource,
 #if !DDPAPPTYPE
@@ -345,43 +346,61 @@ DDPFileManagerSearchViewDelegate>
     [self.tableView setEditing:NO];
 }
 
+- (void)noPromptDeleteFiles:(NSArray<DDPFile *> *)files {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    
+    [files enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(DDPFile * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        //文件夹则删除它的子文件 同时将自己从父目录中移除
+        if (obj.type == DDPFileTypeFolder) {
+            [obj.subFiles enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(DDPFile * _Nonnull obj1, NSUInteger idx1, BOOL * _Nonnull stop1) {
+                [fileManager removeItemAtURL:obj1.fileURL error:nil];
+                [obj1 removeFromParentFile];
+            }];
+            
+            [obj removeFromParentFile];
+        }
+        //文件则将它从父目录中移除 如果父目录为空 则将父目录从父目录的父目录移除
+        else {
+            [fileManager removeItemAtURL:obj.fileURL error:nil];
+            [obj removeFromParentFile];
+            
+            //文件夹为空
+            if (obj.parentFile.subFiles.count == 0) {
+                [obj.parentFile removeFromParentFile];
+            }
+        }
+    }];
+    
+    [self.tableView reloadData];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:DELETE_FILE_SUCCESS_NOTICE object:self];
+    [self touchCancelButton:nil];
+}
+
 - (void)deleteFiles:(NSArray <DDPFile *>*)files {
     
     if (files.count == 0) return;
+    
+    if (files.count == 1) {
+        DDPFile * file = files.firstObject;
+        
+        __block BOOL shouldReturn = NO;
+        [file.videoModel lastPlayTimeWithBlock:^(NSInteger lastPlayTime) {
+            if (lastPlayTime > 60 * 5) {
+                [self noPromptDeleteFiles:files];
+                shouldReturn = YES;
+            }
+        }];
+        
+        if (shouldReturn) { return; }
+    }
     
     UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"提示" message:@"确认删除吗?" preferredStyle:UIAlertControllerStyleAlert];
     
     [vc addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [vc addAction:[UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         
-        NSFileManager *fileManager = [NSFileManager defaultManager];
-        
-        [files enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(DDPFile * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            //文件夹则删除它的子文件 同时将自己从父目录中移除
-            if (obj.type == DDPFileTypeFolder) {
-                [obj.subFiles enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(DDPFile * _Nonnull obj1, NSUInteger idx1, BOOL * _Nonnull stop1) {
-                    [fileManager removeItemAtURL:obj1.fileURL error:nil];
-                    [obj1 removeFromParentFile];
-                }];
-                
-                [obj removeFromParentFile];
-            }
-            //文件则将它从父目录中移除 如果父目录为空 则将父目录从父目录的父目录移除
-            else {
-                [fileManager removeItemAtURL:obj.fileURL error:nil];
-                [obj removeFromParentFile];
-                
-                //文件夹为空
-                if (obj.parentFile.subFiles.count == 0) {
-                    [obj.parentFile removeFromParentFile];
-                }
-            }
-        }];
-        
-        [self.tableView reloadData];
-        
-        [[NSNotificationCenter defaultCenter] postNotificationName:DELETE_FILE_SUCCESS_NOTICE object:self];
-        [self touchCancelButton:nil];
+        [self noPromptDeleteFiles:files];
     }]];
     
     [self presentViewController:vc animated:YES completion:nil];
