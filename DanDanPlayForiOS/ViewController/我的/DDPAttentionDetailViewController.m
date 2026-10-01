@@ -129,6 +129,37 @@
     }];
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+- (UISwipeActionsConfiguration *)tableView:(UITableView *)tableView trailingSwipeActionsConfigurationForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    DDPEpisode *episode = self.historyModel.collection[indexPath.row];
+    
+    UIContextualAction *action;
+    if (episode.lastWatchDate) {
+        action = [UIContextualAction
+                  contextualActionWithStyle:UIContextualActionStyleDestructive
+                  title:@"标记未看"
+                  handler:^(UIContextualAction * _Nonnull action,
+                            __kindof UIView * _Nonnull sourceView,
+                            void (^ _Nonnull completionHandler)(BOOL)) {
+            
+        }];
+    } else {
+        action = [UIContextualAction
+                  contextualActionWithStyle:UIContextualActionStyleNormal
+                  title:@"标记已看"
+                  handler:^(UIContextualAction * _Nonnull action, __kindof UIView * _Nonnull sourceView, void (^ _Nonnull completionHandler)(BOOL)) {
+            [self didWatchEpisode:episode];
+        }];
+        action.backgroundColor = UIColor.ddp_mainColor;
+    }
+    
+    return [UISwipeActionsConfiguration configurationWithActions:@[action]];
+}
+
 - (void)touchTagWithModel:(DDPEpisode *)model {
    //未登录
     
@@ -143,25 +174,29 @@
     UIAlertController *vc = [UIAlertController alertControllerWithTitle:@"是否标记为已看过？" message:@"将会自动关注这个动画" preferredStyle:UIAlertControllerStyleAlert];
     [vc addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self.view showLoadingWithText:@"添加中..."];
-        [DDPFavoriteNetManagerOperation addHistoryWithEpisodeIds:@[@(model.identity)] addToFavorite:YES completionHandler:^(NSError *error) {
-            [self.view hideLoading];
-            
-            if (error) {
-                [self.view showWithError:error];
-            }
-            else {
-                model.lastWatchDate = [NSDate date];
-                self.historyModel.isFavorite = true;
-                if (self.attentionCallBack) {
-                    self.attentionCallBack(self.animateId);
-                }
-                [self.tableView reloadData];
-            }
-        }];
+        [self didWatchEpisode:model];
     }]];
     
     [vc addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
     [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)didWatchEpisode:(DDPEpisode *)episode {
+    [DDPFavoriteNetManagerOperation addHistoryWithEpisodeIds:@[@(episode.identity)] addToFavorite:YES completionHandler:^(NSError *error) {
+        [self.view hideLoading];
+        
+        if (error) {
+            [self.view showWithError:error];
+        }
+        else {
+            episode.lastWatchDate = [NSDate date];
+            self.historyModel.isFavorite = true;
+            if (self.attentionCallBack) {
+                self.attentionCallBack(self.animateId);
+            }
+            [self.tableView reloadData];
+        }
+    }];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
