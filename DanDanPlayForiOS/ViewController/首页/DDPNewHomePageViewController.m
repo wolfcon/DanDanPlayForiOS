@@ -187,13 +187,18 @@
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {
     CGRect preferredFrameForMenuView = [self pageController:pageController preferredFrameForMenuView:pageController.menuView];
-    return CGRectMake(0,
+    return CGRectMake(CGRectGetMinX(preferredFrameForMenuView),
                       CGRectGetMaxY(preferredFrameForMenuView),
                       CGRectGetWidth(preferredFrameForMenuView),
                       CGRectGetHeight(self.view.frame) -
                       self.minimumHeaderViewHeight -
                       CGRectGetHeight(preferredFrameForMenuView));
-    
+}
+
+- (CGRect)pageController:(WMPageController *)pageController preferredFrameForMenuView:(WMMenuView *)menuView {
+    var frame = [super pageController:pageController preferredFrameForMenuView:menuView];
+    frame.origin.x = self.view.safeAreaLayoutGuide.layoutFrame.origin.x;
+    return frame;
 }
 
 #pragma mark - DDPPlayerSelectedIndexViewDataSource

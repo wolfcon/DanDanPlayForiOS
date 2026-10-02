@@ -40,6 +40,17 @@
     }
 }
 
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    var bottom = self.tabBarController.tabBar.height;
+    if (bottom > self.view.frame.size.height / 2) {
+        bottom = 0;
+    }
+    UIEdgeInsets insets = self.collectionView.contentInset;
+    insets.bottom = bottom;
+    self.collectionView.contentInset = insets;
+}
 
 #pragma mark - UICollectionViewDataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
