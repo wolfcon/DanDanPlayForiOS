@@ -138,12 +138,14 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    let size = self.view.size;
-    self.bannerView.frame = CGRectMake(0, 0, size.width, HOME_BANNER_VIEW_HEIGHT);
+    let layoutFrame = self.view.safeAreaLayoutGuide.layoutFrame;
+    let size = layoutFrame.size;
+    let x = layoutFrame.origin.x;
+    self.bannerView.frame = CGRectMake(x, 0, size.width, HOME_BANNER_VIEW_HEIGHT);
     
-    self.progressHeaderView.frame = CGRectMake(0, self.bannerView.bottom, size.width, [self progressHeaderHeight]);
-    self.bangumiProgressView.frame = CGRectMake(0, self.progressHeaderView.bottom, size.width, [self progressViewHeight]);
-    self.bangumiIntroHeaderView.frame = CGRectMake(0, self.bangumiProgressView.bottom, size.width, [self bangumiIntroHeaderHeight]);
+    self.progressHeaderView.frame = CGRectMake(x, self.bannerView.bottom, size.width, [self progressHeaderHeight]);
+    self.bangumiProgressView.frame = CGRectMake(x, self.progressHeaderView.bottom, size.width, [self progressViewHeight]);
+    self.bangumiIntroHeaderView.frame = CGRectMake(x, self.bangumiProgressView.bottom, size.width, [self bangumiIntroHeaderHeight]);
 }
 
 

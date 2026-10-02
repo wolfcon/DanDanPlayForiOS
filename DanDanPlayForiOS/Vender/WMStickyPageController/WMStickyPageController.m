@@ -49,7 +49,8 @@
         UINavigationBar *navigationBar = self.navigationController.navigationBar;
         originY = (self.showOnNavigationBar && navigationBar) ? 0 : CGRectGetMaxY(navigationBar.frame);
     }
-    return CGRectMake(0, originY, CGRectGetWidth( self.view.frame), self.menuViewHeight);
+    CGFloat width = self.view.safeAreaLayoutGuide.layoutFrame.size.width;
+    return CGRectMake(0, originY, width, self.menuViewHeight);
 }
 
 - (CGRect)pageController:(WMPageController *)pageController preferredFrameForContentView:(WMScrollView *)contentView {

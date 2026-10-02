@@ -45,7 +45,7 @@
             } else {
                 make.right.mas_offset(-5);
             }
-            make.top.mas_offset(-5);
+            make.bottom.mas_offset(-5);
         }];
     }
     return self;
