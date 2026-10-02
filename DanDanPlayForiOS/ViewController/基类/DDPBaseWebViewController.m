@@ -116,9 +116,7 @@
 
 #pragma mark - 私有方法
 - (void)configRightItem {
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"home_browser"] configAction:^(UIButton *aButton) {
-        [aButton addTarget:self action:@selector(touchRightItem:) forControlEvents:UIControlEventTouchUpInside];
-    }];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"home_browser"] style:UIBarButtonItemStylePlain target:self action:@selector(touchRightItem:)];
     
     [self.navigationItem addRightItemFixedSpace:item];
 }

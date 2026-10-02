@@ -64,9 +64,9 @@ static void * const kMXScrollViewKVOContext = (void*)&kMXScrollViewKVOContext;
     self.directionalLockEnabled = YES;
     self.bounces = YES;
     
-    if (@available(iOS 11.0, *)) {
-        self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    }
+//    if (@available(iOS 11.0, *)) {
+//        self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//    }
     
     self.panGestureRecognizer.cancelsTouchesInView = NO;
     

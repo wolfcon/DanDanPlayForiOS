@@ -364,7 +364,7 @@
 - (void)showBangumiSeasonList {
     DDPPlayerSelectedIndexView *view = [DDPPlayerSelectedIndexView fromXib];
     view.effect = nil;
-//    view.contentViewBgColor = [UIColor whiteColor];
+    view.contentViewBgColor = UIColor.systemBackgroundColor;
     view.textColor = [UIColor darkGrayColor];
     view.delegate = self;
     view.dataSource = self;

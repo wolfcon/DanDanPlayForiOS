@@ -33,9 +33,9 @@
         self.emptyDataSetSource = self;
         self.emptyDataSetDelegate = self;
         self.backgroundColor = [UIColor ddp_backgroundColor];
-        if (@available(iOS 11.0, *)) {
-            self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        }
+//        if (@available(iOS 11.0, *)) {
+//            self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//        }
     }
     return self;
 }

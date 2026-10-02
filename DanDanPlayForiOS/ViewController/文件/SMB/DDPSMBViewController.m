@@ -252,13 +252,9 @@
 }
 
 - (void)configRightItem {
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"file_add_file"] configAction:^(UIButton *aButton) {
-        [aButton addTarget:self action:@selector(touchAddButton:) forControlEvents:UIControlEventTouchUpInside];
-    }];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"file_add_file"] style:UIBarButtonItemStylePlain target:self action:@selector(touchAddButton:)];
     
-    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"file_help"] configAction:^(UIButton *aButton) {
-        [aButton addTarget:self action:@selector(touchHelpButton:) forControlEvents:UIControlEventTouchUpInside];
-    }];
+    UIBarButtonItem *item1 = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"file_help"] style:UIBarButtonItemStylePlain target:self action:@selector(touchHelpButton:)];
     
     [self.navigationItem addRightItemsFixedSpace:@[item, item1]];
 }

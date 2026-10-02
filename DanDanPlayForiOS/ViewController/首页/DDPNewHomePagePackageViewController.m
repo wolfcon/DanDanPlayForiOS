@@ -38,15 +38,10 @@
 - (void)configRightItem {
     UIImage *fileIcon = [[UIImage imageNamed:@"file_phone"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 
-    UIBarButtonItem *fileItem = [[UIBarButtonItem alloc] initWithImage:fileIcon configAction:^(UIButton *aButton) {
-        [aButton addTarget:self action:@selector(touchLeftItem) forControlEvents:UIControlEventTouchUpInside];
-        aButton.imageView.tintColor = UIColor.whiteColor;
-    }];
+    UIBarButtonItem *fileItem = [[UIBarButtonItem alloc] initWithImage:fileIcon style:UIBarButtonItemStylePlain target:self action:@selector(touchLeftItem)];
     [self.navigationItem addLeftItemFixedSpace:fileItem];
     
-    UIBarButtonItem *searchItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"home_search"] configAction:^(UIButton *aButton) {
-        [aButton addTarget:self action:@selector(touchRightItem) forControlEvents:UIControlEventTouchUpInside];
-    }];
+    UIBarButtonItem *searchItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"home_search"] style:UIBarButtonItemStylePlain target:self action:@selector(touchRightItem)];
     [self.navigationItem addRightItemFixedSpace:searchItem];
 }
 

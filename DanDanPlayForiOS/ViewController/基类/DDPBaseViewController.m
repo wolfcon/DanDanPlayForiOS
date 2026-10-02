@@ -32,7 +32,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor ddp_backgroundColor];
-    self.automaticallyAdjustsScrollViewInsets = NO;
     
     [self configLeftItem];
     [self configRightItem];
@@ -87,14 +86,7 @@
 
 #pragma mark - 私有方法
 - (void)configLeftItem {
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"comment_back_item"] configAction:^(UIButton *aButton) {
-        [aButton addTarget:self action:@selector(touchLeftItem:) forControlEvents:UIControlEventTouchUpInside];
-        [aButton addGestureRecognizer:({
-            UILongPressGestureRecognizer *ges = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longProgressButton:)];
-            ges.minimumPressDuration = 0.7;
-            ges;
-        })];
-    }];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"comment_back_item"] style:UIBarButtonItemStylePlain target:self action:@selector(touchLeftItem:)];
     [self.navigationItem addLeftItemFixedSpace:item];
 }
 
@@ -104,12 +96,6 @@
 
 - (void)touchLeftItem:(UIButton *)button {
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)longProgressButton:(UILongPressGestureRecognizer *)aGesture {
-    if (aGesture.state == UIGestureRecognizerStateBegan) {
-        [self.navigationController popToRootViewControllerAnimated:YES];
-    }
 }
 
 @end

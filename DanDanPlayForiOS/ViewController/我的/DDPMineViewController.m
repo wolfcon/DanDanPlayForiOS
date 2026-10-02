@@ -57,12 +57,14 @@ UIScrollViewDelegate, DDPCacheManagerDelagate>
     [super viewDidLoad];
     
     [self.blurView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.left.right.mas_equalTo(0);
+        make.top.mas_equalTo(self.view.mas_safeAreaLayoutGuideTop);
+        make.left.right.mas_equalTo(0);
         make.height.mas_equalTo(self.headView.height);
     }];
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(0);
+        make.top.mas_equalTo(self.view.mas_safeAreaLayoutGuideTop);
+        make.left.right.bottom.mas_equalTo(0);
     }];
     
 #if !DDPAPPTYPE
@@ -95,9 +97,7 @@ UIScrollViewDelegate, DDPCacheManagerDelagate>
 }
 
 - (void)configRightItem {
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"comment_setting"] configAction:^(UIButton *aButton) {
-        [aButton addTarget:self action:@selector(touchRightItem) forControlEvents:UIControlEventTouchUpInside];
-    }];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"comment_setting"] style:UIBarButtonItemStylePlain target:self action:@selector(touchRightItem)];
     [self.navigationItem addRightItemFixedSpace:item];
 }
 

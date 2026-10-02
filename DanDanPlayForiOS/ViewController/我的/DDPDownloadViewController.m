@@ -164,9 +164,7 @@
             _rightButton = aButton;
         }];
         
-        UIBarButtonItem *deleteItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mine_download_delete"] configAction:^(UIButton *aButton) {
-            [aButton addTarget:self action:@selector(touchDeleteItem:) forControlEvents:UIControlEventTouchUpInside];
-        }];
+        UIBarButtonItem *deleteItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mine_download_delete"] style:UIBarButtonItemStyleDone target:self action:@selector(touchDeleteItem:)];
         
         [self.navigationItem addRightItemsFixedSpace:@[item, deleteItem]];
     }

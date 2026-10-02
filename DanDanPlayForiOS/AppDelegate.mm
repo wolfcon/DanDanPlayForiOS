@@ -223,6 +223,7 @@
     #if !DDPAPPTYPEISMAC
     BuglyConfig *config = [[BuglyConfig alloc] initWithAppId:@"x"
                                                       appKey:ddp_buglyKey];
+    [Bugly startWithConfig:config];
     #endif
 }
 
@@ -238,13 +239,13 @@
 }
 
 - (void)configOther {
-    if (@available(iOS 11.0, *)) {
-        [UITableView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-    }
-    
-    if (@available(iOS 13.0, *)) {
-        [UIScrollView appearance].automaticallyAdjustsScrollIndicatorInsets = NO;
-    }
+//    if (@available(iOS 11.0, *)) {
+//        [UITableView appearance].contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//    }
+//    
+//    if (@available(iOS 13.0, *)) {
+//        [UIScrollView appearance].automaticallyAdjustsScrollIndicatorInsets = NO;
+//    }
     
 //    [UILabel appearance].font = [UIFont ddp_normalSizeFont];
     [UITextView appearance].tintColor = [UIColor ddp_mainColor];

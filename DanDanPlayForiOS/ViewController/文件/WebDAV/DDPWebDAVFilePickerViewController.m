@@ -147,9 +147,7 @@
 
 #pragma mark - 私有方法
 - (void)configRightItem {
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"comment_back_to_top"] configAction:^(UIButton *aButton) {
-        [aButton addTarget:self action:@selector(touchRightItem:) forControlEvents:UIControlEventTouchUpInside];
-    }];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"comment_back_to_top"] style:UIBarButtonItemStylePlain target:self action:@selector(touchRightItem:)];
     
     [self.navigationItem addRightItemFixedSpace:item];
 }

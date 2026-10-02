@@ -12,6 +12,7 @@
 #import "DDPBaseNavigationController.h"
 #import "DDPMatchViewController.h"
 #import "DDPTabBar.h"
+#import <UniformTypeIdentifiers/UniformTypeIdentifiers.h>
 
 #if !DDPAPPTYPEISMAC
 #import "DDPFileViewController.h"
@@ -349,7 +350,7 @@
 
 - (NSArray<NSString *> *)registerTypes {
     if (_registerTypes == nil) {
-        _registerTypes = @[(__bridge NSString *)kUTTypeMovie, (__bridge NSString *)kUTTypeFolder, (__bridge NSString *)kUTTypeXML];
+        _registerTypes = @[UTTypeMovie.identifier, UTTypeFolder.identifier, UTTypeXML.identifier];
     }
     return _registerTypes;
 }

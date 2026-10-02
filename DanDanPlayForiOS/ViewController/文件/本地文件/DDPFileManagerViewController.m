@@ -451,23 +451,17 @@ DDPFileManagerSearchViewDelegate>
 }
 
 - (void)configRightItem {
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"home_search"] configAction:^(UIButton *aButton) {
-        [aButton addTarget:self action:@selector(touchSearchButton:) forControlEvents:UIControlEventTouchUpInside];
-    }];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"home_search"] style:UIBarButtonItemStylePlain target:self action:@selector(touchSearchButton:)];
     
     
-    UIBarButtonItem *sortItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"file_sort"] configAction:^(UIButton *aButton) {
-        [aButton addTarget:self action:@selector(touchSortButton:) forControlEvents:UIControlEventTouchUpInside];
-    }];
+    UIBarButtonItem *sortItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"file_sort"] style:UIBarButtonItemStylePlain target:self action:@selector(touchSortButton:)];
     _sortItem = sortItem;
     
     UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     fixedSpace.width = -10;
     
     if (ddp_appType == DDPAppTypeDefault) {
-        UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"file_add_file"] configAction:^(UIButton *aButton) {
-            [aButton addTarget:self action:@selector(touchHttpButton:) forControlEvents:UIControlEventTouchUpInside];
-        }];
+        UIBarButtonItem *addItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"file_add_file"] style:UIBarButtonItemStylePlain target:self action:@selector(touchHttpButton:)];
         [self.navigationItem addRightItemsFixedSpace:@[fixedSpace, sortItem, addItem, item]];
     }
     else {
@@ -486,19 +480,7 @@ DDPFileManagerSearchViewDelegate>
             image = [[UIImage imageNamed:@"file_app"]
                      yy_imageByTintColor:UIColor.whiteColor];
         }
-        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:image configAction:^(UIButton *aButton) {
-            [aButton addTarget:self action:@selector(openAppleFilesApp:) forControlEvents:UIControlEventTouchUpInside];
-            
-            aButton.tintColor = UIColor.whiteColor;
-            if (@available(iOS 13.0, *)) {
-                UIImageSymbolConfiguration *symbolConfig = [UIImageSymbolConfiguration
-                                                            configurationWithPointSize:0
-                                                            weight:UIImageSymbolWeightMedium
-                                                            scale:UIImageSymbolScaleLarge];
-                [aButton setPreferredSymbolConfiguration:symbolConfig
-                                         forImageInState:UIControlStateNormal];
-            }
-        }];
+        UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(openAppleFilesApp:)];
         
         NSArray <UIBarButtonItem *> *items = self.navigationItem.leftBarButtonItems;
         self.navigationItem.leftBarButtonItems = [items arrayByAddingObject:item];

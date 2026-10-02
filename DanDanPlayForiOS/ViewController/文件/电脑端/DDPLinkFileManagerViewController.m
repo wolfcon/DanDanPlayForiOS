@@ -154,9 +154,7 @@
 #pragma mark - 私有方法
 
 - (void)configRightItem {
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"file_qr_code"] configAction:^(UIButton *aButton) {
-        [aButton addTarget:self action:@selector(touchRightItem:) forControlEvents:UIControlEventTouchUpInside];
-    }];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"file_qr_code"] style:UIBarButtonItemStylePlain target:self action:@selector(touchRightItem:)];
     
     [self.navigationItem addRightItemFixedSpace:item];
 }

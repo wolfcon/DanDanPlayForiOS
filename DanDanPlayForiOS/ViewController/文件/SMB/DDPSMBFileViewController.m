@@ -209,9 +209,7 @@
         [aButton setTitle:@"取消" forState:UIControlStateSelected];
     }];
     
-    UIBarButtonItem *sortItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"file_sort"] configAction:^(UIButton *aButton) {
-        [aButton addTarget:self action:@selector(touchSortButton:) forControlEvents:UIControlEventTouchUpInside];
-    }];
+    UIBarButtonItem *sortItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"file_sort"] style:UIBarButtonItemStylePlain target:self action:@selector(touchSortButton:)];
     
     [self.navigationItem addRightItemsFixedSpace:@[item, sortItem]];
 }

@@ -30,8 +30,9 @@
         }];
         
         [self.searchBar mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.mas_equalTo(0);
-            make.top.mas_offset(CGRectGetMaxY(self.window.windowScene.statusBarManager.statusBarFrame) - 5);
+            make.top.mas_equalTo(self.mas_safeAreaLayoutGuideTop);
+            make.left.mas_equalTo(self.mas_safeAreaLayoutGuideLeft);
+            make.right.mas_equalTo(self.mas_safeAreaLayoutGuideRight);
         }];
         
         [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
